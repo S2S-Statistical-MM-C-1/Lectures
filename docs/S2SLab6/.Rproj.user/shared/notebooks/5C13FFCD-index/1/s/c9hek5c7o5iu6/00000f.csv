@@ -1,4 +1,0 @@
-"0","means_2 <- data.frame(mean = c(means_unif_2, means_expo_2),"
-"0","                      dist = rep(c(""Uniform"", ""Exponential""), each = m))"
-"0",""
-"0","means_2$dist <- factor(x = means$dist, levels = c(""Uniform"", ""Exponential""))"

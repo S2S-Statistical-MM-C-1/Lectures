@@ -1,6 +1,0 @@
-h1:ggplot2 ggplot2
-tab:ggtable Geometric objects for different graph types and the aesthetic options each can take.
-h2:ggbars Barplots
-h2:gghist Histograms
-h2:ggkern Kernel Density Estimators
-
