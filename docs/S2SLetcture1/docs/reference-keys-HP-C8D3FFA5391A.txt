@@ -1,0 +1,14 @@
+RStudio
+downloadR
+downloadRS
+UseR
+vectors
+addition
+vectlog
+other-types-of-vectors
+index
+seq
+repeat
+filter
+help
+exercises
