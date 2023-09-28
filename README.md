@@ -1,1 +1,1 @@
-# Lecutres
+# Lectures
