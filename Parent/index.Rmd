@@ -1,0 +1,36 @@
+--- 
+title: "S2S Statistical Methods, Models and Computing 1"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+link-citations: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, eval=TRUE, comment=NA)
+library(webexercises)
+```
+
+# Links to S2S Labs{-}
+
+* [S2S Induction Lab](https://s2s-statistical-mm-c-1.github.io/Labs/S2Induction/docs)
+
+* [S2S Lab 1](https://s2s-statistical-mm-c-1.github.io/Labs/S2SLab1/docs)
+
+* [S2S Lab 2](https://s2s-statistical-mm-c-1.github.io/Labs/S2SLab2/docs)
+
+* [S2S Lab 3](https://s2s-statistical-mm-c-1.github.io/Labs/S2SLab3/docs)
+
+* [S2S Lab 4](https://s2s-statistical-mm-c-1.github.io/Labs/S2SLab4/docs)
+
+* [S2S Lab 5](https://s2s-statistical-mm-c-1.github.io/Labs/S2SLab5/docs)
+
+* [S2S Lab 6](https://s2s-statistical-mm-c-1.github.io/Labs/S2SLab6/docs)
+
+* [S2S Lab 7](https://s2s-statistical-mm-c-1.github.io/Labs/S2SLab7/docs)
+
+* [S2S Lab 8](https://s2s-statistical-mm-c-1.github.io/Labs/S2SLab8/docs)
+
+* [S2S Lab 9](https://s2s-statistical-mm-c-1.github.io/Labs/S2SLab9/docs)
+
+* [S2S Lab 10](https://s2s-statistical-mm-c-1.github.io/Labs/S2SLab10/docs)
