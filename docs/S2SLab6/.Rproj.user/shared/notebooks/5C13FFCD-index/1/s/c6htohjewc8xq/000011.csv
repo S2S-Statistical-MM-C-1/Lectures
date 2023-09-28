@@ -1,0 +1,8 @@
+"0","ggplot(data = subset(means, subset = (size == ""n = 40""))) +"
+"0","  geom_density(aes(x = mean), fill = ""skyblue"") +"
+"0","  facet_grid(dist ~ .) +"
+"0","  coord_cartesian(xlim = c(6, 24)) +"
+"0","  labs(title = ""Sample size n = 40"","
+"0","       x = expression(bar(x)), y = ""Density"") +"
+"0","  stat_function(fun = dnorm, args = list(mean = 15, sd = 15/sqrt(40)), col = ""black"","
+"0","                linetype = 2, fill = ""black"", alpha = 0.2, geom = ""area"")"

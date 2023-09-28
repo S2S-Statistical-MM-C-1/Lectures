@@ -1,0 +1,39 @@
+# Further Exercises
+
+## Exercise 1 {-}
+
+Suppose $X\sim\mbox{Bi}(16,\,0.5)$. Investigate whether sample sizes of $n=2$, $n=5$, $n=10$, $n=50$ and $n=100$ are sufficiently large for the sampling distribution of $\bar X$ to follow the normal distribution, as stated by the Central Limit Theorem.
+
+For each different sample size, you should,
+
+* Draw 10,000 random samples from $X\sim\mbox{Bi}(16,\,0.5)$.
+* Calculate the mean of each of these samples.
+* Plot the kernel density estimate of the sampling distribution for $\bar X$.
+* Superimpose the distribution that the Central Limit Theorem states the sampling distribution for $\bar X$ should follow above the kernel density estimate - use the mean and standard deviation of $X$ to find which distribution this should be.
+
+***Hint*** You can draw a random sample from the Binomial distribution using the function `rbinom()`. Use the `help()` function to find out which arguments need to be provided to `rbinom()`.
+
+## Exercise 2 {-}
+
+The number of honeybees found in commercial beehives made by company $X$ has a mean of 35,000 and a standard deviation of 12,000. The number of honeybees found in beehives made by company $Y$ also has a mean of 35,000, but a standard deviation of 20,000. Both these hive sizes follow a normal distribution.
+
+a) Suppose 40 beehives have been randomly sampled from company $X$ and 22 beehives have been randomly sampled from company $Y$. Calculate the probability that the mean number of honeybees found in the beehives sampled from company $X$ is at least 2,000 bees more than the mean number found in the sample from company $Y$'s beehives.
+
+b) Simulate taking the samples of beehives from companies $X$ and $Y$ by drawing 15,000 versions of the samples from the respective distributions. Calculate the sample mean in each case and use these to estimate the probability found in part (a). Is this empirical probability similar to the theoretical probability?
+
+   It might help to show the kernel density estimate of the sampling distribution of $\bar X-\bar Y$ in a plot, with the normal distribution it is expected to follow superimposed on top.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

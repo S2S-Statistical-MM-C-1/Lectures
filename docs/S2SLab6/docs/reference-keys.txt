@@ -1,0 +1,4 @@
+sampling-distribution-of-barx
+central-limit-theorem
+sampling-distribution-for-bar-x---bar-y
+further-exercises

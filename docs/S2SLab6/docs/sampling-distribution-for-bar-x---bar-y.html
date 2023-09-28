@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Sampling distribution for \(\bar X - \bar Y\) | S2S Lab 6</title>
+  <meta name="description" content="2 Sampling distribution for \(\bar X - \bar Y\) | S2S Lab 6" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Sampling distribution for \(\bar X - \bar Y\) | S2S Lab 6" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Sampling distribution for \(\bar X - \bar Y\) | S2S Lab 6" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="further-exercises.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="include/webex.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Sampling Distribution of <span class="math inline">\(\bar{X}\)</span></a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#central-limit-theorem"><i class="fa fa-check"></i><b>1.1</b> Central Limit Theorem</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="sampling-distribution-for-bar-x---bar-y.html"><a href="sampling-distribution-for-bar-x---bar-y.html"><i class="fa fa-check"></i><b>2</b> Sampling distribution for <span class="math inline">\(\bar X - \bar Y\)</span></a></li>
+<li class="chapter" data-level="3" data-path="further-exercises.html"><a href="further-exercises.html"><i class="fa fa-check"></i><b>3</b> Further Exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="further-exercises.html"><a href="further-exercises.html#exercise-1"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="further-exercises.html"><a href="further-exercises.html#exercise-2"><i class="fa fa-check"></i>Exercise 2</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">S2S Lab 6</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="sampling-distribution-for-bar-x---bar-y" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">2</span> Sampling distribution for <span class="math inline">\(\bar X - \bar Y\)</span><a href="sampling-distribution-for-bar-x---bar-y.html#sampling-distribution-for-bar-x---bar-y" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>For two independent normal random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, with distributions <span class="math inline">\(X\sim N(\mu_X,\,\sigma_X)\)</span> and <span class="math inline">\(Y\sim N(\mu_Y,\,\sigma_Y)\)</span> respectively, the distribution of <span class="math inline">\(\bar X-\bar Y\)</span> is,</p>
+<p><span class="math display">\[
+\bar X-\bar Y\sim N\Bigg(\mu_X-\mu_Y,\,\sqrt{\frac{\sigma_X^2}{n_X}+\frac{\sigma_y^2}{n_Y}}\Bigg)
+\]</span></p>
+<p>where <span class="math inline">\(n_X\)</span> is the size of the sample taken from the distribution for <span class="math inline">\(X\)</span> and <span class="math inline">\(n_Y\)</span> is the size of the sample taken from the distribution for <span class="math inline">\(Y\)</span>.</p>
+<p>We can show that this result is true by sampling from the distributions of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> in R and creating a new sampling distribution for <span class="math inline">\(\bar X -\bar Y\)</span>.</p>
+<p>Specifically, we will;</p>
+<ol style="list-style-type: decimal">
+<li>Draw <span class="math inline">\(m=\)</span> 20,000 samples of size <span class="math inline">\(n_X=\)</span> 120 from the distribution <span class="math inline">\(X\sim N(90,\,12)\)</span> and calculate the mean of each of these samples.</li>
+<li>Draw <span class="math inline">\(m=\)</span> 20,000 samples of size <span class="math inline">\(n_Y=\)</span> 96 from the distribution <span class="math inline">\(Y\sim N(40,\,10)\)</span> and calculate the mean of each of these samples.</li>
+<li>Calculate the difference between the sample means from the distribution for <span class="math inline">\(X\)</span> and from the distribution for <span class="math inline">\(Y\)</span> - that is <span class="math inline">\(\bar X-\bar Y\)</span>.</li>
+<li>Check whether the kernel density estimate of the distribution of these differences is similar to the expected normal distribution, as stated above.</li>
+</ol>
+<div class="webex-box webex-check">
+<p><strong>Using the statement above about the distribution of <span class="math inline">\(\bar X-\bar Y\)</span>, what distribution would you expect the differences in sample means to follow?</strong></p>
+<div id="radio_DPLHMUVHPT" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_DPLHMUVHPT" value="answer"></input> <span><span class="math inline">\(N\Big(50,\,\sqrt{\textstyle\frac{12^2}{120}+\textstyle\frac{10^2}{96}}\Big)\)</span></span></label><label><input type="radio" autocomplete="off" name="radio_DPLHMUVHPT" value=""></input> <span><span class="math inline">\(N\Big(50,\,\sqrt{\textstyle\frac{12}{120}+\textstyle\frac{10}{96}}\Big)\)</span></span></label><label><input type="radio" autocomplete="off" name="radio_DPLHMUVHPT" value=""></input> <span><span class="math inline">\(N\Big(50,\,\sqrt{\textstyle\frac{12^2}{20,000}+\textstyle\frac{10^2}{20,000}}\Big)\)</span></span></label><label><input type="radio" autocomplete="off" name="radio_DPLHMUVHPT" value=""></input> <span><span class="math inline">\(N\Big(90,\,\sqrt{\textstyle\frac{12^2}{120}+\textstyle\frac{10^2}{96}}\Big)\)</span></span></label>
+</div>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<p>We know that <span class="math inline">\(X\sim N(90,\,12)\)</span> and that we want to take samples of size 120 from this distribution. Therefore, we can say that <span class="math inline">\(\mu_X=90\)</span>, <span class="math inline">\(\sigma_X=12\)</span> and <span class="math inline">\(n_X=120\)</span>.</p>
+<p>We also know that <span class="math inline">\(Y\sim N(40,\,10)\)</span> and that we want to take samples of size 96 from this distribution, so <span class="math inline">\(\mu_Y=40\)</span>, <span class="math inline">\(\sigma_Y=10\)</span> and <span class="math inline">\(n_Y=96\)</span>.</p>
+<p>Plugging these values into the given distribution for <span class="math inline">\(\bar X-\bar Y\)</span> tells us that,</p>
+<p><span class="math display">\[
+\bar X-\bar Y\sim N\Big(90-40=50,\,\sqrt{\textstyle\frac{12^2}{120}+\textstyle\frac{10^2}{96}}\Big)
+\]</span></p>
+</div>
+</div>
+<div class="webex-box webex-check">
+<p><strong>Complete the code below draw 20,000 samples of size 120 from the <span class="math inline">\(N(90,\, 12)\)</span> distribution and save the mean of each sample in a vector called <code>meansX</code>.</strong></p>
+<p><strong>Let <code>m</code> represent the number of samples you want to draw, and <code>nx</code> represent the size each sample should be i.e. <span class="math inline">\(n_X\)</span>.</strong></p>
+<div class="webex-code">
+<p><code>m &lt;-</code><input class='webex-solveme nospaces' size='5' data-answer='["20000"]'/></p>
+<ul style="margin-top: -0.8em; margin-left:-2em;">
+<code>nx &lt;-</code><input class='webex-solveme nospaces' size='3' data-answer='["120"]'/>
+</ul>
+<ul style="margin-top:1.6em; margin-left:-2em;">
+<code>meansX &lt;-</code><select class='webex-select'><option value='blank'></option><option value=''>vector(m)</option><option value='answer'>numeric(m)</option><option value=''>c(m)</option><option value=''>list(m)</option><option value=''>data.frame(m)</option></select>
+</ul>
+<ul style="margin-top:1.6em; margin-left:-2em;">
+<select class='webex-select'><option value='blank'></option><option value='answer'>for</option><option value=''>while</option><option value=''>if</option></select><code>(</code><input class='webex-solveme nospaces' size='12' data-answer='["i in 1:m","i in 1:20000"]'/><code>){</code>
+</ul>
+<ul style="margin-top:-0.8em; margin-left:0.6em;">
+<code>meansX[i] &lt;- mean(</code><input class='webex-solveme nospaces' size='5' data-answer='["rnorm"]'/><code>(nx, mean =</code><input class='webex-solveme nospaces' size='2' data-answer='["90"]'/><code>, sd =</code><input class='webex-solveme nospaces' size='2' data-answer='["12"]'/><code>))</code>
+</ul>
+<ul style="margin-top:-0.8em; margin-left:-2em;">
+<code>}</code>
+</ul>
+</div>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="sampling-distribution-for-bar-x---bar-y.html#cb15-1" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="dv">20000</span></span>
+<span id="cb15-2"><a href="sampling-distribution-for-bar-x---bar-y.html#cb15-2" tabindex="-1"></a>nx <span class="ot">&lt;-</span> <span class="dv">120</span></span>
+<span id="cb15-3"><a href="sampling-distribution-for-bar-x---bar-y.html#cb15-3" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="sampling-distribution-for-bar-x---bar-y.html#cb15-4" tabindex="-1"></a>meansX <span class="ot">&lt;-</span> <span class="fu">numeric</span>(m)</span>
+<span id="cb15-5"><a href="sampling-distribution-for-bar-x---bar-y.html#cb15-5" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="sampling-distribution-for-bar-x---bar-y.html#cb15-6" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>m){</span>
+<span id="cb15-7"><a href="sampling-distribution-for-bar-x---bar-y.html#cb15-7" tabindex="-1"></a>  meansX[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">rnorm</span>(nx, <span class="at">mean =</span> <span class="dv">90</span>, <span class="at">sd =</span> <span class="dv">12</span>))</span>
+<span id="cb15-8"><a href="sampling-distribution-for-bar-x---bar-y.html#cb15-8" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+</div>
+<p>Similarly, we can draw 20,000 samples of size <span class="math inline">\(n_Y=\)</span> 96 from the <span class="math inline">\(N(40,\, 10)\)</span> distribution and calculate the mean of each sample using the following code. As we've seen before, this makes use of a for loop to draw each sample and calculate its mean, before saving the mean in the vector <code>meansY</code>.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="sampling-distribution-for-bar-x---bar-y.html#cb16-1" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="dv">20000</span></span>
+<span id="cb16-2"><a href="sampling-distribution-for-bar-x---bar-y.html#cb16-2" tabindex="-1"></a>ny <span class="ot">&lt;-</span> <span class="dv">96</span></span>
+<span id="cb16-3"><a href="sampling-distribution-for-bar-x---bar-y.html#cb16-3" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="sampling-distribution-for-bar-x---bar-y.html#cb16-4" tabindex="-1"></a>meansY <span class="ot">&lt;-</span> <span class="fu">numeric</span>(m)</span>
+<span id="cb16-5"><a href="sampling-distribution-for-bar-x---bar-y.html#cb16-5" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="sampling-distribution-for-bar-x---bar-y.html#cb16-6" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>m){</span>
+<span id="cb16-7"><a href="sampling-distribution-for-bar-x---bar-y.html#cb16-7" tabindex="-1"></a>  meansY[i] <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">rnorm</span>(ny, <span class="at">mean =</span> <span class="dv">40</span>, <span class="at">sd =</span> <span class="dv">10</span>))</span>
+<span id="cb16-8"><a href="sampling-distribution-for-bar-x---bar-y.html#cb16-8" tabindex="-1"></a>}</span></code></pre></div>
+<p>We can then calculate the difference between each pair of means and store these differences in the data frame <code>XY</code>. We use a data frame, rather than a vector here, so that we can go on to plot the distribution of differences using <code>ggplot2</code>.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="sampling-distribution-for-bar-x---bar-y.html#cb17-1" tabindex="-1"></a>XY <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">diff =</span> meansX <span class="sc">-</span> meansY)</span></code></pre></div>
+<p>Finally, we can use <code>ggplot2</code> to plot the kernel density estimate of the differences between each pair of sample means from the <span class="math inline">\(N(90,\,12)\)</span> and <span class="math inline">\(N(40,\,10)\)</span> distributions. We do this using the <code>geom_density()</code> function.</p>
+<p>We know that <span class="math inline">\(\bar X-\bar Y\)</span> follows the <span class="math inline">\(N\Big(50,\,\sqrt{\textstyle\frac{12^2}{120}+\textstyle\frac{10^2}{96}}\Big)\)</span> distribution, so we can superimpose this above the kernel density estimate to assess how similar they are. We do this by including the layer <code>stat_function()</code>. Because the distribution we want to show is a normal distribution, we use the argument <code>fun = dnorm</code>. The mean and standard deviation, <span class="math inline">\(50\)</span> and <span class="math inline">\(\sqrt{\textstyle\frac{12^2}{120}+\textstyle\frac{10^2}{96}}\)</span> respectively, are included within a list given to the argument <code>args =</code>. We can also set some stylistic choices of how this normal distribution should appear using the <code>col =</code>, <code>linetype =</code>, <code>fill =</code>, <code>alpha =</code> and <code>geom =</code> arguments.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="sampling-distribution-for-bar-x---bar-y.html#cb18-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> XY) <span class="sc">+</span></span>
+<span id="cb18-2"><a href="sampling-distribution-for-bar-x---bar-y.html#cb18-2" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x =</span> diff), <span class="at">fill =</span> <span class="st">&quot;cadetblue3&quot;</span>) <span class="sc">+</span></span>
+<span id="cb18-3"><a href="sampling-distribution-for-bar-x---bar-y.html#cb18-3" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> dnorm, <span class="at">args =</span> <span class="fu">list</span>(<span class="at">mean =</span> <span class="dv">50</span>, <span class="at">sd =</span> <span class="fu">sqrt</span>(<span class="dv">12</span><span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="dv">120</span> <span class="sc">+</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="dv">96</span>)),</span>
+<span id="cb18-4"><a href="sampling-distribution-for-bar-x---bar-y.html#cb18-4" tabindex="-1"></a>                <span class="at">geom =</span> <span class="st">&quot;area&quot;</span>, <span class="at">col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">linetype =</span> <span class="dv">2</span>, <span class="at">fill =</span> <span class="st">&quot;black&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb18-5"><a href="sampling-distribution-for-bar-x---bar-y.html#cb18-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="fu">expression</span>(<span class="fu">bar</span>(X)<span class="sc">-</span><span class="fu">bar</span>(Y)), <span class="at">y =</span> <span class="st">&quot;Density&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/XY3-1.png" width="672" /></p>
+<div class="webex-box webex-check">
+<p><strong>Do you think the kernel density estimate of the distribution of the differences between pairs of sample means is approximately equal to the <span class="math inline">\(N\Big(50,\,\sqrt{\textstyle\frac{12^2}{120}+\textstyle\frac{10^2}{96}}\Big)\)</span> distribution?</strong></p>
+<p><select class='webex-select'><option value='blank'></option><option value='answer'>Yes</option><option value=''>No</option><option value=''>Can't say</option></select></p>
+</div>
+<!--computing empirical and theoretical probability-->
+<p>We can use our calculated differences between the sample means of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> to estimate probabilities for <span class="math inline">\(\bar X-\bar Y\)</span>. For example, you might be asked, what is the probability that the difference between the mean of <span class="math inline">\(X\)</span> and the mean of <span class="math inline">\(Y\)</span> is greater than 48?</p>
+<p>We can use the values of differences between the pairs of sample means to answer this. We use a logical statement, <code>XY$diff &gt; 48</code>, to identify which of the calculated differences are greater than 48. This logical statement returns 20,000 values - <code>TRUE</code> if the corresponding difference was greater than 48 and <code>FALSE</code> if the difference was less than or equal to 48. We can then plug this logical vector into the <code>mean()</code> function to tell us the proportion of differences that were greater than 48. This proportion is a good approximation of the true probability <span class="math inline">\(P\big(\bar X-\bar Y&gt;48\big)\)</span> and using the code below, we see that this is roughly equal to 0.90745.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="sampling-distribution-for-bar-x---bar-y.html#cb19-1" tabindex="-1"></a><span class="fu">mean</span>(XY<span class="sc">$</span>diff <span class="sc">&gt;</span> <span class="dv">48</span>)</span></code></pre></div>
+<pre><code>[1] 0.90745</code></pre>
+<p>Because we have used our samples to calculate this probability, this is known as an <em>empirical</em> probability. We could also find the true, theoretical probability that <span class="math inline">\(P\big(\bar X-\bar Y&gt;48\big)\)</span> by using the fact that <span class="math inline">\(\bar X-\bar Y\sim N\Big(50,\,\sqrt{\textstyle\frac{12^2}{120}+\textstyle\frac{10^2}{96}}\Big)\)</span>.</p>
+<p>We can use the function <code>pnorm()</code> to find the probability that <span class="math inline">\(P\big(\bar X-\bar Y\leq 48\big)\)</span>. Then, in order to find <span class="math inline">\(P\big(\bar X-\bar Y&gt;48\big)\)</span>, we simply calculate <span class="math inline">\(1-\)</span> the result from <code>pnorm()</code>. This is shown in the code below.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="sampling-distribution-for-bar-x---bar-y.html#cb21-1" tabindex="-1"></a><span class="dv">1</span><span class="sc">-</span><span class="fu">pnorm</span>(<span class="dv">48</span>, <span class="at">mean =</span> <span class="dv">50</span>, <span class="at">sd =</span> <span class="fu">sqrt</span>(<span class="dv">12</span><span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="dv">120</span> <span class="sc">+</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">2</span><span class="sc">/</span><span class="dv">96</span>))</span></code></pre></div>
+<pre><code>[1] 0.9091942</code></pre>
+<p>Notice how close the empirical probability we calculated from our samples is to the true, theoretical probability.</p>
+<hr />
+<p>You can follow a similar example of using R to create a sample sampling distribution for <span class="math inline">\(\bar X-\bar Y\)</span> in Section <a href="https://read.kortext.com/reader/pdf/92741/375">6.5.2 Sampling Distribution for <span class="math inline">\(\bar X-\bar Y\)</span> When Sampling from Two Independent Normal Populations</a> in <em>Probability and Statistics with R</em>.</p>
+
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  var t = document.getElementsByClassName("webex-total_correct");
+  for (var i = 0; i < t.length; i++) {
+    p = t[i].parentElement;
+    var correct = p.getElementsByClassName("webex-correct").length;
+    var solvemes = p.getElementsByClassName("webex-solveme").length;
+    var radiogroups = p.getElementsByClassName("webex-radiogroup").length;
+    var selects = p.getElementsByClassName("webex-select").length;
+
+    t[i].innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* check answers */
+check_func = function() {
+  console.log("webex: check answers");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('unchecked')) {
+    cl.remove("unchecked");
+    this.innerHTML = "Hide Answers";
+  } else {
+    cl.add("unchecked");
+    this.innerHTML = "Check Answers";
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  var check_sections = document.getElementsByClassName("webex-check");
+  console.log("check:", check_sections.length);
+  for (var i = 0; i < check_sections.length; i++) {
+    check_sections[i].classList.add("unchecked");
+
+    let btn = document.createElement("button");
+    btn.innerHTML = "Check Answers";
+    btn.classList.add("webex-check-button");
+    btn.onclick = check_func;
+    check_sections[i].appendChild(btn);
+
+    let spn = document.createElement("span");
+    spn.classList.add("webex-total_correct");
+    check_sections[i].appendChild(spn);
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    solveme[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    selects[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  update_total_correct();
+}
+
+</script>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="further-exercises.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

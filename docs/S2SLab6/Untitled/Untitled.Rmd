@@ -1,0 +1,25 @@
+---
+title: "MCQ Formatting"
+output: webexercises::webexercises_default
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(webexercises)
+```
+
+**Do you think the the sampling distribution of $\bar X$, when samples of size $n=2$ are taken from the $\mbox{Unif}(-11,\,41)$ distribution, is approximately normal?**
+
+`r longmcq(c(answer = "Yes", "No", "Can't say"))`
+
+
+**If we were to take samples of size $n=2$ from the $\mbox{Unif}(-11,\, 41)$ distribution, what distribution would $\bar X$ follow, according to the Central Limit Theorem?**
+
+```{r, echo=FALSE}
+opts1 <- sample(c(answer = "$N\\Big(15,\\textstyle\\frac{15}{\\sqrt{2}}\\Big)$",
+           "$N\\Big(-11,\\textstyle\\frac{41}{\\sqrt{2}}\\Big)$",
+           "$N\\Big(15,15\\Big)$",
+           "$\\mbox{Unif}\\Big(-11,41\\Big)$"), size = 4)
+```
+
+`r longmcq(opts1)`
