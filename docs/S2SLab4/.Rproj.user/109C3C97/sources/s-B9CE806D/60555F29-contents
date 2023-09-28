@@ -1,0 +1,391 @@
+---
+title: "S2S Lab 4"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+link-citations: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, eval=TRUE, comment=NA)
+library(webexercises)
+library(PASWR2)
+library(knitr)
+library(kableExtra)
+library(ggplot2)
+```
+
+# Qualitative Data {#sec:qual}
+
+Qualitative data is the term used when a variable has different categories or groups or levels. This could be things such as students' grades, the genders of patients in an experiment or which treatment subjects have been given. There are several ways that qualitative data can be summarised and presented.
+
+
+## Tables {#sec:tables}
+
+Frequency tables summarise qualitative data by showing the different groups/categories in a variable and the corresponding frequency with which they occur - that is, how many observations fall into each category.
+
+Frequency tables can be created in R using the `table()` function. We have already seen `table()` used in Lab 3, <!--link to lab 3--> but let's revisit it with an example.
+
+The data set `EPIDURAL` from the package `PASWR2` contains information on 85 patients from a study used to determine whether administering epidural anesthesia (a pain relief administered in the back) to pregnant women in labour is better whilst they are in the traditional sitting position, or when they are in a "hamstring stretch" position. This contains several variables relating to each patient and the treatment they receive (to see more about what each of these variables describes, run the code `help("EPIDURAL")`).
+
+We can load the data frame into our **Environment** tab and look at the first five rows using the following code (make sure you have installed the `PASWR2` package on whatever device you are using R with beforehand).
+
+```{r qual1}
+library(PASWR2)
+
+data("EPIDURAL")
+head(EPIDURAL)
+```
+
+The variable `ease` is a factor variable which tells how easy the physician found it to locate where the epidural anesthesia should be administered for each patient. It has levels `"Easy"`, `"Difficult"` and `"Impossible"`.
+
+We can summarise the number of patients that fall into each level of the `ease` variable using the `table()` function as follows.
+
+```{r qual2}
+epi_freq <- table(EPIDURAL$ease)
+epi_freq
+```
+
+This frequency table shows us that there are 57 patients in the data set for whom it was easy to administer the anesthetic, 20 who it was difficult for and 8 for whom it was impossible to find where to administer the anesthetic.
+
+::: {.webex-box}
+
+**The levels of `ease` are automatically presented in alphabetical order. Can you reorder the labels so that they go in the order `"Easy"`, `"Difficult"` and `"Impossible"`?**
+
+`r hide("Solution")`
+```{r qual-ans1.1}
+EPIDURAL$ease <- factor(x = EPIDURAL$ease,
+                        levels = c("Easy", "Difficult", "Impossible"))
+levels(EPIDURAL$ease)
+```
+
+The function `levels()` can be used to see the levels of a factor variable, as well as the order they are stored in.
+
+We can update the frequency table `epi_freq` so that the different levels of `ease` now appear in a sensible order.
+
+```{r qual-ans1.2}
+epi_freq <- table(EPIDURAL$ease)
+epi_freq
+```
+`r unhide()`
+
+:::
+
+We could also create a table showing the proportion of the total number of patients which fall into each level of `ease` using `prop.table()`. We need to make sure that we give a pre-existing table to this function. We can use the table `epi_freq` created in the question above here.
+
+```{r qual3}
+epi_prop <- prop.table(epi_freq)
+epi_prop
+```
+
+Now we can see that it was easy to find where to administer the anesthetic for roughly 67% of patients, difficult for roughly 24% and impossible for 9% of patients.
+
+::: {.webex-box}
+**The `TITANIC3` data set from the `PASWR2` package contains information on the survival status of passengers on the Titanic. Load this data set into your Environment tab and create a frequency table showing the number of passengers who survived and the number who did not.**
+
+**Remember to explore the data set using the `help()` and `str()` functions. It might help to rename the levels of the `survived` variable so they are clear.**
+
+`r hide("Solution")`
+```{r qual-ans2}
+data("TITANIC3")
+
+TITANIC3$survived <- factor(x = TITANIC3$survived, labels = c("No", "Yes"))
+
+table(TITANIC3$survived)
+```
+`r unhide()`
+:::
+
+::: {.webex-box .webex-check}
+**What proportion of passengers survived the Titanic sinking?**
+`r fitb(c("0.4", "0.38", "0.382", "0.3820", "0.38197", "0.381971"))`
+
+`r hide("Solution")`
+We can find the proportion of survivors by using the `prop.table()` function.
+
+```{r}
+prop.table(table(TITANIC3$survived))
+```
+`r unhide()`
+:::
+
+
+## Barplots {#bars}
+
+Barplots are a way to graphically summarise qualitative data. You will most likely have seen many barplots before, but now we're going to learn how to create our own.
+
+The function used to create barplots in R is `barplot()`. It takes the following arguments:
+
+* `height =`: this is the vector or matrix which contains a summary of the qualitative data; this could be a frequency table or a table of proportions.
+* `col =`: this is a vector of colours to be used for the bars in the barplot. If you want to see a list of colour names that R can use, run the code `colors()` - there are also documents online which will show you the actual colours too!
+* `main =`: this is the main title of the plot.
+* `xlab =`: this is a label for along the x-axis.
+* `ylab =`: this is a label for along the y-axis.
+* `ylim =`: this is a vector giving the limits that the y-axis should be spread over.
+
+The only essential argument to give to `barplot()` is `height =`. For a full list of the arguments that can be used within `barplot()`, use the code `help("barplot")`.
+
+We can create a barplot showing the number of patients from `EPIDURAL` that fall into each level of `ease` using the following code.
+
+```{r qual4}
+barplot(height = epi_freq,
+        col = c("darkslategray", "darkslategray4", "darkslategray3"),
+        main = "Ease of Locating Anesthesia Administering Location in Patients",
+        xlab = "Ease",
+        ylab = "Frequency")
+```
+
+We can also use the table of proportions `epi_prop` to create a barplot, this time showing the proportion of patients in each level of ease, rather than the frequency.
+
+```{r qual5}
+barplot(height = epi_prop,
+        col = c("darkslategray", "darkslategray4", "darkslategray3"),
+        main = "Ease of Locating Anesthesia Administering Location in Patients",
+        xlab = "Ease",
+        ylab = "Proportion")
+```
+
+Notice that the shapes of both these barplots are identical. The only difference between them is the scale used on the y-axis.
+
+::: {.webex-box .webex-check}
+**Complete the code below to create a barplot which shows the number of passengers on the Titanic belonging to 1^st^, 2^nd^ and 3^rd^ class respectively.**
+
+::: {.webex-code}
+`r fitb(c("barplot"))``(height = ``r fitb(c("table(TITANIC3$pclass)"), ignore_case=TRUE)``,`
+<ul style="margin-top: -0.8em;">
+
+          col = c("gray32", "gray95", "seashell3"),
+          main = "Number of Titanic Passengers in each Class",
+          xlab = "Class",
+          ylab = "Frequency")
+</ul>
+:::
+
+
+`r hide("Solution")`
+```{r qual-ans3.2}
+barplot(height = table(TITANIC3$pclass),
+        col = c("gray32", "gray95", "seashell3"),
+        main = "Number of Titanic Passengers in each Class",
+        xlab = "Class",
+        ylab = "Frequency")
+```
+`r unhide()`
+:::
+
+## Dot Charts {#sec:dots}
+
+Dot charts show similar information to barplots and summarise qualitative data. They show a dot for each level of a categorical variable which indicates the frequency of that level (see below for an example).
+
+Dot charts can be made in R using the function `dotchart()`. This takes similar arguments to those used by `barplot()` above, including:
+
+* `x =`: this is the vector or matrix which contains a summary of the qualitative data; this could be a frequency table or a table of proportions.
+* `bg =`: this is the colour to be used inside the dot.
+
+Again, the only essential argument to provide is `x =`.
+
+We can create a dot chart showing the number of patients from `EPIDURAL` in each level of `ease` using the following code.
+
+```{r qual6, warning=FALSE}
+dotchart(x = epi_freq,
+         bg = c("darkslategray", "darkslategray4", "darkslategray3"),
+         main = "Ease of Locating Anesthesia Administering Location in Patients",
+         xlab = "Frequency",
+         ylab = "Ease")
+```
+
+
+## Pie Charts {#sec:pies}
+
+A third way to graphically present qualitative data is with a pie chart. These show the relative frequencies of different levels of a categorical variable as proportions of a "pie".
+
+Pie charts are sometimes not favoured by statisticians because it can be difficult to clearly see the differences in proportions when they are very similar. Pie charts can still be used though to show the proportion of observations in a category, in relation to the total number of observations.
+
+The function used to create pie charts is `pie()`, which takes the following arguments:
+
+* `x =`: this is the vector which summarises the qualitative data as frequencies or proportions.
+* `radius =`: this determines the size of the pie chart within your plotting window.
+* `col =`: this is a vector of colours which are to be used for each "slice" of the pie chart.
+
+You can see a full list of the arguments that can be given to the `pie()` function using `help("pie")`. The only necessary argument to provide is `x =`.
+
+We can create a pie chart showing the proportion of patients in each level of `ease` using the code below.
+
+```{r qual7}
+pie(x = epi_prop,
+    radius = 0.9,
+    col = c("darkslategray", "darkslategray4", "darkslategray3"),
+    main = "Ease of Locating Anesthesia Administering Location in Patients")
+```
+
+::: {.webex-box}
+**Create a pie chart showing the proportion of passengers on the Titanic in each class.**
+
+`r hide("Solution")`
+```{r}
+pie(x = table(TITANIC3$pclass),
+    col = c("gray32", "gray95", "seashell3"),
+    main = "Class of Titanic Passengers")
+```
+`r unhide()`
+:::
+
+---
+
+For more details on summarising univariate qualitative data and creating suitable graphical displays, see [Section 2.3 Displaying Qualitative Data](https://read.kortext.com/reader/pdf/92741/98) in *Probability and Statistics with R*.
+
+
+## Bivariate Data {#bi}
+
+So far, we have looked at different ways to visualise information about one categorical (or qualitative) variable. Because only one variable has been considered, it is called univariate data.
+
+We will now turn our attention to bivariate categorical data. This means we will look at ways to visualise information about two categorical variables at the same time. We can expand upon some of the methods we have already learned to allow two categorical variables to be considered.
+
+In Section \@ref(sec:tables) we looked at the use of the `table()` function to create frequency tables for one categorical variable. We can expand upon the use of this function so that frequency tables of two categorical variables can be created. These are known as two-way contingency tables.
+
+In order to create a two-way contingency table, simply provide the second categorical variable you wish to use as an additional argument.
+
+The data set `EPIDURAL` contains a variable `doctor` which indicates the physician (`"Dr. A"`, `"Dr. B"`, `"Dr. C"` or `"Dr. D"`) who administered the epidural anesthesia. Table \@ref(tab:contingency-table) shows the number of patients who fall into each level of the `doctor` and `ease` variables.
+
+```{r contingency-table, echo=FALSE}
+tab <- as.matrix(table(EPIDURAL$doctor, EPIDURAL$ease))
+
+kable(tab, caption="Two-way contingency table of \`Doctor\` by \`Ease\`.") %>%
+  column_spec(1, bold=TRUE)
+```
+
+We can recreate Table \@ref(tab:contingency-table) in R using the following code.
+
+```{r bi1}
+epi_tab <- table(EPIDURAL$doctor, EPIDURAL$ease)
+epi_tab
+```
+
+::: {.webex-box}
+**Create a two-way contingency table showing the number of passengers who survived and did not survive in each of the three classes (1^st^, 2^nd^ and 3^rd^).**
+
+`r hide("Solution")`
+```{r qual-ans4}
+table(TITANIC3$pclass, TITANIC3$survived)
+```
+`r unhide()`
+:::
+
+::: {.webex-box .webex-check}
+**How many 3^rd^ class passengers survived the sinking of the Titanic?**
+`r fitb(181)`
+:::
+
+Barplots are a useful tool to present the information from a two-way contingency table graphically. For example, we can produce a barplot, which shows the same counts as in Table \@ref(tab:contingency-table), using the following code.
+
+```{r bi2}
+barplot(height = epi_tab,
+        legend.text = TRUE,
+        col = c("seashell", "rosybrown2", "thistle", "snow4"),
+        main = "Number of patients treated by each physician in each level of Ease",
+        xlab = "Ease",
+        ylab = "Frequency")
+```
+
+This code uses the `barplot()` function introduced in Section \@ref(bars) and provides the two-way contingency table `epi_tab` to the argument `height =`. This means that all the values in this table will be used to construct the height of the bars. Because the bars for each doctor are on top of each other, this is known as a "stacked" barplot.
+
+The argument `legend.text = TRUE` has also been included so that a legend, indicating the different physicians, is included in the plot.
+
+If we instead wanted to produce a barplot where there is a separate bar for each doctor within each level of the `ease` variable, then we need to include the argument `beside = TRUE`.
+
+```{r bi3}
+barplot(height = epi_tab,
+        legend.text = TRUE,
+        beside = TRUE,
+        col = c("seashell", "rosybrown2", "thistle", "snow4"),
+        main = "Number of patients treated by each physician in each level of Ease",
+        xlab = "Ease",
+        ylab = "Frequency")
+```
+
+Another option for presenting this information would be to create a barplot where the different doctors are along the x-axis and the levels of `ease` are used to create the individual bars. In order to do this, we need to transpose the two-way contingency table that is given to the `height =` argument in the `barplot()` function.
+
+Transposing a table can easily be achieved using the function `t()`. The only argument needed is the table you wish to transpose.
+
+```{r bi4}
+t(epi_tab)
+```
+
+We can then create the following barplots using the transposed `epi_tab` table.
+
+```{r bi5}
+barplot(height = t(epi_tab),
+        legend.text = TRUE,
+        col = c("darkslategray", "darkslategray3", "darkslategray4"),
+        main = "Number of patients treated by each physician in each level of Ease",
+        xlab = "Doctor",
+        ylab = "Frequency")
+
+barplot(height = t(epi_tab),
+        legend.text = TRUE,
+        beside = TRUE,
+        col = c("darkslategray", "darkslategray3", "darkslategray4"),
+        main = "Number of patients treated by each physician in each level of Ease",
+        xlab = "Doctor",
+        ylab = "Frequency")
+```
+
+It is often better to present relationships using proportions, rather than counts. In order to calculate the proportions (either out of the total number of observations, row totals or column totals) from a two-way contingency table, we can use the function `prop.table()`.
+
+To create a barplot which shows the proportion of patients who were in each level of the `ease` variable out of the total number of patients seen by a given doctor, we would first need to calculate these proportions in `epi_tab`. This can be done by using the argument `margin = 1` within the `prop.table()` function.
+
+```{r bi6}
+epi_prop_tab <- prop.table(x = epi_tab, margin = 1)
+epi_prop_tab
+```
+
+Now we can see, for example, that Dr. A found it easy to feel the bone landmarks of 82.6% of their patients, found it difficult in 13.0% of their patients and impossible in 4.3% of their patients.
+
+We can graphically present these proportions for all doctors in a barplot using the following code. Because the proportions are calculated out of the total number of patients each doctor has seen, it makes sense to plot the physicians along the x-axis.
+
+```{r bi7}
+barplot(height = t(epi_prop_tab),
+        legend.text = TRUE,
+        beside = TRUE,
+        col = c("darkslategray", "darkslategray3", "darkslategray4"),
+        main = "Proportion of doctor's patients in each level of Ease variable",
+        xlab = "Doctor",
+        ylab = "Proportion")
+```
+
+::: {.webex-box}
+**Create a barplot showing the proportion of passengers in each class who survived and the proportion who did not.**
+
+**Make sure the bars are side-by-side, and that the "class" variable is shown along the x-axis.**
+
+`r hide("Solution")`
+```{r qual-ans5}
+surv_prop <- prop.table(table(TITANIC3$pclass, TITANIC3$survived), margin = 1)
+
+barplot(height = t(surv_prop),
+        legend.text = TRUE,
+        beside = TRUE,
+        main = "Proportion of Passengers Surviving the Titanic Sinking in each Class",
+        xlab = "Class",
+        ylab = "Proportion")
+```
+`r unhide()`
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

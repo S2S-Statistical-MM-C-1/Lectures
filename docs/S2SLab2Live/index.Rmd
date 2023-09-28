@@ -1,0 +1,20 @@
+---
+title: "S2S Lab 2"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+link-citation: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval=TRUE, comment=NA)
+library(webexercises)
+library(PASWR2)
+```
+
+# Welcome!
+
+Welcome to the second S2S lab. This lab starts by describing what R packages are and provides an introduction to the different 'data structures' that can be used in R. We will also start to work with some real data!
+
+It's really important to know how R handles different types of data because there are many ways that you will be working with data throughout all your statistics courses. Being able to understand and use them all is a really good foundational skill to have.
+

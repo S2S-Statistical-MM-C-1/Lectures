@@ -1,0 +1,4 @@
+"0","apply(X = births, MARGIN = 2, FUN = sd)[2, 3]"
+"2","Error in apply(X = births, MARGIN = 2, FUN = sd)[2, 3] : 
+  incorrect number of dimensions
+"

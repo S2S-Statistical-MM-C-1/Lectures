@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>S2S Lab 4</title>
+  <meta name="description" content="S2S Lab 4" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="S2S Lab 4" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="S2S Lab 4" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+<link rel="next" href="quant.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="include/webex.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Qualitative Data</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#sec:tables"><i class="fa fa-check"></i><b>1.1</b> Tables</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#bars"><i class="fa fa-check"></i><b>1.2</b> Barplots</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#sec:dots"><i class="fa fa-check"></i><b>1.3</b> Dot Charts</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#sec:pies"><i class="fa fa-check"></i><b>1.4</b> Pie Charts</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#bi"><i class="fa fa-check"></i><b>1.5</b> Bivariate Data</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="quant.html"><a href="quant.html"><i class="fa fa-check"></i><b>2</b> Quantitative Data</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="quant.html"><a href="quant.html#stem-and-leaf-plots"><i class="fa fa-check"></i><b>2.1</b> Stem and Leaf Plots</a></li>
+<li class="chapter" data-level="2.2" data-path="quant.html"><a href="quant.html#strip"><i class="fa fa-check"></i><b>2.2</b> Strip Charts</a></li>
+<li class="chapter" data-level="2.3" data-path="quant.html"><a href="quant.html#histograms"><i class="fa fa-check"></i><b>2.3</b> Histograms</a></li>
+<li class="chapter" data-level="2.4" data-path="quant.html"><a href="quant.html#kernel-density-estimators"><i class="fa fa-check"></i><b>2.4</b> Kernel Density Estimators</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="comp.html"><a href="comp.html"><i class="fa fa-check"></i><b>3</b> Comparing Samples</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="comp.html"><a href="comp.html#qq-plots"><i class="fa fa-check"></i><b>3.1</b> QQ Plots</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ggplot2.html"><a href="ggplot2.html"><i class="fa fa-check"></i><b>4</b> ggplot2</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="ggplot2.html"><a href="ggplot2.html#ggbars"><i class="fa fa-check"></i><b>4.1</b> Barplots</a></li>
+<li class="chapter" data-level="4.2" data-path="ggplot2.html"><a href="ggplot2.html#gghist"><i class="fa fa-check"></i><b>4.2</b> Histograms</a></li>
+<li class="chapter" data-level="4.3" data-path="ggplot2.html"><a href="ggplot2.html#ggkern"><i class="fa fa-check"></i><b>4.3</b> Kernel Density Estimators</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="further-exercises.html"><a href="further-exercises.html"><i class="fa fa-check"></i><b>5</b> Further Exercises</a>
+<ul>
+<li class="chapter" data-level="" data-path="further-exercises.html"><a href="further-exercises.html#exercise-1"><i class="fa fa-check"></i>Exercise 1</a></li>
+<li class="chapter" data-level="" data-path="further-exercises.html"><a href="further-exercises.html#exercise-2"><i class="fa fa-check"></i>Exercise 2</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">S2S Lab 4</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">S2S Lab 4</h1>
+</div>
+<div id="sec:qual" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">1</span> Qualitative Data<a href="index.html#sec:qual" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Qualitative data is the term used when a variable has different categories or groups or levels. This could be things such as students' grades, the genders of patients in an experiment or which treatment subjects have been given. There are several ways that qualitative data can be summarised and presented.</p>
+<div id="sec:tables" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Tables<a href="index.html#sec:tables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Frequency tables summarise qualitative data by showing the different groups/categories in a variable and the corresponding frequency with which they occur - that is, how many observations fall into each category.</p>
+<p>Frequency tables can be created in R using the <code>table()</code> function. We have already seen <code>table()</code> used in Lab 3, <!--link to lab 3--> but let's revisit it with an example.</p>
+<p>The data set <code>EPIDURAL</code> from the package <code>PASWR2</code> contains information on 85 patients from a study used to determine whether administering epidural anesthesia (a pain relief administered in the back) to pregnant women in labour is better whilst they are in the traditional sitting position, or when they are in a "hamstring stretch" position. This contains several variables relating to each patient and the treatment they receive (to see more about what each of these variables describes, run the code <code>help("EPIDURAL")</code>).</p>
+<p>We can load the data frame into our <strong>Environment</strong> tab and look at the first five rows using the following code (make sure you have installed the <code>PASWR2</code> package on whatever device you are using R with beforehand).</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(PASWR2)</span>
+<span id="cb1-2"><a href="index.html#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="index.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;EPIDURAL&quot;</span>)</span>
+<span id="cb1-4"><a href="index.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(EPIDURAL)</span></code></pre></div>
+<div class="kable-table">
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+doctor
+</th>
+<th style="text-align:right;">
+kg
+</th>
+<th style="text-align:right;">
+cm
+</th>
+<th style="text-align:left;">
+ease
+</th>
+<th style="text-align:left;">
+treatment
+</th>
+<th style="text-align:right;">
+oc
+</th>
+<th style="text-align:left;">
+complications
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Dr. B
+</td>
+<td style="text-align:right;">
+116
+</td>
+<td style="text-align:right;">
+172
+</td>
+<td style="text-align:left;">
+Difficult
+</td>
+<td style="text-align:left;">
+Traditional Sitting
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+None
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dr. C
+</td>
+<td style="text-align:right;">
+86
+</td>
+<td style="text-align:right;">
+176
+</td>
+<td style="text-align:left;">
+Easy
+</td>
+<td style="text-align:left;">
+Hamstring Stretch
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+None
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dr. B
+</td>
+<td style="text-align:right;">
+72
+</td>
+<td style="text-align:right;">
+157
+</td>
+<td style="text-align:left;">
+Difficult
+</td>
+<td style="text-align:left;">
+Traditional Sitting
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+None
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dr. B
+</td>
+<td style="text-align:right;">
+63
+</td>
+<td style="text-align:right;">
+169
+</td>
+<td style="text-align:left;">
+Easy
+</td>
+<td style="text-align:left;">
+Hamstring Stretch
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+None
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dr. B
+</td>
+<td style="text-align:right;">
+114
+</td>
+<td style="text-align:right;">
+163
+</td>
+<td style="text-align:left;">
+Impossible
+</td>
+<td style="text-align:left;">
+Traditional Sitting
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:left;">
+None
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dr. B
+</td>
+<td style="text-align:right;">
+121
+</td>
+<td style="text-align:right;">
+163
+</td>
+<td style="text-align:left;">
+Difficult
+</td>
+<td style="text-align:left;">
+Hamstring Stretch
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+None
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The variable <code>ease</code> is a factor variable which tells how easy the physician found it to locate where the epidural anesthesia should be administered for each patient. It has levels <code>"Easy"</code>, <code>"Difficult"</code> and <code>"Impossible"</code>.</p>
+<p>We can summarise the number of patients that fall into each level of the <code>ease</code> variable using the <code>table()</code> function as follows.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="index.html#cb2-1" aria-hidden="true" tabindex="-1"></a>epi_freq <span class="ot">&lt;-</span> <span class="fu">table</span>(EPIDURAL<span class="sc">$</span>ease)</span>
+<span id="cb2-2"><a href="index.html#cb2-2" aria-hidden="true" tabindex="-1"></a>epi_freq</span></code></pre></div>
+<pre><code>
+ Difficult       Easy Impossible 
+        20         57          8 </code></pre>
+<p>This frequency table shows us that there are 57 patients in the data set for whom it was easy to administer the anesthetic, 20 who it was difficult for and 8 for whom it was impossible to find where to administer the anesthetic.</p>
+<div class="webex-box">
+<p><strong>The levels of <code>ease</code> are automatically presented in alphabetical order. Can you reorder the labels so that they go in the order <code>"Easy"</code>, <code>"Difficult"</code> and <code>"Impossible"</code>?</strong></p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="index.html#cb4-1" aria-hidden="true" tabindex="-1"></a>EPIDURAL<span class="sc">$</span>ease <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="at">x =</span> EPIDURAL<span class="sc">$</span>ease,</span>
+<span id="cb4-2"><a href="index.html#cb4-2" aria-hidden="true" tabindex="-1"></a>                        <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;Easy&quot;</span>, <span class="st">&quot;Difficult&quot;</span>, <span class="st">&quot;Impossible&quot;</span>))</span>
+<span id="cb4-3"><a href="index.html#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(EPIDURAL<span class="sc">$</span>ease)</span></code></pre></div>
+<pre><code>[1] &quot;Easy&quot;       &quot;Difficult&quot;  &quot;Impossible&quot;</code></pre>
+<p>The function <code>levels()</code> can be used to see the levels of a factor variable, as well as the order they are stored in.</p>
+<p>We can update the frequency table <code>epi_freq</code> so that the different levels of <code>ease</code> now appear in a sensible order.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="index.html#cb6-1" aria-hidden="true" tabindex="-1"></a>epi_freq <span class="ot">&lt;-</span> <span class="fu">table</span>(EPIDURAL<span class="sc">$</span>ease)</span>
+<span id="cb6-2"><a href="index.html#cb6-2" aria-hidden="true" tabindex="-1"></a>epi_freq</span></code></pre></div>
+<pre><code>
+      Easy  Difficult Impossible 
+        57         20          8 </code></pre>
+</div>
+</div>
+<p>We could also create a table showing the proportion of the total number of patients which fall into each level of <code>ease</code> using <code>prop.table()</code>. We need to make sure that we give a pre-existing table to this function. We can use the table <code>epi_freq</code> created in the question above here.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="index.html#cb8-1" aria-hidden="true" tabindex="-1"></a>epi_prop <span class="ot">&lt;-</span> <span class="fu">prop.table</span>(epi_freq)</span>
+<span id="cb8-2"><a href="index.html#cb8-2" aria-hidden="true" tabindex="-1"></a>epi_prop</span></code></pre></div>
+<pre><code>
+      Easy  Difficult Impossible 
+0.67058824 0.23529412 0.09411765 </code></pre>
+<p>Now we can see that it was easy to find where to administer the anesthetic for roughly 67% of patients, difficult for roughly 24% and impossible for 9% of patients.</p>
+<div class="webex-box">
+<p><strong>The <code>TITANIC3</code> data set from the <code>PASWR2</code> package contains information on the survival status of passengers on the Titanic. Load this data set into your Environment tab and create a frequency table showing the number of passengers who survived and the number who did not.</strong></p>
+<p><strong>Remember to explore the data set using the <code>help()</code> and <code>str()</code> functions. It might help to rename the levels of the <code>survived</code> variable so they are clear.</strong></p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="index.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;TITANIC3&quot;</span>)</span>
+<span id="cb10-2"><a href="index.html#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="index.html#cb10-3" aria-hidden="true" tabindex="-1"></a>TITANIC3<span class="sc">$</span>survived <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="at">x =</span> TITANIC3<span class="sc">$</span>survived, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;No&quot;</span>, <span class="st">&quot;Yes&quot;</span>))</span>
+<span id="cb10-4"><a href="index.html#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="index.html#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(TITANIC3<span class="sc">$</span>survived)</span></code></pre></div>
+<pre><code>
+ No Yes 
+809 500 </code></pre>
+</div>
+</div>
+<div class="webex-box webex-check">
+<p><strong>What proportion of passengers survived the Titanic sinking?</strong>
+<input class='webex-solveme nospaces' size='8' data-answer='["0.4","0.38","0.382","0.3820","0.38197","0.381971"]'/></p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<p>We can find the proportion of survivors by using the <code>prop.table()</code> function.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="index.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(TITANIC3<span class="sc">$</span>survived))</span></code></pre></div>
+<pre><code>
+      No      Yes 
+0.618029 0.381971 </code></pre>
+</div>
+</div>
+</div>
+<div id="bars" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Barplots<a href="index.html#bars" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Barplots are a way to graphically summarise qualitative data. You will most likely have seen many barplots before, but now we're going to learn how to create our own.</p>
+<p>The function used to create barplots in R is <code>barplot()</code>. It takes the following arguments:</p>
+<ul>
+<li><code>height =</code>: this is the vector or matrix which contains a summary of the qualitative data; this could be a frequency table or a table of proportions.</li>
+<li><code>col =</code>: this is a vector of colours to be used for the bars in the barplot. If you want to see a list of colour names that R can use, run the code <code>colors()</code> - there are also documents online which will show you the actual colours too!</li>
+<li><code>main =</code>: this is the main title of the plot.</li>
+<li><code>xlab =</code>: this is a label for along the x-axis.</li>
+<li><code>ylab =</code>: this is a label for along the y-axis.</li>
+<li><code>ylim =</code>: this is a vector giving the limits that the y-axis should be spread over.</li>
+</ul>
+<p>The only essential argument to give to <code>barplot()</code> is <code>height =</code>. For a full list of the arguments that can be used within <code>barplot()</code>, use the code <code>help("barplot")</code>.</p>
+<p>We can create a barplot showing the number of patients from <code>EPIDURAL</code> that fall into each level of <code>ease</code> using the following code.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="index.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="at">height =</span> epi_freq,</span>
+<span id="cb14-2"><a href="index.html#cb14-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;darkslategray&quot;</span>, <span class="st">&quot;darkslategray4&quot;</span>, <span class="st">&quot;darkslategray3&quot;</span>),</span>
+<span id="cb14-3"><a href="index.html#cb14-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">&quot;Ease of Locating Anesthesia Administering Location in Patients&quot;</span>,</span>
+<span id="cb14-4"><a href="index.html#cb14-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">&quot;Ease&quot;</span>,</span>
+<span id="cb14-5"><a href="index.html#cb14-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">&quot;Frequency&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/qual4-1.png" width="672" /></p>
+<p>We can also use the table of proportions <code>epi_prop</code> to create a barplot, this time showing the proportion of patients in each level of ease, rather than the frequency.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="index.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="at">height =</span> epi_prop,</span>
+<span id="cb15-2"><a href="index.html#cb15-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;darkslategray&quot;</span>, <span class="st">&quot;darkslategray4&quot;</span>, <span class="st">&quot;darkslategray3&quot;</span>),</span>
+<span id="cb15-3"><a href="index.html#cb15-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">&quot;Ease of Locating Anesthesia Administering Location in Patients&quot;</span>,</span>
+<span id="cb15-4"><a href="index.html#cb15-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">&quot;Ease&quot;</span>,</span>
+<span id="cb15-5"><a href="index.html#cb15-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">&quot;Proportion&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/qual5-1.png" width="672" /></p>
+<p>Notice that the shapes of both these barplots are identical. The only difference between them is the scale used on the y-axis.</p>
+<div class="webex-box webex-check">
+<p><strong>Complete the code below to create a barplot which shows the number of passengers on the Titanic belonging to 1<sup>st</sup>, 2<sup>nd</sup> and 3<sup>rd</sup> class respectively.</strong></p>
+<div class="webex-code">
+<input class='webex-solveme nospaces' size='7' data-answer='["barplot"]'/><code>(height =</code><input class='webex-solveme nospaces ignorecase' size='22' data-answer='["table(TITANIC3$pclass)"]'/><code>,</code>
+<ul style="margin-top: -0.8em;">
+<pre><code>      col = c(&quot;gray32&quot;, &quot;gray95&quot;, &quot;seashell3&quot;),
+      main = &quot;Number of Titanic Passengers in each Class&quot;,
+      xlab = &quot;Class&quot;,
+      ylab = &quot;Frequency&quot;)</code></pre>
+</ul>
+</div>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="index.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="at">height =</span> <span class="fu">table</span>(TITANIC3<span class="sc">$</span>pclass),</span>
+<span id="cb17-2"><a href="index.html#cb17-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;gray32&quot;</span>, <span class="st">&quot;gray95&quot;</span>, <span class="st">&quot;seashell3&quot;</span>),</span>
+<span id="cb17-3"><a href="index.html#cb17-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">&quot;Number of Titanic Passengers in each Class&quot;</span>,</span>
+<span id="cb17-4"><a href="index.html#cb17-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">&quot;Class&quot;</span>,</span>
+<span id="cb17-5"><a href="index.html#cb17-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">&quot;Frequency&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/qual-ans3.2-1.png" width="672" /></p>
+</div>
+</div>
+</div>
+<div id="sec:dots" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Dot Charts<a href="index.html#sec:dots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Dot charts show similar information to barplots and summarise qualitative data. They show a dot for each level of a categorical variable which indicates the frequency of that level (see below for an example).</p>
+<p>Dot charts can be made in R using the function <code>dotchart()</code>. This takes similar arguments to those used by <code>barplot()</code> above, including:</p>
+<ul>
+<li><code>x =</code>: this is the vector or matrix which contains a summary of the qualitative data; this could be a frequency table or a table of proportions.</li>
+<li><code>bg =</code>: this is the colour to be used inside the dot.</li>
+</ul>
+<p>Again, the only essential argument to provide is <code>x =</code>.</p>
+<p>We can create a dot chart showing the number of patients from <code>EPIDURAL</code> in each level of <code>ease</code> using the following code.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="index.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dotchart</span>(<span class="at">x =</span> epi_freq,</span>
+<span id="cb18-2"><a href="index.html#cb18-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">bg =</span> <span class="fu">c</span>(<span class="st">&quot;darkslategray&quot;</span>, <span class="st">&quot;darkslategray4&quot;</span>, <span class="st">&quot;darkslategray3&quot;</span>),</span>
+<span id="cb18-3"><a href="index.html#cb18-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">main =</span> <span class="st">&quot;Ease of Locating Anesthesia Administering Location in Patients&quot;</span>,</span>
+<span id="cb18-4"><a href="index.html#cb18-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">xlab =</span> <span class="st">&quot;Frequency&quot;</span>,</span>
+<span id="cb18-5"><a href="index.html#cb18-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">ylab =</span> <span class="st">&quot;Ease&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/qual6-1.png" width="672" /></p>
+</div>
+<div id="sec:pies" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> Pie Charts<a href="index.html#sec:pies" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A third way to graphically present qualitative data is with a pie chart. These show the relative frequencies of different levels of a categorical variable as proportions of a "pie".</p>
+<p>Pie charts are sometimes not favoured by statisticians because it can be difficult to clearly see the differences in proportions when they are very similar. Pie charts can still be used though to show the proportion of observations in a category, in relation to the total number of observations.</p>
+<p>The function used to create pie charts is <code>pie()</code>, which takes the following arguments:</p>
+<ul>
+<li><code>x =</code>: this is the vector which summarises the qualitative data as frequencies or proportions.</li>
+<li><code>radius =</code>: this determines the size of the pie chart within your plotting window.</li>
+<li><code>col =</code>: this is a vector of colours which are to be used for each "slice" of the pie chart.</li>
+</ul>
+<p>You can see a full list of the arguments that can be given to the <code>pie()</code> function using <code>help("pie")</code>. The only necessary argument to provide is <code>x =</code>.</p>
+<p>We can create a pie chart showing the proportion of patients in each level of <code>ease</code> using the code below.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="index.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pie</span>(<span class="at">x =</span> epi_prop,</span>
+<span id="cb19-2"><a href="index.html#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">radius =</span> <span class="fl">0.9</span>,</span>
+<span id="cb19-3"><a href="index.html#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;darkslategray&quot;</span>, <span class="st">&quot;darkslategray4&quot;</span>, <span class="st">&quot;darkslategray3&quot;</span>),</span>
+<span id="cb19-4"><a href="index.html#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;Ease of Locating Anesthesia Administering Location in Patients&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/qual7-1.png" width="672" /></p>
+<div class="webex-box">
+<p><strong>Create a pie chart showing the proportion of passengers on the Titanic in each class.</strong></p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="index.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pie</span>(<span class="at">x =</span> <span class="fu">table</span>(TITANIC3<span class="sc">$</span>pclass),</span>
+<span id="cb20-2"><a href="index.html#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;gray32&quot;</span>, <span class="st">&quot;gray95&quot;</span>, <span class="st">&quot;seashell3&quot;</span>),</span>
+<span id="cb20-3"><a href="index.html#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;Class of Titanic Passengers&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
+</div>
+<hr />
+<p>For more details on summarising univariate qualitative data and creating suitable graphical displays, see <a href="https://read.kortext.com/reader/pdf/92741/98">Section 2.3 Displaying Qualitative Data</a> in <em>Probability and Statistics with R</em>.</p>
+</div>
+<div id="bi" class="section level2 hasAnchor" number="1.5">
+<h2><span class="header-section-number">1.5</span> Bivariate Data<a href="index.html#bi" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>So far, we have looked at different ways to visualise information about one categorical (or qualitative) variable. Because only one variable has been considered, it is called univariate data.</p>
+<p>We will now turn our attention to bivariate categorical data. This means we will look at ways to visualise information about two categorical variables at the same time. We can expand upon some of the methods we have already learned to allow two categorical variables to be considered.</p>
+<p>In Section <a href="index.html#sec:tables">1.1</a> we looked at the use of the <code>table()</code> function to create frequency tables for one categorical variable. We can expand upon the use of this function so that frequency tables of two categorical variables can be created. These are known as two-way contingency tables.</p>
+<p>In order to create a two-way contingency table, simply provide the second categorical variable you wish to use as an additional argument.</p>
+<p>The data set <code>EPIDURAL</code> contains a variable <code>doctor</code> which indicates the physician (<code>"Dr. A"</code>, <code>"Dr. B"</code>, <code>"Dr. C"</code> or <code>"Dr. D"</code>) who administered the epidural anesthesia. Table <a href="index.html#tab:contingency-table">1.1</a> shows the number of patients who fall into each level of the <code>doctor</code> and <code>ease</code> variables.</p>
+<table>
+<caption>
+<span id="tab:contingency-table">Table 1.1: </span>Two-way contingency table of <code>Doctor</code> by <code>Ease</code>.
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+Easy
+</th>
+<th style="text-align:right;">
+Difficult
+</th>
+<th style="text-align:right;">
+Impossible
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+Dr. A
+</td>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+Dr. B
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+Dr. C
+</td>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;">
+Dr. D
+</td>
+<td style="text-align:right;">
+13
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+</tbody>
+</table>
+<p>We can recreate Table <a href="index.html#tab:contingency-table">1.1</a> in R using the following code.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="index.html#cb21-1" aria-hidden="true" tabindex="-1"></a>epi_tab <span class="ot">&lt;-</span> <span class="fu">table</span>(EPIDURAL<span class="sc">$</span>doctor, EPIDURAL<span class="sc">$</span>ease)</span>
+<span id="cb21-2"><a href="index.html#cb21-2" aria-hidden="true" tabindex="-1"></a>epi_tab</span></code></pre></div>
+<pre><code>       
+        Easy Difficult Impossible
+  Dr. A   19         3          1
+  Dr. B    7        10          4
+  Dr. C   18         3          0
+  Dr. D   13         4          3</code></pre>
+<div class="webex-box">
+<p><strong>Create a two-way contingency table showing the number of passengers who survived and did not survive in each of the three classes (1<sup>st</sup>, 2<sup>nd</sup> and 3<sup>rd</sup>).</strong></p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="index.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(TITANIC3<span class="sc">$</span>pclass, TITANIC3<span class="sc">$</span>survived)</span></code></pre></div>
+<pre><code>     
+       No Yes
+  1st 123 200
+  2nd 158 119
+  3rd 528 181</code></pre>
+</div>
+</div>
+<div class="webex-box webex-check">
+<p><strong>How many 3<sup>rd</sup> class passengers survived the sinking of the Titanic?</strong>
+<input class='webex-solveme nospaces' size='3' data-answer='["181"]'/></p>
+</div>
+<p>Barplots are a useful tool to present the information from a two-way contingency table graphically. For example, we can produce a barplot, which shows the same counts as in Table <a href="index.html#tab:contingency-table">1.1</a>, using the following code.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="index.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="at">height =</span> epi_tab,</span>
+<span id="cb25-2"><a href="index.html#cb25-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.text =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb25-3"><a href="index.html#cb25-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;seashell&quot;</span>, <span class="st">&quot;rosybrown2&quot;</span>, <span class="st">&quot;thistle&quot;</span>, <span class="st">&quot;snow4&quot;</span>),</span>
+<span id="cb25-4"><a href="index.html#cb25-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">&quot;Number of patients treated by each physician in each level of Ease&quot;</span>,</span>
+<span id="cb25-5"><a href="index.html#cb25-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">&quot;Ease&quot;</span>,</span>
+<span id="cb25-6"><a href="index.html#cb25-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">&quot;Frequency&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/bi2-1.png" width="672" /></p>
+<p>This code uses the <code>barplot()</code> function introduced in Section <a href="index.html#bars">1.2</a> and provides the two-way contingency table <code>epi_tab</code> to the argument <code>height =</code>. This means that all the values in this table will be used to construct the height of the bars. Because the bars for each doctor are on top of each other, this is known as a "stacked" barplot.</p>
+<p>The argument <code>legend.text = TRUE</code> has also been included so that a legend, indicating the different physicians, is included in the plot.</p>
+<p>If we instead wanted to produce a barplot where there is a separate bar for each doctor within each level of the <code>ease</code> variable, then we need to include the argument <code>beside = TRUE</code>.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="index.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="at">height =</span> epi_tab,</span>
+<span id="cb26-2"><a href="index.html#cb26-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.text =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb26-3"><a href="index.html#cb26-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">beside =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb26-4"><a href="index.html#cb26-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;seashell&quot;</span>, <span class="st">&quot;rosybrown2&quot;</span>, <span class="st">&quot;thistle&quot;</span>, <span class="st">&quot;snow4&quot;</span>),</span>
+<span id="cb26-5"><a href="index.html#cb26-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">&quot;Number of patients treated by each physician in each level of Ease&quot;</span>,</span>
+<span id="cb26-6"><a href="index.html#cb26-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">&quot;Ease&quot;</span>,</span>
+<span id="cb26-7"><a href="index.html#cb26-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">&quot;Frequency&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/bi3-1.png" width="672" /></p>
+<p>Another option for presenting this information would be to create a barplot where the different doctors are along the x-axis and the levels of <code>ease</code> are used to create the individual bars. In order to do this, we need to transpose the two-way contingency table that is given to the <code>height =</code> argument in the <code>barplot()</code> function.</p>
+<p>Transposing a table can easily be achieved using the function <code>t()</code>. The only argument needed is the table you wish to transpose.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="index.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t</span>(epi_tab)</span></code></pre></div>
+<pre><code>            
+             Dr. A Dr. B Dr. C Dr. D
+  Easy          19     7    18    13
+  Difficult      3    10     3     4
+  Impossible     1     4     0     3</code></pre>
+<p>We can then create the following barplots using the transposed <code>epi_tab</code> table.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="index.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="at">height =</span> <span class="fu">t</span>(epi_tab),</span>
+<span id="cb29-2"><a href="index.html#cb29-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.text =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb29-3"><a href="index.html#cb29-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;darkslategray&quot;</span>, <span class="st">&quot;darkslategray3&quot;</span>, <span class="st">&quot;darkslategray4&quot;</span>),</span>
+<span id="cb29-4"><a href="index.html#cb29-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">&quot;Number of patients treated by each physician in each level of Ease&quot;</span>,</span>
+<span id="cb29-5"><a href="index.html#cb29-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">&quot;Doctor&quot;</span>,</span>
+<span id="cb29-6"><a href="index.html#cb29-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">&quot;Frequency&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/bi5-1.png" width="672" /></p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="index.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="at">height =</span> <span class="fu">t</span>(epi_tab),</span>
+<span id="cb30-2"><a href="index.html#cb30-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.text =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb30-3"><a href="index.html#cb30-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">beside =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb30-4"><a href="index.html#cb30-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;darkslategray&quot;</span>, <span class="st">&quot;darkslategray3&quot;</span>, <span class="st">&quot;darkslategray4&quot;</span>),</span>
+<span id="cb30-5"><a href="index.html#cb30-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">&quot;Number of patients treated by each physician in each level of Ease&quot;</span>,</span>
+<span id="cb30-6"><a href="index.html#cb30-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">&quot;Doctor&quot;</span>,</span>
+<span id="cb30-7"><a href="index.html#cb30-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">&quot;Frequency&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/bi5-2.png" width="672" /></p>
+<p>It is often better to present relationships using proportions, rather than counts. In order to calculate the proportions (either out of the total number of observations, row totals or column totals) from a two-way contingency table, we can use the function <code>prop.table()</code>.</p>
+<p>To create a barplot which shows the proportion of patients who were in each level of the <code>ease</code> variable out of the total number of patients seen by a given doctor, we would first need to calculate these proportions in <code>epi_tab</code>. This can be done by using the argument <code>margin = 1</code> within the <code>prop.table()</code> function.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="index.html#cb31-1" aria-hidden="true" tabindex="-1"></a>epi_prop_tab <span class="ot">&lt;-</span> <span class="fu">prop.table</span>(<span class="at">x =</span> epi_tab, <span class="at">margin =</span> <span class="dv">1</span>)</span>
+<span id="cb31-2"><a href="index.html#cb31-2" aria-hidden="true" tabindex="-1"></a>epi_prop_tab</span></code></pre></div>
+<pre><code>       
+              Easy  Difficult Impossible
+  Dr. A 0.82608696 0.13043478 0.04347826
+  Dr. B 0.33333333 0.47619048 0.19047619
+  Dr. C 0.85714286 0.14285714 0.00000000
+  Dr. D 0.65000000 0.20000000 0.15000000</code></pre>
+<p>Now we can see, for example, that Dr. A found it easy to feel the bone landmarks of 82.6% of their patients, found it difficult in 13.0% of their patients and impossible in 4.3% of their patients.</p>
+<p>We can graphically present these proportions for all doctors in a barplot using the following code. Because the proportions are calculated out of the total number of patients each doctor has seen, it makes sense to plot the physicians along the x-axis.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="index.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="at">height =</span> <span class="fu">t</span>(epi_prop_tab),</span>
+<span id="cb33-2"><a href="index.html#cb33-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.text =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb33-3"><a href="index.html#cb33-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">beside =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb33-4"><a href="index.html#cb33-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;darkslategray&quot;</span>, <span class="st">&quot;darkslategray3&quot;</span>, <span class="st">&quot;darkslategray4&quot;</span>),</span>
+<span id="cb33-5"><a href="index.html#cb33-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">&quot;Proportion of doctor&#39;s patients in each level of Ease variable&quot;</span>,</span>
+<span id="cb33-6"><a href="index.html#cb33-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">&quot;Doctor&quot;</span>,</span>
+<span id="cb33-7"><a href="index.html#cb33-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">&quot;Proportion&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/bi7-1.png" width="672" /></p>
+<div class="webex-box">
+<p><strong>Create a barplot showing the proportion of passengers in each class who survived and the proportion who did not.</strong></p>
+<p><strong>Make sure the bars are side-by-side, and that the "class" variable is shown along the x-axis.</strong></p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="index.html#cb34-1" aria-hidden="true" tabindex="-1"></a>surv_prop <span class="ot">&lt;-</span> <span class="fu">prop.table</span>(<span class="fu">table</span>(TITANIC3<span class="sc">$</span>pclass, TITANIC3<span class="sc">$</span>survived), <span class="at">margin =</span> <span class="dv">1</span>)</span>
+<span id="cb34-2"><a href="index.html#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-3"><a href="index.html#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="at">height =</span> <span class="fu">t</span>(surv_prop),</span>
+<span id="cb34-4"><a href="index.html#cb34-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.text =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb34-5"><a href="index.html#cb34-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">beside =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb34-6"><a href="index.html#cb34-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">&quot;Proportion of Passengers Surviving the Titanic Sinking in each Class&quot;</span>,</span>
+<span id="cb34-7"><a href="index.html#cb34-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">&quot;Class&quot;</span>,</span>
+<span id="cb34-8"><a href="index.html#cb34-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">&quot;Proportion&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/qual-ans5-1.png" width="672" /></p>
+</div>
+</div>
+
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  var t = document.getElementsByClassName("webex-total_correct");
+  for (var i = 0; i < t.length; i++) {
+    p = t[i].parentElement;
+    var correct = p.getElementsByClassName("webex-correct").length;
+    var solvemes = p.getElementsByClassName("webex-solveme").length;
+    var radiogroups = p.getElementsByClassName("webex-radiogroup").length;
+    var selects = p.getElementsByClassName("webex-select").length;
+
+    t[i].innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* check answers */
+check_func = function() {
+  console.log("webex: check answers");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('unchecked')) {
+    cl.remove("unchecked");
+    this.innerHTML = "Hide Answers";
+  } else {
+    cl.add("unchecked");
+    this.innerHTML = "Check Answers";
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  var check_sections = document.getElementsByClassName("webex-check");
+  console.log("check:", check_sections.length);
+  for (var i = 0; i < check_sections.length; i++) {
+    check_sections[i].classList.add("unchecked");
+
+    let btn = document.createElement("button");
+    btn.innerHTML = "Check Answers";
+    btn.classList.add("webex-check-button");
+    btn.onclick = check_func;
+    check_sections[i].appendChild(btn);
+
+    let spn = document.createElement("span");
+    spn.classList.add("webex-total_correct");
+    check_sections[i].appendChild(spn);
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    solveme[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    selects[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  update_total_correct();
+}
+
+</script>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="quant.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

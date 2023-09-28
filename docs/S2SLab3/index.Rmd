@@ -1,0 +1,21 @@
+---
+title: "S2S Lab 3"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+link-citations: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval=TRUE, comment=NA)
+library(webexercises)
+library(knitr)
+library(kableExtra)
+set.seed(1406)
+```
+
+# Welcome!
+
+Welcome to the third S2S lab. This lab builds on what we already know about data frames and will teach you how to save data files of different types in RStudio and then manipulate them in several ways, such as creating new variables, working with a subset of a larger data frame or merging together data from different sources. Working with data is a key skill throughout statistics and it will often be saved as a data frame, so it is important to know all the things that can be done with them.
+
+This lab will also introduce you to some fundamental concepts of coding, in particular using R to access information about statistical distributions, writing repeating code using if statements and for loops, and teach you how to define your own functions.

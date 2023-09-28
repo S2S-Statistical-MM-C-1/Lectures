@@ -1,0 +1,548 @@
+# Vectors
+
+Vectors are fundamental "objects" in R. They can store data of different types but the data within any single vector must be of the same type.  For example, vectors can store numerical, character (text) or logical (`TRUE`/`FALSE`) data, and be used to easily execute mathematical operations or extract certain elements of the data.  For our purposes in S2S, vectors will often contain the values of a particular variable in a dataset.
+
+Let's create some trivial vectors in R to explore their properties. Copy and run the following code in your own R script.
+
+```{r vect1}
+x <- 3
+y <- c(2, 4, 1)
+```
+
+You should notice that two '`Values`' appear in the **Environment** tab, `x` and `y`. This is because we have assigned values to each of these names using the `<-` operator in the code above.
+
+* `x` is the single value 3, which can be thought of as a vector of length 1.
+* `y` is a vector of length 3 and of the form $\begin{bmatrix}2&4&1 \end{bmatrix}^\intercal$. The function `c()` has been used to '**c**ombine' these values into one vector.
+
+---
+
+Note that you can find further details and examples of creating your own vectors in [Section 1.3 Vectors](https://read.kortext.com/reader/pdf/92741/6) of *Probability and Statistics with R*.
+
+## Addition 
+
+We can also use R to add vectors together. Let's try it out by running the following code.
+
+```{r vect2}
+x + y
+```
+The output shown above should appear in the **console** at the bottom left of the RStudio window.
+
+Here, R has 'recycled' the element of the vector `x` until it is the same length as the vector `y`, and elementwise addition has then been completed. This essentially means R has completed $3+2$ to calculate the first element, $3+4$ to find the second and $3+1$ to find the third.
+
+What happens if we try to add together two vectors of unequal length, but they both have more than one element? We can try this out by creating a new, longer vector $z=\begin{bmatrix}3&3&5&8&2\end{bmatrix}^\intercal$ and then adding this to `y`.
+
+```{r vect3, warning=TRUE}
+z <- c(3, 3, 5, 8, 2)
+
+y + z
+```
+
+We now see a warning message telling us that the length of vector `z` is not a multiple of the length of vector `y` - in other words, they have a different number of elements. We still see a result however (`r y+z`) so the vectors have been added together.
+
+This time, R recycles each element of `y` in turn until it is the same length as `z` and then completes the elementwise addition. `y` has been extended by adding its first two elements on to the end so that it has five entries like `z`, meaning R has completed the calculation $\begin{bmatrix}2&4&1&2&4\end{bmatrix}^\intercal+\begin{bmatrix}3&3&5&8&2\end{bmatrix}^\intercal$.
+
+::: {.webex-box}
+
+**Create and save the vector $a=\begin{bmatrix}2&2&-1\end{bmatrix}^\intercal$ and scalar $b=2$, then add these together and save the result as a new vector called `c` and print the contents of `c` in the console.**
+
+`r hide("Solution")`
+```{r vect-ans1, comment=NA}
+a <- c(2, 2, -1)
+b <- 2
+
+c <- a + b
+c
+```
+`r unhide()`
+
+:::
+
+## Logical operators {#vectlog}
+
+Vectors can contain logical values (`TRUE`/`FALSE`) rather than numerical values. We can create logical vectors by comparing the values within a numerical vector.
+
+```{r vect4}
+x < y
+```
+
+Here, R has again recycled the element from `x` to make it the same length as `y`, then it returns a vector telling us for which elements the statement `x < y` is true. For example, the first element of `y` is 2 which is less than 3, so `x < y` is `FALSE`.
+
+Other logical operators that we can use with vectors include:
+
+| Operator | Function                 |
+| :------: | :----------------------- |
+| `>`      | greater than             |
+| `<`      | less than                |
+| `<=`     | less than or equal to    |
+| `>=`     | greater than or equal to |
+| `==`     | exact equality           |
+| `!=`     | exact inequality         |
+| `&`      | vector intersection      |
+| `|`      | vector union             |
+
+Let's explore how these operators behave by creating two new logical vectors.
+
+```{r vect5}
+s <- c(TRUE, TRUE, FALSE)
+t <- c(FALSE, TRUE, TRUE)
+```
+
+::: {.webex-box}
+
+**Write some code to find:**
+
+* **the intersection the vectors `s` and `t`.**
+* **the union of vectors `s` and `t`**
+* **whether the elements of `s` and `t` are unequal**
+
+`r hide("Solution")`
+**Intersection**:
+```{r vect-ans2.1}
+s & t
+```
+We can see that the operator `&` returns a `TRUE` statement only when both elements being compared are `TRUE`.
+
+**Union**:
+```{r vect-ans2.2}
+s | t
+```
+The `|` operator returns a `TRUE` statement when either of the elements being compared are `TRUE`
+
+**Inequality**:
+```{r vect-ans2.3}
+s != t
+```
+The `!=` operator returns a `TRUE` statement only when both elements are different.
+
+Try using some of the other operators listed above to see if they return the vectors you expect.
+`r unhide()`
+
+:::
+
+What if we wanted to compare specific elements of the vectors? We can achieve this by 'indexing' the vector. In other words we choose a single element from the vector that we want to use. This is done by first telling R which vector we want to look at by typing its name and then specifying the element we want by including its position inside square brackets (`[ ]`).
+
+For example, `z[4]` would extract the fourth element from `z`, that is the number `r z[4]`.
+
+The following code can be used to check whether the second element of `s` is the same as the third element of `t`.
+
+```{r vect6}
+s[2] == t[3]
+```
+
+::: {.webex-box}
+
+**Create the vectors $u=\begin{bmatrix} 4 & 4 & 1 \end{bmatrix}^\intercal$ and $v=\begin{bmatrix} 1 & 0 & 5 \end{bmatrix}^\intercal$. Write code to check:**
+
+* **whether the first elements of `u+v` and `x+y` (defined in the previous section) are the same.**
+* **if the third element of `u+v` is the same as the second element of `x+y`.**
+
+`r hide("Solution")`
+```{r vect-ans3.1}
+u <- c(4, 4, 1)
+v <- c(1, 0, 5)
+```
+
+**Equality of the first elements:**
+```{r vect-ans3.2}
+(u + v)[1] == (x + y)[1]
+```
+
+Here we have wrapped both `u+v` and `x+y` in brackets first so that we can then index the resulting vector. Alternatively, you could save `u+v` and `x+y` as new vectors, called something different, using the `<-` operator.
+
+`u+v` is equal to $\begin{bmatrix} 5 & 4 & 6 \end{bmatrix}^\intercal$ so its first element is `r (u+v)[1]`.
+`x+y` is equal to $\begin{bmatrix} 5 & 7 & 4 \end{bmatrix}^\intercal$ so its first element is also `r (x+y)[1]`. It makes sense then that a `TRUE` statement is returned when checking the equality of the first elements of these two vectors.
+
+**Equality of the third and second elements:**
+```{r vect-ans3.3}
+(u + v)[3] == (x + y)[2]
+```
+
+Similarly, we can see that the third entry of `u+v` is `r (u+v)[3]` and the second entry of `x+y` is `r (x+y)[2]`. Since these are clearly not equal we would expect R to return a `FALSE` statement when checking their equality, which we can see above.
+`r unhide()`
+
+:::
+
+
+## Other types of vectors 
+
+So far we have looked at numeric vectors and logical vectors. R can also store vectors with other types of elements, for example a character vector can be used to store strings of text.
+
+The code below shows how to create a character vector;
+
+```{r vect7}
+animals <- c("dog", "sheep", "cow", "horse")
+```
+
+Vectors containing complex numbers can also be created as follows;
+
+```{r vect8}
+complex <- c(2+1i, 0+0i, 3+2i)
+```
+
+The function `typof()` is going to be useful for checking how R has stored the elements of a particular vector. To check the type of vector `animals` is, we can run the code;
+
+```{r vect9}
+typeof(animals)
+```
+
+This tells us that R has stored `animals` as a character vector, meaning each element is stored as a string of text.
+
+::: {.webex-check .webex-box}
+
+**What type of vector is `s`?** `r mcq(c(answer="logical", "numeric", "complex", "character"))`
+
+`r hide("Solution")`
+```{r vect-ans4}
+typeof(s)
+```
+
+Using `typeof()`, we can see that `s` is stored by R as a logical vector.
+`r unhide()`
+:::
+
+What happens  if we try to combine two vectors which are of different types in R? Let's run some code and see.
+
+```{r vect10}
+c(t, y)
+```
+
+Here, `t` is a logical vector and `y` is a numeric vector. R has returned the vector $\begin{bmatrix} 0&1&1&2&4&1 \end{bmatrix}^\intercal$, rather than $\begin{bmatrix} \mbox{FALSE} & \mbox{TRUE} & \mbox{TRUE} & 2 & 4 & 1 \end{bmatrix}^\intercal$ as might be expected. So what's happened?
+
+When R combines vectors of different types it will ensure all the elements are of the same type in the resulting vector. This is because vectors need to be stored with all elements being the same type by R. This is done so that all elements are of the most 'complex' type. R considers numeric vectors to be more complex than logical vectors, so when we combine a logical and a numeric vector we will be left with a numeric vector.
+
+The entries `TRUE` and `FALSE` within the vector `t` therefore need to be presented numerically. A `FALSE` statement will take the value 0 and a `TRUE` statement will take the value 1.
+
+Let's look at combining a numeric vector with a complex vector. Remember that `y` is a numeric vector and `complex` is a vector containing complex numbers.
+
+```{r vect11}
+c(y, complex)
+```
+
+Now all elements are presented as a complex number. That is because R considers complex vectors to be more complex than numeric vectors.
+
+::: {.webex-box}
+
+**Create a new vector, called `combined`, which is a combination of the logical vector `s` and the character vector `animals`. What type of vector is this?**
+
+`r hide("Solution")`
+```{r vect-ans5, echo=c(1, 3)}
+combined <- c(s, animals)
+combined
+typeof(combined)
+```
+
+The resulting vector is $\begin{bmatrix} ``\mbox{TRUE"} & ``\mbox{TRUE"} & ``\mbox{FALSE"} & ``\mbox{dog"} & ``\mbox{sheep"} & ``\mbox{cow"} & ``\mbox{horse"} \end{bmatrix}^\intercal$ which we can see is stored by R as a character vector. Each element is now considered to be a string of text (note the quotation marks around each element).
+`r unhide()`
+
+:::
+
+It is possible to coerce vectors of one type to be another type. This can be done using one of the functions 
+
+* `as.logical()`
+* `as.numeric()`
+* `as.complex()`
+* `as.character()`
+
+For example, if we wanted to change the logical vector `s` to be a numeric vector we could use the following code.
+
+```{r vect12}
+as.numeric(s)
+```
+
+We again see that `TRUE` statements have been given the value 1 and `FALSE` statements have been given the value 0.
+
+It is important to ensure that this coercion makes sense to do! It doesn't make much sense to represent the vector `animals` as a numerical vector, and in fact if we tried to R would show us a warning message.
+
+```{r vect 13}
+as.numeric(animals)
+```
+
+R has still changed the vector to be numeric, but since "dog", for example, doesn't have a numerical value it has been represented with `NA` (without any quoation marks "") which is R's symbol for "Not Available", which we think of as a missing value. This tells us that each element of the now numeric vector doesn't have a value.  R also has the symbol `NaN` ("Not a Number") to represent an impossible value (e.g. result of dividing by zero),
+
+<!-- task on coercing vectors? -->
+
+## Indexing vectors {#index}
+
+We have seen briefly how to index vectors using square brackets `[ ]` but we can now look at indexing in more detail. Specific elements can be extracted using positive indices or can be omitted from a vector using negative indices.
+
+Let's again look at the vector `z` (remember $z=\begin{bmatrix}3&3&5&8&2 \end{bmatrix}^\intercal$) and extract the first two elements.
+
+```{r vect14}
+z[c(1, 2)]
+```
+
+In order to extract these two elements, we need to provide a vector (using `c()`) giving the positions of the elements we want within the square brackets, `[ ]`.
+
+If we wanted to remove the third entry from `z` we can use the following code.
+
+```{r vect15}
+z[-3]
+```
+
+Note that it is not possible to use both positive and negative indices at the same time, so we couldn't remove the first entry of a vector at the same time as extracting the second and third entries for example.
+
+::: {.webex-check .webex-box}
+
+**Complete the code that would remove the third and fourth elements from the vector `animals`.**
+
+::: {.webex-code}
+`animals[``r fitb(c("-c(3, 4)", "c(-3, -4)", "c(1, 2)"), ignore_ws=TRUE)``]`
+:::
+
+`r hide("Hint")`
+There are several ways this code could be written. We can remove the third and fourth entries through either of the following lines of code.
+
+```{r vect-hint1.1}
+animals[-c(3, 4)]
+
+animals[c(-3, -4)]
+```
+
+Alternatively, because animals has four elements, removing the third and fourth elements is equivalent to extracting the first and second elements. Therefore we can achieve the same results using the following code.
+
+```{r vect-hint1.2}
+animals[c(1, 2)]
+```
+
+`r unhide()`
+
+:::
+
+::: {.webex-box}
+
+**This task has three steps, so you should write three lines of code.**
+
+* **Create the vector $\begin{bmatrix} 1&1&0&1 \end{bmatrix}^\intercal$ and call it `binary`**
+* **Change `binary` to be a logical vector and save this as a new vector called `logical`**
+* **Extract the first and third elements of this vector `logical`.**
+
+`r hide("Solution")`
+```{r vect-ans6.1}
+binary <- c(1, 1, 0, 1)
+logical <- as.logical(binary)
+
+logical[c(1, 3)]
+```
+In the above code we have chosen to extract the first and third elements. Alternatively, we could remove the second and fourth elements instead.
+
+```{r vect-ans6.2}
+logical[-c(2, 4)]
+```
+
+`r unhide()`
+
+:::
+
+---
+
+[Section 1.3.2 Vector Indexing](https://read.kortext.com/reader/pdf/92741/10) of *Proability and Statistics with R* contains further details of indexing vectors.
+
+## Sequences {#seq}
+
+So far we have manually entered the elements of all the vectors we have created. If a vector is simply a sequence of numbers (following some pattern), R has some nice functions which will speed up how we create these vectors.
+
+The operator `:` can be used, e.g `2:8`, to generate a sequence of integers from the number on the left hand side (`2`), up to the number on the right hand side (`8`).
+
+The following code generates a sequence of integers from 2 up to 8.
+
+```{r vect16}
+2:8
+```
+
+This can be useful if we want to extract (or omit) a sequence of elements from a vector which are all next to each other. Let's start by creating quite a long vector (the object `letters` in R is a vector of all 26 lowercase letters of the English alphabet). If we then want to extract the first five letters of the alphabet, we can use the code `1:5` within our indexing. The following code shows how this is done.
+
+```{r vect17}
+longvector <- letters
+longvector[1:5]
+```
+
+What if we want to generate a non-consecutive sequence of numbers? What about a sequence of non-integer values?
+
+We can do this using the function `seq()` in R. A function is a piece of code that tells R to complete some predetermined steps which will depend on the values provided to some 'arguments' within the brackets `( )`. The arguments that the function `seq()` can be provided with are:
+
+* `from =`: this is the starting value of our sequence (it can be an integer or a non-integer).
+* `to =`: this is the final value of our sequence (it can be an integer or a non-integer).
+* `by =`: this is the size of the jump between consecutive numbers in our sequence.
+* `length.out =`: this is the total number of values we want to be included in our sequence.
+
+Hopefully you can see that if we specify each of `to =`, `by =` and `length.out =` then they might not necessarily all match up. Therefore we actually only need to specify two of `to =`, `by =` or `length.out =` within the `seq()` function.
+
+Let's look at some examples of using `seq()`.
+
+```{r vect18}
+seq(from = 2, to = 4, by = 0.2)
+seq(from = 3, to = 5, length.out = 9)
+seq(from = 4, by = 0.5, length.out = 7)
+```
+
+::: {.webex-box}
+
+**Write some code to create the sequence 4.10, 4.15, 4.20, 4.25, 4.30, 4.35, 4.40 using the function `seq()`**
+
+`r hide("Solution")`
+There are three different ways we could generate this sequence using the `seq()` function.
+
+```{r vect-ans7}
+seq(from = 4.10, to = 4.40, by = 0.05)
+seq(from = 4.10, to = 4.40, length.out = 7)
+seq(from = 4.10, by = 0.05, length.out = 7)
+
+```
+
+`r unhide()`
+
+:::
+
+## Repeating constants {#repeat}
+
+Another function in R that's going to be useful is the `rep()` function. This allows us to create a vector which consists of repeated elements, or repeated sequences of elements. The arguments that `rep()` can be provided with are:
+
+* `x =`: this is the value (or sequence) that we want to be repeated.
+* `times = `: this is the number of times the value should be repeated - if `x` is a sequence then the full sequence will be repeated this many times.
+* `each = `: if `x` is a sequence then this is the number of times the first element of the sequence should be repeated before moving on to repeating the second element and so on.
+* `length.out = `: this is the total number of elements we want to be included in the vector of repeated values.
+
+If we specify all of `times =`, `each =` and `length.out =`, they might not necessarily be in agreement with each other. Therefore, only one of `times =`, `each =` or `length.out =` needs to be specified.
+
+Let's look at some examples of using `rep()`.
+
+```{r vect19}
+rep(x = 2, times = 6)
+rep(x = 1:3, each = 2)
+rep(x = 1:4, times = 1:4)
+rep(x = c(TRUE, FALSE), length.out = 8)
+```
+
+::: {.webex-box}
+
+**Write some code to create each of the following repeating sequences using `rep()`:**
+
+* **`r rep(3:5, times=3)`**
+* **`r rep(c(2, 4, 6), each=2)`**
+* **`r rep(c("blue", "red"), times=c(3, 2))`**
+
+`r hide("Solution")`
+```{r vect-ans8, eval=TRUE}
+rep(3:5, times = 3)
+rep(c(2, 4, 6), each = 2)
+rep(c("blue", "red"), times=c(3, 2))
+```
+`r unhide()`
+
+:::
+
+::: {.webex-box}
+
+**Write some code to generate the sequence 2, 3, 3, 4, 5, 5, 6, 7, 7 using both the `seq()` and `rep()` functions.**
+
+`r hide("Hint")`
+First of all, notice that the sequence of numbers you want to repeat is 2, 3, 4, 5, 6, 7. Therefore this sequence should be generated using `seq()`, or the `from:to` operator, and then fed into the `rep()` function as the `x =` argument.
+
+Then have a think about how many times each of these elements should be repeated. 2 should be repeated once, 3 should be repeated twice, 4 should be repeated once and so on. To do this, the `times =` argument within `rep()` should be given the repeating sequence 1, 2, 1, 2, 1, 2.
+`r unhide()`
+
+`r hide("Solution")`
+```{r vect-ans9}
+rep(x = 2:7, 
+    times = rep(x = c(1, 2), times = 3))
+```
+
+`r unhide()`
+
+:::
+
+---
+
+You can see additional examples of using the `seq()` and `rep()` functions in [Section 1.3.3 Generating Vector Sequences and Repeating Vector Constants](https://read.kortext.com/reader/pdf/92741/11) of *Probability and Statistics with R*.
+
+## Filtering vectors {#filter}
+
+We can combine what we have already learned in terms of logical operators (Section \@ref(vectlog)) and indexing vectors (Section \@ref(index)) in order to extract elements which satisfy certain conditions.
+
+For example, if we create the vector $\begin{bmatrix}2 & 2 & 3 & 6 \end{bmatrix}^\intercal$, then we can extract the elements of this vector which are greater than or equal to 3 in one easy step.
+
+```{r vect20}
+vect <- c(2, 2, 3, 6)
+
+vect[vect >= 3]
+```
+
+This works because R will initially run the logical operator `vect >= 3` which will return the following logical vector.
+
+```{r vect21, echo=FALSE}
+vect >= 3
+```
+
+Using this logical vector to index inside the square brackets returns exactly the same result as above.
+
+```{r vect22}
+vect[c(FALSE, FALSE, TRUE, TRUE)]
+```
+
+::: {.webex-box}
+
+**Write some code to extract the elements of the vector `z` which are greater than 5.**
+
+`r hide("Solution")`
+```{r vect-ans10}
+z[z > 5]
+```
+
+`r unhide()`
+
+:::
+
+A function within R which can be used to give the **same results** as logical operators within the square brackets is the `subset()` function. This returns the elements of a specified vector which satisfy a given logical expression. The arguments that `subset()` can be provided with are:
+
+* `x =`: this is the vector we want to extract elements from.
+* `subset = `: this is the logical expression used to select the elements to keep.
+
+We can use `subset()` to extract the elements of the vector `vect` which are greater than or equal to 3, exactly as we did before.
+
+```{r vect23}
+subset(x = vect, subset = (vect >= 3))
+```
+
+::: {.webex-box}
+
+**Extract the elements of the vector `z` which are greater than 5 using the `subset()` function.**
+
+`r hide("Solution")`
+```{r vect-ans11}
+subset(x = z, subset = (z > 5))
+```
+
+`r unhide()`
+
+:::
+
+---
+
+[Section 1.3.4 Filtering Vectors](https://read.kortext.com/reader/pdf/92741/12) of *Probability and Statistics with R* gives further examples on how to filter vectors.
+
+## Getting help {#help}
+
+If you are ever unsure of the arguments required in a particular function in R, or even what that function does, there are ways to find out. R contains extensive help files on any function that can be used. To access these, simply put a `?` in front of the function name, or use the function `help()`.
+
+For example, if we were unsure what the function `rep()` is used for, then we can run either of the following lines of code.
+
+```{r help1, eval=FALSE}
+?rep
+
+help(rep)
+```
+
+---
+
+For more information on accessing the online and inbuilt help in RSudio, see [Section 1.5 Getting Help](https://read.kortext.com/reader/pdf/92741/14) in *Probability and Statistics with R*.
+
+<!-- `args()` only gives the argument names for more complex functions like `lm()` which haven't been introduced yet -->
+<!-- If we more specifically wanted to know what the argument names for a function should be, then we can use the function `args()` instead. To find the argument names for the `rep()` function, we can use the following code.
+
+```{r help2}
+args(rep)
+```
+-->
+
+
+
