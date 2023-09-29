@@ -12,7 +12,7 @@ library(knitr)
 library(webexercises)
 ```
 
-# Welcome to S2S Lectures
+# Introducing the textbook and pre-lecture reading {-}
 
 The lectures will cover material from the textbook [***Probability and Statistics with R***](https://read.kortext.com/reader/pdf/92741/A) by Ugarte, Militino and Arnholt. 
 
@@ -26,7 +26,9 @@ include_graphics("Images/PASWR2.png")
 <!-- * All the pre-lecture reading and links are on [S2S Moodle page](https://moodle.gla.ac.uk/course/view.php?id=38593). -->
 <!-- * We may use Mentimeter to gather class responses during lectures via [menti.com](https://www.menti.com/). -->
 
-The first lecture covers material from [Chapter 2 Exploring Data](https://read.kortext.com/reader/pdf/92741/97) and **before** the lecture you should read:
+## Pre-Lecture 1 Reading {-}
+
+The first lecture covers material from [Chapter 2 Exploring Data](https://read.kortext.com/reader/pdf/92741/97) and **before** the lecture you should read: 
 
 * [2.1 What Is Statistics?](https://read.kortext.com/reader/pdf/92741/97)
 * [2.2 Data](https://read.kortext.com/reader/pdf/92741/97)
