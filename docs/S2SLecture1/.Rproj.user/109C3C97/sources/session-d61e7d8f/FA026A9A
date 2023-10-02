@@ -1,9 +1,9 @@
 {
     "id": "FA026A9A",
-    "path": "C:/Users/mtb3f/OneDrive - University of Glasgow/Stats Level 2/2023_24 S2S and S2Y/S2S Statistical MM&C 1/Lectures/S2SLecture1/index.Rmd",
+    "path": "C:/Users/mtb3f/OneDrive - University of Glasgow/Stats Level 2/2023_24 S2S and S2Y/S2S Statistical MM&C 1/Github/Lectures/docs/S2SLecture1/index.Rmd",
     "project_path": "index.Rmd",
     "type": "r_markdown",
-    "hash": "2702073838",
+    "hash": "4210856825",
     "contents": "",
     "dirty": false,
     "created": 1695901791572.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "28,28",
+        "cursorPosition": "23,152",
         "scrollLine": "10"
     },
     "folds": "",
-    "lastKnownWriteTime": 1696002729,
+    "lastKnownWriteTime": 1696244249,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1696002729924,
+    "last_content_update": 1696244249551,
     "read_only": false,
     "read_only_alternatives": []
 }
