@@ -1,0 +1,4 @@
+"0","library(PASWR2) # PASWR2 contains dataframe BODYFAT"
+"0",""
+"0","BODYFAT$sex <- factor(BODYFAT$sex, labels = c(""Female"", ""Male""))"
+"0","boxplot(fat ~ sex, data = BODYFAT, col = c(""gray80"", ""gray20""), ylab = ""Percent Bodyfat"")"

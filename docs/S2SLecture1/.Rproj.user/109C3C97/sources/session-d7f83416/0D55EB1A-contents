@@ -1,0 +1,25 @@
+# R Code 2.19 {-}
+
+```{r 2_19}
+library(PASWR2) # load MASS package
+
+
+```
+
+
+<!-- ::: {.webex-box} -->
+
+<!-- **Give instructions here** -->
+
+`r hide("Show the plot")`
+```{r, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE}
+library(PASWR2) # load MASS package
+
+```
+`r unhide()`
+
+<!-- ::: -->
+
+---
+
+[R Code 2.18](https://read.kortext.com/reader/pdf/92741/128) from *Probability and Statistics with R, Ugarte et al. (2016)*.

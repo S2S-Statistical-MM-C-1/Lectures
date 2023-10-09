@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3 Further Exercises | S2S Lab 1</title>
-  <meta name="description" content="3 Further Exercises | S2S Lab 1" />
+  <title>1 Further Exercises | S2S Lecture 1</title>
+  <meta name="description" content="1 Further Exercises | S2S Lecture 1" />
   <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3 Further Exercises | S2S Lab 1" />
+  <meta property="og:title" content="1 Further Exercises | S2S Lecture 1" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3 Further Exercises | S2S Lab 1" />
+  <meta name="twitter:title" content="1 Further Exercises | S2S Lecture 1" />
   
   
   
@@ -28,7 +28,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="vectors.html"/>
+<link rel="prev" href="r-code-2.html"/>
 
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -135,19 +135,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Welcome to S2S Lectures</a></li>
-<li class="chapter" data-level="2" data-path="vectors.html"><a href="vectors.html"><i class="fa fa-check"></i><b>2</b> Vectors</a>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introducing the textbook and pre-lecture reading</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="vectors.html"><a href="vectors.html#addition"><i class="fa fa-check"></i><b>2.1</b> Addition</a></li>
-<li class="chapter" data-level="2.2" data-path="vectors.html"><a href="vectors.html#vectlog"><i class="fa fa-check"></i><b>2.2</b> Logical operators</a></li>
-<li class="chapter" data-level="2.3" data-path="vectors.html"><a href="vectors.html#other-types-of-vectors"><i class="fa fa-check"></i><b>2.3</b> Other types of vectors</a></li>
-<li class="chapter" data-level="2.4" data-path="vectors.html"><a href="vectors.html#index"><i class="fa fa-check"></i><b>2.4</b> Indexing vectors</a></li>
-<li class="chapter" data-level="2.5" data-path="vectors.html"><a href="vectors.html#seq"><i class="fa fa-check"></i><b>2.5</b> Sequences</a></li>
-<li class="chapter" data-level="2.6" data-path="vectors.html"><a href="vectors.html#repeat"><i class="fa fa-check"></i><b>2.6</b> Repeating constants</a></li>
-<li class="chapter" data-level="2.7" data-path="vectors.html"><a href="vectors.html#filter"><i class="fa fa-check"></i><b>2.7</b> Filtering vectors</a></li>
-<li class="chapter" data-level="2.8" data-path="vectors.html"><a href="vectors.html#help"><i class="fa fa-check"></i><b>2.8</b> Getting help</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#pre-lecture-1-reading"><i class="fa fa-check"></i>Pre-Lecture 1 Reading</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="exercises.html"><a href="exercises.html"><i class="fa fa-check"></i><b>3</b> Further Exercises</a>
+<li class="chapter" data-level="" data-path="r-code-2.html"><a href="r-code-2.html"><i class="fa fa-check"></i>R Code 2.18</a></li>
+<li class="chapter" data-level="1" data-path="exercises.html"><a href="exercises.html"><i class="fa fa-check"></i><b>1</b> Further Exercises</a>
 <ul>
 <li class="chapter" data-level="" data-path="exercises.html"><a href="exercises.html#exercise-1"><i class="fa fa-check"></i>Exercise 1</a></li>
 <li class="chapter" data-level="" data-path="exercises.html"><a href="exercises.html#exercise-2"><i class="fa fa-check"></i>Exercise 2</a></li>
@@ -162,7 +155,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">S2S Lab 1</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">S2S Lecture 1</a>
           </h1>
         </div>
 
@@ -170,13 +163,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="exercises" class="section level1 hasAnchor" number="3">
-<h1><span class="header-section-number">3</span> Further Exercises<a href="exercises.html#exercises" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="exercises" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">1</span> Further Exercises<a href="exercises.html#exercises" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="exercise-1" class="section level2 unnumbered hasAnchor">
 <h2>Exercise 1<a href="exercises.html#exercise-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The code below creates the vectors <code>a</code> and <code>b</code>. <code>a</code> randomly takes the value 1 or 2 and <code>b</code> randomly takes the value 2 or 4 (this is done using the <code>sample()</code> function which you can learn more about using the <code>help()</code> function).</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="exercises.html#cb56-1" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="dv">1</span>)</span>
-<span id="cb56-2"><a href="exercises.html#cb56-2" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>), <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="exercises.html#cb2-1" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="dv">1</span>)</span>
+<span id="cb2-2"><a href="exercises.html#cb2-2" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>), <span class="dv">1</span>)</span></code></pre></div>
 <p>Create a new vector <code>c</code> which is:</p>
 <ul>
 <li><code>TRUE</code> if both <code>a</code> and <code>b</code> are equal.</li>
@@ -419,7 +412,7 @@ window.onload = function() {
           </div>
         </div>
       </div>
-<a href="vectors.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="r-code-2.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
     </div>
   </div>
