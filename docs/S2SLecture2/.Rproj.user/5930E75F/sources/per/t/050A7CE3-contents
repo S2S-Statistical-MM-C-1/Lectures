@@ -1,0 +1,213 @@
+---
+title: "DRAFT Paper 1 Computer Output Question"
+date: "October 2023"
+output: html_document
+---
+
+```{r setup, message=FALSE, warning=FALSE,echo = F}
+library(PairedData)
+library(BSDA)
+knitr::opts_chunk$set(echo = F)
+```
+
+**Question**
+
+A school is considering introducing a reading programme that aims to improve students' reading speeds.  In order to evaluate the programme a teacher takes a random sample of 47 students and the students are given a couple of pages to read and the reading speed (in words/minute) of each student is recorded and stored in a statistical software package in an object called `speed.1`.  After undertaking the reading programme the same students are given an equivalent reading task and their reading speed (in words/minute) is recorded and stored in the same statistical software in an object called `speed.2`.   
+
+
+```{r data}
+n <- 47
+speed.1 <-  as.numeric(sample(200:280,n,replace=TRUE))
+speed.2 <-  speed.1-rep(30,n)
+#speed.2 <- speed.2+sample(15:25,n,replace=TRUE)
+speed.2 <- speed.2+round(rnorm(n,mean=29,sd=5),0)
+differences <- speed.2-speed.1
+
+reading <- data.frame(speed.1,speed.2,differences)
+speed.long <- data.frame(student=c(1:n,1:n),reading.speed=c(speed.1,speed.2),time=c(rep("Before",n),rep("After",n)))
+speed.long$time <- factor(speed.long$time,levels=c("Before","After"))
+```
+
+
+
+(a) The three plots shown in Figures 1-3 were produced to explore the data and inform the analysis but not all the plots are appropriate for this context.
+
+```{r Figures1-3}
+
+boxplot(reading.speed~time,data=speed.long,xlab="",ylab="Reading Speed",main="Figure 1")
+
+ggplot(speed.long, aes(x = time, y = reading.speed, group = student)) + 
+geom_line() + 
+geom_point(size = 2, aes(color = time)) +
+scale_x_discrete("") +
+theme_minimal() +
+labs(title="Figure 2")+
+ylab("Reading Speed")
+
+plot(speed.1,speed.2,main="Figure 3")
+abline(a=0,b=1)
+
+#+
+# theme(legend.position = "top", 
+#       panel.grid = element_blank(),
+#       axis.text.x = element_blank(),
+#       axis.line.y = element_line(size = .5))
+
+```
+
+
+(i) Choose one of the plots which is appropriate for these data and explain why it is appropriate.
+
+(ii) Choose one of the plots which is not appropriate  for these data and explain why it is not appropriate.
+
+
+**ANSWER (a)(i)**
+
+Either 
+
+* Figure 2 (line plot) is appropriate because it shows the 'before' and 'after' reading speeds for each student with paired values joined by lines **OR** 
+* Figure 3 (scatterplot) is appropriate because it shows each pair of 'before' and 'after' reading speeds as a point relatively to the line of equality
+
+[1 MARK] for an appropriate plot
+
+[1 MARK] for correct explanation
+
+
+**ANSWER (a)(ii)**
+
+* Figure 1 (boxplot) is not appropriate because it shows the 'before' and 'after' reading speeds as separate samples and give no indication of the paired nature of the data (i.e. that each student has a 'before' and 'after' reading speed)
+
+[1 MARK] for the inappropriate plot
+
+[1 MARK] for correct explanation
+
+
+The teacher decides the best way to analyse these data is to first calculate the change in each student's reading speed by calculating a new data object called `differences` by subtracting each student's first reading speed `speed.1` (i.e. before doing the reading programme) from their second reading speed `speed.2` (i.e. after they had done the reading programme).  
+
+(b) State one reason why the teacher decides to proceed in this way?
+
+**ANSWER (b)**
+
+EITHER
+
+- Because the original data are paired  **OR**
+
+- Because the differences are independent 
+
+[1 MARK]
+
+To inform the analysis of the data, the teacher produced the histogram of the difference shown in Figure 4.
+
+```{r Figure4}
+hist(x = differences,main="Figure 4")
+```
+
+(c) State an assumption about the differences that the histogram could be used to investigate.
+
+**ANSWER (c)**
+
+- The assumption that the differences are from a normal distribution
+
+[1 MARK]
+
+
+<!-- (???) State a justification for the use of a z-test to analyse this data rather than a t-test. -->
+
+<!-- **ANSWER (???)** -->
+
+<!-- - The sample size is large, i.e. greater than 40, therefore z-test can used instead of t-test even though the population variance of the differences is unknown -->
+
+<!-- [1 MARK] -->
+
+
+
+The teacher decides to use a z-test to analyse the differences in reading speeds and  Output 1 contains the results of the z-test performed using statistical software.
+
+```{r OUTPUT1, eval=FALSE}
+z.test(x = differences,
+       sigma.x = sd(differences),
+       mu = 0,
+       alternative = "two.sided")
+```
+
+
+**Output 1**
+
+````markdown
+`r ''`One-sample z-Test
+
+data:  differences
+z = ******, p-value = 0.0414
+alternative hypothesis: true mean is not equal to 0
+95 percent confidence interval:
+ -2.71535261 -0.05060483
+sample estimates:
+mean of x 
+-1.382979 
+````
+
+
+
+
+(d) (i) State the hypotheses used in the z-test reported in Output 1.
+
+(ii) Calculate the missing value indicated by ***** in Output 1 using the reported p-value and the standard normal table (Table 3 on page 11 in the Statistical Formulae and Tables booklet).
+
+(iii) Interpret the p-value reported in Output 1 in terms of the context of these data.
+
+
+**ANSWER (d)(i)**
+
+* The null hypothesis is that the population mean difference is zero
+* The alternatve hypothesis is that the population mean difference is not equal to zero 
+
+[1 MARK] for correct null hypothesis
+
+[1 MARK] for correct alternate hypothesis
+
+**ANSWER (d)(ii)**
+
+* A two tailed test is reported so first halve the reported p-value: 0.0414/2 = 0.0207
+* The z-score corresponding to this value is the z-score with cumulative probability (as given in the Table 3) of 1-0.0207 = 0.9793
+* From Table 3 the z-score is therefore either -2.04 or 2.04 (accept either value)
+
+[3 MARKS] corresponding to the three steps above
+
+
+**ANSWER (d)(iii)**
+
+* Because the p-value < 0.05 therefor we conclude there is sufficient evidence to reject the null hypothesis and conclude the reading programme has resulted in a statistically significant change in the population mean reading speed of students.
+
+[2 MARKS] for correct conclusion and interpretation
+
+
+
+```{r OUTPUT2, eval=FALSE}
+print("NOT TO BE INCLUDED")
+t.test(differences,
+       mu = 0,
+       alternative = "two.sided")
+```
+
+(e) If instead the researcher wanted to test the hypothesis that the reading speed had got faster after students took the reading programme, state how the test statistic and p-value obtained from this test would compare to the equivalent values reported in Output 1.
+
+**ANSWER (e)**
+
+* The test statistic will be the same as in Output 1
+
+* The p-value will be half the p-value in Output 1
+
+(NB given that the difference is defined as `speed.2`-`speed.1` above)
+
+[1 MARK] for correct statement about the test statistic
+
+[1 MARK] for correct statement about the p-value
+
+
+```{r one.sided, eval=FALSE}
+print("NOT TO BE INCLUDED")
+z.test(x = differences,
+       sigma.x = sd(differences),
+       mu = 0,
+       alternative = "less")
+```
