@@ -1,0 +1,35 @@
+# Cluster Sampling
+
+::: {.webex-box}
+**Example** Suppose a company that gives city tours wants to survey its customers. They ask every customer to rate their experience on a scale of 1 to 10. One tour guide runs ten tours a day, from which four should be randomly selected and all the customer ratings from these should be included in the sample.
+
+Randomly select these clusters of customers for the company and include their ratings in the sample.
+
+`r hide("Solution")`
+To start, set up a data frame to contain the customer ratings and the tour they belonged to. Each tour is given to 20 customers.
+
+```{r}
+tours <- data.frame(tour = rep(1:10, each = 20),
+                    rating = sample(x = 1:10, size = 200, replace = TRUE,
+                                        prob = c(rep(1/20, 6), rep(1/5, 3), 1/10)))
+head(tours)
+```
+
+In order to randomly select the tours to use as the clusters, use the `sample()` function.
+
+```{r}
+clusters <- sample(1:10, size = 4, replace = FALSE)
+clusters
+```
+
+Then, the sample includes all customers who were on a tours `r sort(clusters)[1:3]` or `r sort(clusters)[4]`.
+```{r}
+cluster_sample <- tours[tours$tour %in% clusters, ]
+```
+
+We can verify that all customers from each tour group chosen as a cluster are included in the sample.
+```{r}
+table(cluster_sample$tour)
+```
+`r unhide()`
+:::

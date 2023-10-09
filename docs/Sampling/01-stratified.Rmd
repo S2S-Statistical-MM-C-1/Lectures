@@ -1,0 +1,104 @@
+# Stratified Sampling
+
+::: {.webex-box}
+**Example** Suppose a company has 300 employees; 100 entry-level staff, 100 mid-level staff and 100 senior staff. Obtain a stratified sample of 30 total employees, containing 10 employees from each level, that could be used to investigate things like employee performance scores.
+
+`r hide("Solution")`
+Start by creating a data frame showing the 300 employees' levels and their unique employee ID.
+```{r}
+employees <- data.frame(level = rep(c("entry", "mid", "senior"), each = 100),
+                        employee_ID = 1:300)
+```
+
+Then create a subset of the data in each strata and use `sample()` to randomly select the rows (or employees) to include in the sample.
+```{r}
+entry <- subset(x = employees, subset = (level == "entry"))
+entry_sample <- entry[sample(x = nrow(entry), size = 10, replace = FALSE), ]
+
+mid <- subset(x = employees, subset = (level == "mid"))
+mid_sample <- mid[sample(x = nrow(mid), size = 10, replace = FALSE), ]
+
+senior <- subset(x = employees, subset = (level == "senior"))
+senior_sample <- senior[sample(x = nrow(senior), size = 10, replace = FALSE), ]
+```
+
+Combine the randomly selected employees in each strata into one stratified sample and verify that there are 10 employees sampled from each level. The employee ID's can then be used to find things such as the performance score of all employees in this startified sample.
+```{r}
+employees_sample <- rbind(entry_sample, mid_sample, senior_sample)
+table(employees_sample$level)
+```
+`r unhide()`
+:::
+
+::: {.webex-box}
+**Example** A botanist wants to study the characteristics of a common weed and its adaptation to various geographical regions on a remote island. The island has well-defined strata that can be classified as desert, forest, mountains, and swamp.
+
+If 5000 acres of the island are desert, 1000 acres are forest, 500 acres are mountains, and 3500 acres are swamp, and the botanist wants to sample 5% of the population using a stratified sampling scheme that is proportional to the strata, how many acres of each of the four regions will they have to sample?
+
+`r hide("Solution")`
+The botanist wants to sample a total of 5% of 10,000 acres. That is 500 acres.
+
+The sample size taken from each strata should be proportional to the size of that strata in the population. So for desert, forest, mountain and swamp regions, the botanist should sample the following acres of each.
+
+```{r}
+#desert
+500*(5000/10000)
+
+#forest
+500*(1000/10000)
+
+#mountains
+500*(500/10000)
+
+#swamp
+500*(3500/10000)
+```
+
+This gives a total of 500 acres sampled across the island.
+`r unhide()`
+:::
+
+::: {.webex-box}
+**Example** Obtain a stratified sample of 500 acres from the island that has the same proportions of desert, forest, mountain and swamp regions as seen in the population.
+
+`r hide("Solution")`
+Start by setting up a data frame containing the type of region each acre on the island is classfied as and a unique identifier for every acre.
+```{r}
+island <- data.frame(region = rep(c("Desert", "Forest", "Mountain", "Swamp"),
+                                  times = c(5000, 1000, 500, 3500)),
+                     ID = 1:10000)
+```
+
+Then create a subset of the data in each strata (or region) and use `sample()` to randomly select the rows to include in the sample.
+```{r}
+desert <- subset(x = island, subset = (region == "Desert"))
+desert_sample <- desert[sample(x = nrow(desert), size = 500*(5000/10000)), ]
+
+forest <- subset(x = island, subset = (region == "Forest"))
+forest_sample <- forest[sample(x = nrow(forest), size = 500*(1000/10000)), ]
+
+mountain <- subset(x = island, subset = (region == "Mountain"))
+mountain_sample <- mountain[sample(x = nrow(mountain), size = 500*(500/10000)), ]
+
+swamp <- subset(x = island, subset = (region == "Swamp"))
+swamp_sample <- swamp[sample(x = nrow(swamp), size = 500*(3500/10000)), ]
+```
+
+Combine the randomly selected acres in each region into one stratified sample and verify that the numbers sampled agree with what is expected, give the proportion of each type of region on the island. The unique identifier of each acre in `island_sample` can then be used to know which areas should be sampled from.
+```{r}
+island_sample <- rbind(desert_sample, forest_sample, mountain_sample, swamp_sample)
+table(island_sample$region)
+```
+`r unhide()`
+:::
+
+
+
+
+
+
+
+
+
+
+

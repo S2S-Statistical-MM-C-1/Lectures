@@ -1,0 +1,4 @@
+simple-random-sampling
+stratified-sampling
+systematic-sampling
+cluster-sampling

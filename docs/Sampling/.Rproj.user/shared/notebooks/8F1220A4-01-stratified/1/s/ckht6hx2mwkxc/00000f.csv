@@ -1,0 +1,3 @@
+"0","island <- data.frame(region = "
+"0","                       rep(c(""Desert"", ""Forest"", ""Mountain"", ""Swamp""), times = c(5000, 1000, 500, 3500)),"
+"0","                     ID = 1:10000)"

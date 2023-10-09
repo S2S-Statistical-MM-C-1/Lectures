@@ -1,0 +1,31 @@
+# Systematic Sampling
+
+::: {.webex-box}
+**Example** Suppose a systematic sample of size $n=10$ is desired from a list containing 1000 members. Then $k=\frac{1000}{10}=100$, so every 100^th^ member of the list should be sampled. To pick the initial starting point, select a random between 1 and 100.
+
+`r hide("Solution")`
+```{r}
+initial <- sample(x = 1:100, size = 1)
+seq(from = initial, to = 1000, by = 100)
+```
+`r unhide()`
+:::
+
+::: {.webex-box}
+**Example** Produce a list of locations to sample for a systematic sample if $N=1000$ and $n=20$.
+
+`r hide("Solution")`
+To make a systematic sample, every $k=\frac{1000}{20}=50^{th}$ item will be observed. To start the process, select a random number between 1 and 50.
+
+```{r}
+initial <- sample(x = 1:50, size = 1)
+seq(from = initial, to = 1000, by = 50)
+```
+`r unhide()`
+:::
+
+
+
+
+
+
