@@ -1,0 +1,5 @@
+"0",""
+"0","f <- with(data=Cars93, fivenum(Min.Price)) # store fivenum values in f"
+"0",""
+"0","text(x = rep(1.25, 5), y = f, labels=c(""Min"", expression(H[L]),"
+"0","                        expression(Q[2]) , expression(H[U]), ""Max""), pos=4)"

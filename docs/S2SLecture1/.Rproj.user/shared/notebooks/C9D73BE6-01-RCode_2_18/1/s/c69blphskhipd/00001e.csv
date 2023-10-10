@@ -1,0 +1,5 @@
+"0",""
+"0","fig <- recordPlot() # Save plot in object ""fig"""
+"0",""
+"0","par(opar) # reset to original parameters"
+"0",""

@@ -1,0 +1,1 @@
+"0","cluster_sample <- tours[tours$guide %in% clusters, ]"

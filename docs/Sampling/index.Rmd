@@ -1,0 +1,77 @@
+---
+title: ""
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+link-citations: yes
+---
+
+# Simple Random Sampling
+
+::: {.webex-box}
+**Example** Given a population of size $N=5$, list all of the possible samples of size $n=3$. That is, list the ${5\choose 3}=10$ possible combinations.
+
+`r hide("Solution")`
+Use the function `combn()` to list the combinations. The argument `x =` is a vector of $N$ elements and the argument `m =` is the number of elements to sample from the population.
+
+```{r}
+combn(x = 1:5, m = 3)
+```
+
+The 10 possible combinations are $(1,2,3),\,(1,2,4),\dots,\,(3,4,5)$.
+`r unhide()`
+:::
+
+::: {.webex-box}
+**Example** Given a population of size $N=5$, where $X_1=2$, $X_2=5$, $X_3=8$, $X_4=12$ and $X_5=13$, list all the possible samples of size $n=3$. That is, list the ${5\choose 3}=10$ possible combinations.
+
+`r hide("Solution")`
+Make sure the `PASWR2` package is loaded into your R session. Then use the function `srs()`. The argument `popvalues =` is a vector of the values of the $N$ elements in the population and the argument `m =` is the number of elements to sample.
+
+```{r, message=FALSE}
+library(PASWR2)
+
+srs(popvalues = c(2, 5, 8, 12, 13), n = 3)
+```
+
+The 10 possible combinations are $(2,5,8),\,(2,5,12),\dots,\,(8,12,13)$.
+`r unhide()`
+:::
+
+::: {.webex-box}
+**Example** A teacher wants an algorithm that will randomly select 5 students from a large lecture section with 180 students to present their work at the board.
+
+`r hide("Solution")`
+Assume the students in the class are numbered from 1 to 180 and that students know their numbers. Then use the `sample()` function to select 5 students. The argument `x =` is a vector of $N$ elements, the argument `size =` is the number of elements to sample and the argument `replace =` states whether sampling should be done with or without replacement. This assumes there is an equal probability of sampling any student.
+
+```{r}
+sample(x = 1:180, size = 5, replace = FALSE)
+```
+`r unhide()`
+:::
+
+::: {.webex-box}
+**Example** Randomly select 5 people from a group of 20 where the individuals are labeled from 1 to 20 and individuals labeled 19 or 20 are four times more likely to be selected than the individuals labeled 1 through 18.
+
+`r hide("Solution")`
+The individuals 1 to 18 have a probability of being sampled of $\frac{1}{26}$ while individuals 19 and 20 have a probability of being sampled of $\frac{4}{26}$. A vector of probabilities of being sampled for each element in the population can be given to the argument `prob =`.
+
+```{r}
+sample(x = 1:20, size = 5, replace = FALSE,
+       prob = c(rep(1/26, 18), rep(4/26, 2)))
+```
+`r unhide()`
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+

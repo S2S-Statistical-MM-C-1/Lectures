@@ -1,0 +1,56 @@
+# R Code 2_18 {-}
+
+```{r 2.18}
+library(MASS) # MASS package contains data frame Cars93
+
+opar <- par(no.readonly = TRUE) # read in current parameters
+
+par(mar=c(0.1, 7.1, 0.1, 0.1)) # more space needed on side 2
+
+with(data = Cars93, boxplot(Min.Price, ylim = c(0, 50),
+                  ylab = "Minimum Price (in \\$1000)\n for basic version",
+                  col = "springgreen3"))
+
+f <- with(data=Cars93, fivenum(Min.Price)) # store fivenum values in f
+
+text(x = rep(1.25, 5), y = f, labels=c("Min", expression(H[L]),
+                        expression(Q[2]) , expression(H[U]), "Max"), pos=4)
+
+par(opar) # reset to original parameters
+
+```
+
+
+<!-- ::: {.webex-box} -->
+
+<!-- **Give instructions here** -->
+
+`r hide("Show the plot")`
+```{r, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE}
+library(MASS) # load MASS package
+
+opar <- par(no.readonly = TRUE) # read in current parameters
+
+par(mar=c(0.1, 7.1, 0.1, 0.1)) # more space needed on side 2
+
+with(data = Cars93, boxplot(Min.Price, ylim = c(0, 50),
+                  ylab = "Minimum Price (in \\$1000)\n for basic version",
+                  col = "springgreen3"))
+
+f <- with(data=Cars93, fivenum(Min.Price)) # store fivenum values in f
+
+text(x = rep(1.25, 5), y = f, labels=c("Min", expression(H[L]),
+                        expression(Q[2]) , expression(H[U]), "Max"), pos=4)
+
+# fig <- recordPlot() # Save plot in object "fig"
+
+par(opar) # reset to original parameters
+
+```
+`r unhide()`
+
+<!-- ::: -->
+
+---
+
+[R Code 2.18](https://read.kortext.com/reader/pdf/92741/128) from *Probability and Statistics with R, Ugarte et al. (2016)*.
