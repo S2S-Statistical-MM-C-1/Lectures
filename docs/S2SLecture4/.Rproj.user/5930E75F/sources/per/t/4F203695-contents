@@ -1,0 +1,58 @@
+# R Code 2.18 {-}
+
+```{r 2.18}
+library(MASS) # load MASS package
+
+opar <- par(no.readonly = TRUE) # read in current parameters
+
+par(mar=c(0.1, 7.1, 0.1, 0.1)) # more space needed on side 2
+
+with(data = Cars93, boxplot(Min.Price, ylim = c(0, 50),
+                  ylab = "Minimum Price (in \\$1000)\n for basic version",
+                  col = "springgreen3"))
+
+f <- with(data=Cars93, fivenum(Min.Price)) # store fivenum values in f
+
+text(x = rep(1.25, 5), y = f, labels=c("Min", expression(H[L]),
+                        expression(Q[2]) , expression(H[U]), "Max"), pos=4)
+
+par(opar) # reset to original parameters
+
+```
+
+
+
+
+<!-- ::: {.webex-box} -->
+
+<!-- **Create and save the vector $a=\begin{bmatrix}2&2&-1\end{bmatrix}^\intercal$ and scalar $b=2$, then add these together and save the result as a new vector called `c` and print the contents of `c` in the console.** -->
+
+`r hide("Show the plot")`
+```{r vect-ans1, echo=FALSE, eval=TRUE}
+library(MASS) # load MASS package
+
+opar <- par(no.readonly = TRUE) # read in current parameters
+
+par(mar=c(0.1, 7.1, 0.1, 0.1)) # more space needed on side 2
+
+with(data = Cars93, boxplot(Min.Price, ylim = c(0, 50),
+                  ylab = "Minimum Price (in \\$1000)\n for basic version",
+                  col = "springgreen3"))
+
+f <- with(data=Cars93, fivenum(Min.Price)) # store fivenum values in f
+
+text(x = rep(1.25, 5), y = f, labels=c("Min", expression(H[L]),
+                        expression(Q[2]) , expression(H[U]), "Max"), pos=4)
+
+# fig <- recordPlot() # Save plot in object "fig"
+
+par(opar) # reset to original parameters
+
+```
+`r unhide()`
+
+<!-- ::: -->
+
+---
+
+[Section 1.3 Vectors](https://read.kortext.com/reader/pdf/92741/6) of *Probability and Statistics with R* explains in detail how R adds two vectors together.

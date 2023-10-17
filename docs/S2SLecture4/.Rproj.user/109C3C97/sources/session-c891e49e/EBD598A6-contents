@@ -1,0 +1,31 @@
+--- 
+title: ""
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+link-citations: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, eval=FALSE, comment=NA)
+library(knitr)
+library(webexercises)
+```
+
+# Pre-Lecture 4 Reading {-}
+
+**Before** the lecture you should read: 
+
+* [6.5 Sampling Distribution for a Statistic from an Infinite Population](https://read.kortext.com/reader/pdf/92741/367)
+ 
+  + [6.5.1 Sampling Distribution for the Sample Mean](https://read.kortext.com/reader/pdf/92741/367)
+
+    + [6.5.1.1 First Case: Sampling Distribution of Sample Mean When Sampling from a Normal Distribution](https://read.kortext.com/reader/pdf/92741/368)
+
+    + [6.5.1.2 Second Case: Sampling Distribution of Sample Mean When X Is Not a Normal Random Variable (CLT) (COVERED IN LAB)](https://read.kortext.com/reader/pdf/92741/370)
+
+  + [6.5.2 Sampling Distribution for $\bar{X}-\bar{Y}$ When Sampling from Two Independent Normal Populations (COVERED IN LAB)](https://read.kortext.com/reader/pdf/92741/375)
+
+  + [6.5.3 Sampling Distribution for the Sample Proportion P](https://read.kortext.com/reader/pdf/92741/377)
+
+
