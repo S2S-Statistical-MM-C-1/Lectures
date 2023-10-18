@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Mentimeter Link | _main.knit</title>
+  <title>Activity | _main.knit</title>
   <meta name="description" content="" />
   <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Mentimeter Link | _main.knit" />
+  <meta property="og:title" content="Activity | _main.knit" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Mentimeter Link | _main.knit" />
+  <meta name="twitter:title" content="Activity | _main.knit" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="investigating-engagement-in-level-2-statistics.html"/>
+<link rel="prev" href="investigating-engagement-in-level-2-statistics.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -156,9 +156,50 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="mentimeter-link" class="section level1 unnumbered hasAnchor">
-<h1>Mentimeter Link<a href="mentimeter-link.html#mentimeter-link" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p><a href="https://www.menti.com/aljdzfuuo2v9">Mentimeter Link</a></p>
+<div id="activity" class="section level1 unnumbered hasAnchor">
+<h1>Activity<a href="activity.html#activity" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Consider a population of 146 university students and the variable “how many drinks does it take to get drunk” shown here:</p>
+<p><img src="Images/activity_table.jpg" width="100%" style="display: block; margin: auto;" /></p>
+<ul>
+<li><p>Simulate the sampling distribution of the sample mean as an estimator of the population mean from a simple random sample of size 10. Use R, either via RStudio on your own device or this <a href="https://www.mycompiler.io/new/r">online console</a>.</p></li>
+<li><p>Estimate the standard error of this point estimate.</p></li>
+</ul>
+<p>In order to estimate the average number of drinks it takes these 146 university students to get drunk:</p>
+<p><strong>Step 1.Take a simple random sample of ten students from the population.</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="activity.html#cb1-1" tabindex="-1"></a><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">146</span>,<span class="dv">10</span>)</span></code></pre></div>
+<p><strong>Step 2. Create a vector of the number of drinks it takes for the students in the sample to get drunk.</strong></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="activity.html#cb2-1" tabindex="-1"></a>values <span class="ot">&lt;-</span> <span class="fu">c</span>( , , , , , , , , , )  <span class="co">#You need to look up values in the table and insert them </span></span></code></pre></div>
+<p><strong>Step 3. Calculate your sample mean, sample standard deviation and estimate of the standard error</strong></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="activity.html#cb3-1" tabindex="-1"></a><span class="fu">mean</span>(values)</span>
+<span id="cb3-2"><a href="activity.html#cb3-2" tabindex="-1"></a><span class="fu">sd</span>(values)</span>
+<span id="cb3-3"><a href="activity.html#cb3-3" tabindex="-1"></a><span class="fu">sd</span>(values)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">10</span>)</span></code></pre></div>
+<p><strong>Step 4. Submit your point estimate of the population mean via Google Form</strong></p>
+<p><a href="https://forms.gle/pxEqLWkbb2izDHYP6">Google Form</a></p>
+<p><strong>and on Mentimeter</strong></p>
+<p><a href="https://www.menti.com/aljdzfuuo2v9">Mentimeter</a></p>
+<!-- ::: {.webex-box} -->
+<!-- **Give instructions here** -->
+<!-- 
+<div class='webex-solution'><button>Show the plot</button>
+ -->
+<!-- ```{r, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE} -->
+<!-- library(MASS) # load MASS package -->
+<!-- opar <- par(no.readonly = TRUE) # read in current parameters -->
+<!-- par(mar=c(0.1, 7.1, 0.1, 0.1)) # more space needed on side 2 -->
+<!-- with(data = Cars93, boxplot(Min.Price, ylim = c(0, 50), -->
+<!--                   ylab = "Minimum Price (in \\$1000)\n for basic version", -->
+<!--                   col = "springgreen3")) -->
+<!-- f <- with(data=Cars93, fivenum(Min.Price)) # store fivenum values in f -->
+<!-- text(x = rep(1.25, 5), y = f, labels=c("Min", expression(H[L]), -->
+<!--                         expression(Q[2]) , expression(H[U]), "Max"), pos=4) -->
+<!-- # fig <- recordPlot() # Save plot in object "fig" -->
+<!-- par(opar) # reset to original parameters -->
+<!-- ``` -->
+<!-- 
+</div>
+ -->
+<!-- ::: -->
+<hr />
 
 </div>
 <script>
@@ -372,8 +413,8 @@ window.onload = function() {
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="investigating-engagement-in-level-2-statistics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="investigating-engagement-in-level-2-statistics.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

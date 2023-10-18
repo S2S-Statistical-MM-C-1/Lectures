@@ -12,11 +12,9 @@ library(knitr)
 library(webexercises)
 ```
 
-# Pre-Lecture 2 Reading {-}
+# Pre-Lecture 3 Reading {-}
 
 **Before** the lecture you should read: 
 
-* [6.1 Sampling](https://read.kortext.com/reader/pdf/92741/351)
-* [6.2 Parameters](https://read.kortext.com/reader/pdf/92741/356)
-* [6.3 Estimators](https://read.kortext.com/reader/pdf/92741/357)
+* [6.4 Sampling Distribution of the Sample Mean ](https://read.kortext.com/reader/pdf/92741/359)
 

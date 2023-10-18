@@ -1,0 +1,78 @@
+# Activity {-}
+
+Consider a population of 146 university students and the variable “how many drinks does it take to get drunk” shown here:
+
+```{r activity_table, eval=TRUE, echo=FALSE, fig.align='center', out.width='100%'}
+include_graphics("Images/activity_table.jpg")
+```
+
+* Simulate the sampling distribution of the sample mean as an estimator of the population mean from a simple random sample of size 10.  Use R, either via RStudio on your own device or this [online console](https://www.mycompiler.io/new/r).
+
+
+* Estimate the standard error of this point estimate. 
+
+
+In order to estimate the average number of drinks it takes these 146 university students to get drunk:
+
+**Step 1.Take a simple random sample of ten students from the population.**
+
+```{r step1}
+sample(1:146,10)
+```
+
+
+**Step 2. Create a vector of the number of drinks it takes for the students in the sample to get drunk.**
+
+```{r step2}
+values <- c( , , , , , , , , , )  #You need to look up values in the table and insert them 
+```
+
+
+**Step 3. Calculate your sample mean, sample standard deviation and estimate of the standard error**
+
+```{r step3}
+mean(values)
+sd(values)
+sd(values)/sqrt(10)
+```
+
+**Step 4. Submit your point estimate of the population mean via Google Form**
+
+[Google Form](https://forms.gle/pxEqLWkbb2izDHYP6) 
+
+**and on Mentimeter**
+
+[Mentimeter](https://www.menti.com/aljdzfuuo2v9)
+
+<!-- ::: {.webex-box} -->
+
+<!-- **Give instructions here** -->
+
+<!-- `r hide("Show the plot")` -->
+<!-- ```{r, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE} -->
+<!-- library(MASS) # load MASS package -->
+
+<!-- opar <- par(no.readonly = TRUE) # read in current parameters -->
+
+<!-- par(mar=c(0.1, 7.1, 0.1, 0.1)) # more space needed on side 2 -->
+
+<!-- with(data = Cars93, boxplot(Min.Price, ylim = c(0, 50), -->
+<!--                   ylab = "Minimum Price (in \\$1000)\n for basic version", -->
+<!--                   col = "springgreen3")) -->
+
+<!-- f <- with(data=Cars93, fivenum(Min.Price)) # store fivenum values in f -->
+
+<!-- text(x = rep(1.25, 5), y = f, labels=c("Min", expression(H[L]), -->
+<!--                         expression(Q[2]) , expression(H[U]), "Max"), pos=4) -->
+
+<!-- # fig <- recordPlot() # Save plot in object "fig" -->
+
+<!-- par(opar) # reset to original parameters -->
+
+<!-- ``` -->
+<!-- `r unhide()` -->
+
+<!-- ::: -->
+
+---
+
