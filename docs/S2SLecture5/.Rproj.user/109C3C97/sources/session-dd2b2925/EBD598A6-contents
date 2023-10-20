@@ -20,7 +20,9 @@ library(webexercises)
 
 * [6.6.1 Chi-Square Distribution](https://read.kortext.com/reader/pdf/92741/383)
 
-  + [6.6.1.1 The Relationship between the chi-square Distribution and the Normal Distribution](https://read.kortext.com/reader/pdf/92741/386)
+  <!-- + [6.6.1.1 The Relationship between the chi-square Distribution and the Normal Distribution](https://read.kortext.com/reader/pdf/92741/386) -->
 
   + [6.6.1.2 Sampling Distribution for Sample Variances When Sampling from Normal Populations](https://read.kortext.com/reader/pdf/92741/389)
 
+
+**NB: Not covering 6.6.1.1**
