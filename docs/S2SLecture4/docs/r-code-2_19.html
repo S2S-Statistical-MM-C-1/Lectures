@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>R Code 2_19 | S2S Lecture 1</title>
-  <meta name="description" content="R Code 2_19 | S2S Lecture 1" />
+  <title>R Code 2_19 | _main.knit</title>
+  <meta name="description" content="" />
   <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="R Code 2_19 | S2S Lecture 1" />
+  <meta property="og:title" content="R Code 2_19 | _main.knit" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="R Code 2_19 | S2S Lecture 1" />
+  <meta name="twitter:title" content="R Code 2_19 | _main.knit" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="r-code-2_18.html"/>
-
+<link rel="prev" href="s2s03-activity.html"/>
+<link rel="next" href="example-6.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -135,13 +135,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introducing the textbook and pre-lecture reading</a>
-<ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#pre-lecture-1-reading"><i class="fa fa-check"></i>Pre-Lecture 1 Reading</a></li>
-</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Pre-Lecture 4 Reading</a></li>
 <li class="chapter" data-level="" data-path="mentimeter-link.html"><a href="mentimeter-link.html"><i class="fa fa-check"></i>Mentimeter Link</a></li>
-<li class="chapter" data-level="" data-path="r-code-2_18.html"><a href="r-code-2_18.html"><i class="fa fa-check"></i>R Code 2_18</a></li>
+<li class="chapter" data-level="" data-path="s2s03-activity.html"><a href="s2s03-activity.html"><i class="fa fa-check"></i>S2S03 Activity</a></li>
 <li class="chapter" data-level="" data-path="r-code-2_19.html"><a href="r-code-2_19.html"><i class="fa fa-check"></i>R Code 2_19</a></li>
+<li class="chapter" data-level="" data-path="example-6.html"><a href="example-6.html"><i class="fa fa-check"></i>Example 6.16</a></li>
 </ul>
 
       </nav>
@@ -151,7 +149,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">S2S Lecture 1</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
           </h1>
         </div>
 
@@ -161,17 +159,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="r-code-2_19" class="section level1 unnumbered hasAnchor">
 <h1>R Code 2_19<a href="r-code-2_19.html#r-code-2_19" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="r-code-2_19.html#cb2-1" tabindex="-1"></a><span class="fu">library</span>(PASWR2) <span class="co"># PASWR2 contains data frame BODYFAT</span></span>
-<span id="cb2-2"><a href="r-code-2_19.html#cb2-2" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="r-code-2_19.html#cb2-3" tabindex="-1"></a>BODYFAT<span class="sc">$</span>sex <span class="ot">&lt;-</span> <span class="fu">factor</span>(BODYFAT<span class="sc">$</span>sex, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>))</span>
-<span id="cb2-4"><a href="r-code-2_19.html#cb2-4" tabindex="-1"></a><span class="fu">boxplot</span>(fat <span class="sc">~</span> sex, <span class="at">data =</span> BODYFAT, <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;gray80&quot;</span>, <span class="st">&quot;gray20&quot;</span>), <span class="at">ylab =</span> <span class="st">&quot;Percent Bodyfat&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="r-code-2_19.html#cb8-1" tabindex="-1"></a><span class="fu">library</span>(PASWR2) <span class="co"># PASWR2 contains data frame BODYFAT</span></span>
+<span id="cb8-2"><a href="r-code-2_19.html#cb8-2" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="r-code-2_19.html#cb8-3" tabindex="-1"></a>BODYFAT<span class="sc">$</span>sex <span class="ot">&lt;-</span> <span class="fu">factor</span>(BODYFAT<span class="sc">$</span>sex, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Female&quot;</span>, <span class="st">&quot;Male&quot;</span>))</span>
+<span id="cb8-4"><a href="r-code-2_19.html#cb8-4" tabindex="-1"></a><span class="fu">boxplot</span>(fat <span class="sc">~</span> sex, <span class="at">data =</span> BODYFAT, <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;gray80&quot;</span>, <span class="st">&quot;gray20&quot;</span>), <span class="at">ylab =</span> <span class="st">&quot;Percent Bodyfat&quot;</span>)</span></code></pre></div>
 <!-- ::: {.webex-box} -->
 <!-- **Give instructions here** -->
 <div class="webex-solution">
 <button>
 Show the plot
 </button>
-<p><img src="_main_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 </div>
 <!-- ::: -->
 <hr />
@@ -389,8 +387,8 @@ window.onload = function() {
           </div>
         </div>
       </div>
-<a href="r-code-2_18.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="s2s03-activity.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="example-6.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -443,6 +441,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

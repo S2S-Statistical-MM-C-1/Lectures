@@ -29,7 +29,7 @@
   
   
 <link rel="prev" href="mentimeter-link.html"/>
-
+<link rel="next" href="example-6.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -135,9 +135,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Pre-Lecture 3 Reading</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Pre-Lecture 4 Reading</a></li>
 <li class="chapter" data-level="" data-path="mentimeter-link.html"><a href="mentimeter-link.html"><i class="fa fa-check"></i>Mentimeter Link</a></li>
 <li class="chapter" data-level="" data-path="activity.html"><a href="activity.html"><i class="fa fa-check"></i>Activity</a></li>
+<li class="chapter" data-level="" data-path="example-6.html"><a href="example-6.html"><i class="fa fa-check"></i>Example 6.15</a></li>
+<li class="chapter" data-level="" data-path="example-6.html"><a href="example-6.html#example-6.16"><i class="fa fa-check"></i>Example 6.16</a></li>
 </ul>
 
       </nav>
@@ -160,43 +162,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Consider a population of 146 university students and the variable “how many drinks does it take to get drunk” shown here:</p>
 <p><img src="Images/activity_table.jpg" width="100%" style="display: block; margin: auto;" /></p>
 <ul>
-<li><p>Simulate the sampling distribution of the sample mean as a point estimate of the population mean from a simple random sample of size 10.</p></li>
+<li><p>Simulate the sampling distribution of the sample mean as an estimator of the population mean from a simple random sample of size 10. Use R, either via RStudio on your own device or this <a href="https://www.mycompiler.io/new/r">online console</a>.</p></li>
 <li><p>Estimate the standard error of this point estimate.</p></li>
 </ul>
-<p>In order to estimate the average number of drinks it takes these 146 university students to get drunk:</p>
-<p><strong>Step 1.Take a simple random sample of ten students from the population.</strong></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="activity.html#cb1-1" tabindex="-1"></a><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">146</span>,<span class="dv">10</span>)</span></code></pre></div>
-<p><strong>Step 2. Create a vector of the number of drinks it takes for the students in the sample to get drunk.</strong></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="activity.html#cb2-1" tabindex="-1"></a>values <span class="ot">&lt;-</span> <span class="fu">c</span>( , , , , , , , , , )  <span class="co">#You need to look up values in the table and insert them </span></span></code></pre></div>
-<p><strong>Step 3. Calculate your sample mean</strong></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="activity.html#cb3-1" tabindex="-1"></a><span class="fu">mean</span>(values)</span></code></pre></div>
-<p><strong>Step 4. Submit your point estimate of the population mean via Google Form</strong></p>
-<p><a href="https://forms.gle/pxEqLWkbb2izDHYP6">Google Form</a></p>
-<p><strong>and on Mentimeter</strong></p>
-<p><a href="https://www.menti.com/aljdzfuuo2v9">Mentimeter</a></p>
-<!-- ::: {.webex-box} -->
-<!-- **Give instructions here** -->
-<!-- 
-<div class='webex-solution'><button>Show the plot</button>
- -->
-<!-- ```{r, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE} -->
-<!-- library(MASS) # load MASS package -->
-<!-- opar <- par(no.readonly = TRUE) # read in current parameters -->
-<!-- par(mar=c(0.1, 7.1, 0.1, 0.1)) # more space needed on side 2 -->
-<!-- with(data = Cars93, boxplot(Min.Price, ylim = c(0, 50), -->
-<!--                   ylab = "Minimum Price (in \\$1000)\n for basic version", -->
-<!--                   col = "springgreen3")) -->
-<!-- f <- with(data=Cars93, fivenum(Min.Price)) # store fivenum values in f -->
-<!-- text(x = rep(1.25, 5), y = f, labels=c("Min", expression(H[L]), -->
-<!--                         expression(Q[2]) , expression(H[U]), "Max"), pos=4) -->
-<!-- # fig <- recordPlot() # Save plot in object "fig" -->
-<!-- par(opar) # reset to original parameters -->
-<!-- ``` -->
-<!-- 
-</div>
- -->
-<!-- ::: -->
-<hr />
+<p>** Here are your results...**</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="activity.html#cb1-1" tabindex="-1"></a>S2S03.Activity.Responses <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;S2S03 Activity  (Sample Mean Drinks) (Responses).csv&quot;</span>, <span class="at">row.names=</span><span class="cn">NULL</span>)</span>
+<span id="cb1-2"><a href="activity.html#cb1-2" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="activity.html#cb1-3" tabindex="-1"></a>S2S03.Activity.Responses <span class="ot">&lt;-</span> S2S03.Activity.Responses[,<span class="sc">-</span><span class="dv">1</span>] <span class="co"># Drop the first columen (Google timestamp)</span></span>
+<span id="cb1-4"><a href="activity.html#cb1-4" tabindex="-1"></a>  </span>
+<span id="cb1-5"><a href="activity.html#cb1-5" tabindex="-1"></a><span class="fu">colnames</span>(S2S03.Activity.Responses) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;sample.mean&quot;</span>,<span class="st">&quot;sample.standard.deviation&quot;</span>,<span class="st">&quot;estimate.pop.mean&quot;</span>,<span class="st">&quot;estimate.standard.error.sample.mean&quot;</span>)</span>
+<span id="cb1-6"><a href="activity.html#cb1-6" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="activity.html#cb1-7" tabindex="-1"></a><span class="fu">attach</span>(S2S03.Activity.Responses)</span>
+<span id="cb1-8"><a href="activity.html#cb1-8" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="activity.html#cb1-9" tabindex="-1"></a><span class="fu">hist</span>(sample.mean)</span>
+<span id="cb1-10"><a href="activity.html#cb1-10" tabindex="-1"></a><span class="fu">hist</span>(sample.mean[sample.mean<span class="sc">&lt;</span><span class="dv">10</span>], <span class="at">main=</span><span class="st">&quot;sample.mean (tidied)&quot;</span>)</span>
+<span id="cb1-11"><a href="activity.html#cb1-11" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="activity.html#cb1-12" tabindex="-1"></a><span class="fu">hist</span>(sample.standard.deviation)</span>
+<span id="cb1-13"><a href="activity.html#cb1-13" tabindex="-1"></a><span class="fu">hist</span>(sample.standard.deviation[sample.standard.deviation<span class="sc">&lt;</span><span class="dv">10</span>],<span class="at">main=</span><span class="st">&quot;sample.standard.deviation (tidied)&quot;</span>)</span>
+<span id="cb1-14"><a href="activity.html#cb1-14" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="activity.html#cb1-15" tabindex="-1"></a><span class="fu">plot</span>(sample.mean,estimate.pop.mean)</span>
+<span id="cb1-16"><a href="activity.html#cb1-16" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">a=</span><span class="dv">0</span>,<span class="at">b=</span><span class="dv">1</span>)</span>
+<span id="cb1-17"><a href="activity.html#cb1-17" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="activity.html#cb1-18" tabindex="-1"></a><span class="fu">hist</span>(estimate.standard.error.sample.mean)</span>
+<span id="cb1-19"><a href="activity.html#cb1-19" tabindex="-1"></a><span class="fu">hist</span>(estimate.standard.error.sample.mean[estimate.standard.error.sample.mean<span class="sc">&lt;</span><span class="dv">4</span>],<span class="at">main=</span><span class="st">&quot;estimate.standard.error.sample.mean (tidied)&quot;</span>)</span></code></pre></div>
 
 </div>
 <script>
@@ -410,8 +398,8 @@ window.onload = function() {
           </div>
         </div>
       </div>
-<a href="mentimeter-link.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="mentimeter-link.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="example-6.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -464,6 +452,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
