@@ -1,0 +1,29 @@
+# R Code 2_19 {-}
+
+```{r 2.19}
+library(PASWR2) # PASWR2 contains data frame BODYFAT
+
+BODYFAT$sex <- factor(BODYFAT$sex, labels = c("Female", "Male"))
+boxplot(fat ~ sex, data = BODYFAT, col = c("gray80", "gray20"), ylab = "Percent Bodyfat")
+```
+
+
+<!-- ::: {.webex-box} -->
+
+<!-- **Give instructions here** -->
+
+`r hide("Show the plot")`
+```{r, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE}
+library(PASWR2) # PASWR2 contains dataframe BODYFAT
+
+BODYFAT$sex <- factor(BODYFAT$sex, labels = c("Female", "Male"))
+boxplot(fat ~ sex, data = BODYFAT, col = c("gray80", "gray20"), ylab = "Percent Bodyfat")
+
+```
+`r unhide()`
+
+<!-- ::: -->
+
+---
+
+[R Code 2.19](https://read.kortext.com/reader/pdf/92741/129) from *Probability and Statistics with R, Ugarte et al. (2016)*.

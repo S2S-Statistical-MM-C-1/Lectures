@@ -1,0 +1,21 @@
+--- 
+title: ""
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+link-citations: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, eval=FALSE, comment=NA)
+library(knitr)
+library(webexercises)
+```
+
+# Pre-Lecture 6 Reading {-}
+
+**Before** the lecture you should read: 
+
+* [6.6.2 t-Distribution](https://read.kortext.com/reader/pdf/92741/394)	
+
+* [6.6.3 The F Distribution](https://read.kortext.com/reader/pdf/92741/397)
