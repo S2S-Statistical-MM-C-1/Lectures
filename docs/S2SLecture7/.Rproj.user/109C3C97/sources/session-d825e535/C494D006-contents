@@ -1,0 +1,26 @@
+# Example page 399 {-}
+
+```{r, eval=TRUE, echo=FALSE, fig.align='center', out.width='100%'}
+include_graphics("Images/Example_6_25_b.jpg")
+```
+
+Use R, either via RStudio on your own device or this [online console](https://www.mycompiler.io/new/r), to show this relationship holds between RVs with  t(5) and F(1,5) distributions
+
+
+
+```{r}
+
+
+```
+
+
+`r hide("Show the solution")`
+```{r, echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
+qt(0.975, 5)^2
+
+qf(0.95, 1, 5)
+
+# See lecture slides or textbook for full solutions
+
+```
+`r unhide()`

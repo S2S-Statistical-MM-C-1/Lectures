@@ -1,0 +1,23 @@
+--- 
+title: ""
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+link-citations: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, eval=FALSE, comment=NA)
+library(knitr)
+library(webexercises)
+```
+
+# Pre-Lecture 7 Reading {-}
+
+**Before** the lecture you should read: 
+
+* [7.1 Introduction](https://read.kortext.com/reader/pdf/92741/405)	
+* [7.2 Properties of Point Estimators](https://read.kortext.com/reader/pdf/92741/405)	
+  + [7.2.1 Mean Square Error](https://read.kortext.com/reader/pdf/92741/405)	
+  + [7.2.2 Unbiased Estimators](https://read.kortext.com/reader/pdf/92741/406)	
+  + [7.2.3 Efficiency](https://read.kortext.com/reader/pdf/92741/409)	
