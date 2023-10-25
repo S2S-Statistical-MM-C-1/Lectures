@@ -33,5 +33,7 @@ pchisq(260, 220, lower = FALSE)
 # Part d)
 qchisq(0.6, 100)
 
+# See lecture slides or textbook for full solutions
+
 ```
 `r unhide()`
