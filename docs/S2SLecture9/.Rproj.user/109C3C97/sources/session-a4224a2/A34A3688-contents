@@ -1,0 +1,20 @@
+--- 
+title: ""
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+link-citations: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, eval=FALSE, comment=NA)
+library(knitr)
+library(webexercises)
+```
+
+# Pre-Lecture 9 Reading {-}
+
+**Before** the lecture you should read: 
+
+
+* [7.3.2 Likelihood and Maximum Likelihood Estimators](https://read.kortext.com/reader/pdf/92741/419)	
