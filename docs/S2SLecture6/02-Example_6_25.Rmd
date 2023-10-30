@@ -1,37 +1,27 @@
-# Example 6-23 {-}
+# Example 6-25 {-}
 
 ```{r, eval=TRUE, echo=FALSE, fig.align='center', out.width='100%'}
-include_graphics("Images/Example_6_23.jpg")
+include_graphics("Images/Example_6_25.jpg")
 ```
 
 Use R, either via RStudio on your own device or this [online console](https://www.mycompiler.io/new/r).
-
-Enter your answers in [this Google form](https://forms.gle/AGRscz2SQoxKrz467).
 
 
 ```{r}
 # These functions may be useful (you need to replace the _ with numerical expressions)
 
-pchisq(_,_)
+pf(_,_)
   
-qchisq(_,_)
+qf(_,_)
   
 ```
 
 
 `r hide("Show the solution")`
 ```{r, echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
-# Part a) 
-1 - pchisq(126, 150)
+pf(2.53, 19, 19)
 
-# Part b) 
-pchisq(50, 65) - pchisq(40, 65)
-
-# Part c)
-pchisq(260, 220, lower = FALSE)
-
-# Part d)
-qchisq(0.6, 100)
+pf(0.40, 19, 19)
 
 # See lecture slides or textbook for full solutions
 
