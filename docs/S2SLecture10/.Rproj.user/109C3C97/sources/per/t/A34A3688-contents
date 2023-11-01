@@ -1,0 +1,23 @@
+--- 
+title: ""
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+link-citations: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, eval=FALSE, comment=NA)
+library(knitr)
+library(webexercises)
+```
+
+# Pre-Lecture 10 Reading {-}
+
+**Before** the lecture you should read: 
+
+* [7.3.2.1 Fisher Information](https://read.kortext.com/reader/pdf/92741/431)	
+<!-- * [7.3.2.2 Fisher Information for Several Parameters](https://read.kortext.com/reader/pdf/92741/433)	 -->
+* [7.3.2.3 Properties of Maximum Likelihood Estimators](https://read.kortext.com/reader/pdf/92741/435)	
+
+**NOT Covering 7.3.2.2, 7.3.2.4 or 7.3.2.5**
