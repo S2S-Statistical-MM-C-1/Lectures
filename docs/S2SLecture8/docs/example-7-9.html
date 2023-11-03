@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Pre-Lecture 8 Reading | _main.knit</title>
+  <title>Example 7-9 | _main.knit</title>
   <meta name="description" content="" />
   <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Pre-Lecture 8 Reading | _main.knit" />
+  <meta property="og:title" content="Example 7-9 | _main.knit" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Pre-Lecture 8 Reading | _main.knit" />
+  <meta name="twitter:title" content="Example 7-9 | _main.knit" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="mentimeter-link.html"/>
 
-<link rel="next" href="mentimeter-link.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -155,23 +155,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<!--bookdown:title:end-->
-<!--bookdown:title:start-->
-<div id="pre-lecture-8-reading" class="section level1 unnumbered hasAnchor">
-<h1>Pre-Lecture 8 Reading<a href="index.html#pre-lecture-8-reading" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p><strong>Before</strong> the lecture you should read:</p>
-<ul>
-<li><ul>
-<li><a href="https://read.kortext.com/reader/pdf/92741/414">7.2.4 Consistent Estimators</a><br />
-</li>
-<li><a href="https://read.kortext.com/reader/pdf/92741/415">7.2.5 Robust Estimators</a><br />
-</li>
-</ul></li>
-<li><a href="https://read.kortext.com/reader/pdf/92741/416">7.3 Point Estimation Techniques</a>
-<ul>
-<li><a href="https://read.kortext.com/reader/pdf/92741/417">7.3.1 Method of Moments Estimators</a></li>
-</ul></li>
-</ul>
+<div id="example-7-9" class="section level1 unnumbered hasAnchor">
+<h1>Example 7-9<a href="example-7-9.html#example-7-9" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><img src="Images/Example_7_9.jpg" width="100%" style="display: block; margin: auto;" /></p>
+<p>Use R, either via RStudio on your own device or this <a href="https://www.mycompiler.io/new/r">online console</a>.</p>
+<p>Enter your answers in <a href="https://forms.gle/dMUaW2k8UxpEt4896">this Google form</a>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="example-7-9.html#cb1-1" tabindex="-1"></a><span class="co"># This code may be useful (you need to replace the _ with numerical expressions and may need to copy and modify some code)</span></span>
+<span id="cb1-2"><a href="example-7-9.html#cb1-2" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="example-7-9.html#cb1-3" tabindex="-1"></a>stem1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.7</span>, <span class="fl">2.8</span>, <span class="fl">3.2</span>, <span class="fl">3.4</span>, <span class="fl">5.3</span>, <span class="fl">5.9</span>, <span class="fl">6.2</span>, <span class="fl">7.2</span>, <span class="fl">8.3</span>, <span class="fl">9.3</span>)</span>
+<span id="cb1-4"><a href="example-7-9.html#cb1-4" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="example-7-9.html#cb1-5" tabindex="-1"></a><span class="fu">mean</span>(_)</span>
+<span id="cb1-6"><a href="example-7-9.html#cb1-6" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="example-7-9.html#cb1-7" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="fu">var</span>(_))</span>
+<span id="cb1-8"><a href="example-7-9.html#cb1-8" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="example-7-9.html#cb1-9" tabindex="-1"></a><span class="fu">median</span>(_)</span>
+<span id="cb1-10"><a href="example-7-9.html#cb1-10" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="example-7-9.html#cb1-11" tabindex="-1"></a><span class="fu">mad</span>(_, <span class="at">constant =</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="webex-solution">
+<button>
+Show the solution
+</button>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="example-7-9.html#cb2-1" tabindex="-1"></a><span class="co"># Create two samples (original and with error) </span></span>
+<span id="cb2-2"><a href="example-7-9.html#cb2-2" tabindex="-1"></a>stem1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.7</span>, <span class="fl">2.8</span>, <span class="fl">3.2</span>, <span class="fl">3.4</span>, <span class="fl">5.3</span>, <span class="fl">5.9</span>, <span class="fl">6.2</span>, <span class="fl">7.2</span>, <span class="fl">8.3</span>, <span class="fl">9.3</span>)</span>
+<span id="cb2-3"><a href="example-7-9.html#cb2-3" tabindex="-1"></a>stem2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">1.7</span>, <span class="fl">2.8</span>, <span class="fl">3.2</span>, <span class="fl">3.4</span>, <span class="fl">5.3</span>, <span class="fl">5.9</span>, <span class="fl">6.2</span>, <span class="fl">7.2</span>, <span class="dv">83</span>, <span class="fl">9.3</span>)</span>
+<span id="cb2-4"><a href="example-7-9.html#cb2-4" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="example-7-9.html#cb2-5" tabindex="-1"></a><span class="co"># Sample mean and sample variance of original sample</span></span>
+<span id="cb2-6"><a href="example-7-9.html#cb2-6" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">mean</span>(stem1), <span class="fu">sqrt</span>(<span class="fu">var</span>(stem1)))</span></code></pre></div>
+<pre><code>[1] 5.330000 2.516634</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="example-7-9.html#cb4-1" tabindex="-1"></a><span class="co"># Sample mean and sample variance of sample with error</span></span>
+<span id="cb4-2"><a href="example-7-9.html#cb4-2" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">mean</span>(stem2), <span class="fu">sqrt</span>(<span class="fu">var</span>(stem2)))</span></code></pre></div>
+<pre><code>[1] 12.80000 24.77185</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="example-7-9.html#cb6-1" tabindex="-1"></a><span class="co"># Sample median and sample MAD of original sample</span></span>
+<span id="cb6-2"><a href="example-7-9.html#cb6-2" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">median</span>(stem1), <span class="fu">mad</span>(stem1, <span class="at">constant =</span> <span class="dv">1</span>))</span></code></pre></div>
+<pre><code>[1] 5.6 2.3</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="example-7-9.html#cb8-1" tabindex="-1"></a><span class="co"># Sample median and sample MAD of sample with error</span></span>
+<span id="cb8-2"><a href="example-7-9.html#cb8-2" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="example-7-9.html#cb8-3" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">median</span>(stem2), <span class="fu">mad</span>(stem2, <span class="at">constant =</span> <span class="dv">1</span>))</span></code></pre></div>
+<pre><code>[1] 5.6 2.3</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="example-7-9.html#cb10-1" tabindex="-1"></a><span class="co"># See lecture slides or textbook for full solutions</span></span></code></pre></div>
+</div>
 
 </div>
 <script>
@@ -385,8 +407,8 @@ window.onload = function() {
           </div>
         </div>
       </div>
+<a href="mentimeter-link.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="mentimeter-link.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

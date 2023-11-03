@@ -135,7 +135,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Pre-Lecture 6 Reading</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Pre-Lecture 8 Reading</a></li>
 <li class="chapter" data-level="" data-path="mentimeter-link.html"><a href="mentimeter-link.html"><i class="fa fa-check"></i>Mentimeter Link</a></li>
 <li class="chapter" data-level="" data-path="example-6-17.html"><a href="example-6-17.html"><i class="fa fa-check"></i>Example 6-17</a></li>
 </ul>
@@ -157,20 +157,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="example-6-17" class="section level1 unnumbered hasAnchor">
 <h1>Example 6-17<a href="example-6-17.html#example-6-17" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p><img src="Images/Example_6_23.jpg" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="Images/Example_7_9.jpg" width="100%" style="display: block; margin: auto;" /></p>
 <p>Use R, either via RStudio on your own device or this <a href="https://www.mycompiler.io/new/r">online console</a>.</p>
+<p>Enter your answers in <a href="https://forms.gle/AGRscz2SQoxKrz467">this Google form</a>.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="example-6-17.html#cb1-1" tabindex="-1"></a><span class="co"># These functions may be useful (you need to replace the _ with numerical expressions)</span></span>
 <span id="cb1-2"><a href="example-6-17.html#cb1-2" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="example-6-17.html#cb1-3" tabindex="-1"></a><span class="fu">pt</span>(_,_)</span>
+<span id="cb1-3"><a href="example-6-17.html#cb1-3" tabindex="-1"></a><span class="fu">pchisq</span>(_,_)</span>
 <span id="cb1-4"><a href="example-6-17.html#cb1-4" tabindex="-1"></a>  </span>
-<span id="cb1-5"><a href="example-6-17.html#cb1-5" tabindex="-1"></a><span class="fu">qt</span>(_,_)</span></code></pre></div>
+<span id="cb1-5"><a href="example-6-17.html#cb1-5" tabindex="-1"></a><span class="fu">qchisq</span>(_,_)</span></code></pre></div>
 <div class="webex-solution">
 <button>
 Show the solution
 </button>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="example-6-17.html#cb2-1" tabindex="-1"></a><span class="fu">pt</span>(<span class="dv">2</span>, <span class="dv">4</span>) <span class="sc">-</span> <span class="fu">pt</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="dv">4</span>)</span></code></pre></div>
-<pre><code>[1] 0.8838835</code></pre>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="example-6-17.html#cb4-1" tabindex="-1"></a><span class="co"># See lecture slides or textbook for full solutions</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="example-6-17.html#cb2-1" tabindex="-1"></a><span class="co"># Part a) </span></span>
+<span id="cb2-2"><a href="example-6-17.html#cb2-2" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pchisq</span>(<span class="dv">126</span>, <span class="dv">150</span>)</span></code></pre></div>
+<pre><code>[1] 0.9233931</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="example-6-17.html#cb4-1" tabindex="-1"></a><span class="co"># Part b) </span></span>
+<span id="cb4-2"><a href="example-6-17.html#cb4-2" tabindex="-1"></a><span class="fu">pchisq</span>(<span class="dv">50</span>, <span class="dv">65</span>) <span class="sc">-</span> <span class="fu">pchisq</span>(<span class="dv">40</span>, <span class="dv">65</span>)</span></code></pre></div>
+<pre><code>[1] 0.07861696</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="example-6-17.html#cb6-1" tabindex="-1"></a><span class="co"># Part c)</span></span>
+<span id="cb6-2"><a href="example-6-17.html#cb6-2" tabindex="-1"></a><span class="fu">pchisq</span>(<span class="dv">260</span>, <span class="dv">220</span>, <span class="at">lower =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<pre><code>[1] 0.03335803</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="example-6-17.html#cb8-1" tabindex="-1"></a><span class="co"># Part d)</span></span>
+<span id="cb8-2"><a href="example-6-17.html#cb8-2" tabindex="-1"></a><span class="fu">qchisq</span>(<span class="fl">0.6</span>, <span class="dv">100</span>)</span></code></pre></div>
+<pre><code>[1] 102.9459</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="example-6-17.html#cb10-1" tabindex="-1"></a><span class="co"># See lecture slides or textbook for full solutions</span></span></code></pre></div>
 </div>
 
 </div>
