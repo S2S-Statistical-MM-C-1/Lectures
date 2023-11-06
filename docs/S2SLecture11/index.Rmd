@@ -1,0 +1,25 @@
+--- 
+title: ""
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+link-citations: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, eval=FALSE, comment=NA)
+library(knitr)
+library(webexercises)
+```
+
+# Pre-Lecture 11 Reading {-}
+
+**Before** the lecture you should read: 
+
+* [8.1 Introduction](https://read.kortext.com/reader/pdf/92741/453)	
+* [8.2 Confidence Intervals for Population Means](https://read.kortext.com/reader/pdf/92741/454)	
+
+   + [8.2.1 Confidence Interval for the Population Mean When Sampling from a Normal Distribution with Known Population Variance](https://read.kortext.com/reader/pdf/92741/454)	
+       - [8.2.1.1 Determining Required Sample Size ](https://read.kortext.com/reader/pdf/92741/460)	
+   + [8.2.2 Confidence Interval for the Population Mean When Sampling from a Normal Distribution with Unknown Population Variance](https://read.kortext.com/reader/pdf/92741/464)	
+
