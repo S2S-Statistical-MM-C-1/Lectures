@@ -8,7 +8,10 @@ Use R, either via RStudio on your own device or this [online console](https://ww
 
 
 ```{r}
-# These functions may be useful
+# These functions and data may be useful
+
+library(PASWR2)
+HOUSE$price
 
 qqnorm()
 qqline()
