@@ -10,6 +10,9 @@ Use R, either via RStudio on your own device or this [online console](https://ww
 ```{r}
 # These functions may be useful
 
+qqnorm()
+qqline()
+
 # First approach
 mean()
 sd()
@@ -23,6 +26,10 @@ t.test()
 `r hide("Solution")`
 ```{r, echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
 library(PASWR2)
+
+qqnorm(HOUSE$price)
+qqline(HOUSE$price)
+
 xbar <- mean(HOUSE$price)
 CT <- qt(0.975, 13) # critical t value
 ST <- sd(HOUSE$price) # standard deviation

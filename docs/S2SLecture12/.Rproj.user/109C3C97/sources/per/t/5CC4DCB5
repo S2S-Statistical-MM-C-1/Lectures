@@ -3,7 +3,7 @@
     "path": "C:/Users/mtb3f/OneDrive - University of Glasgow/Stats Level 2/2023_24 S2S and S2Y/S2S Statistical MM&C 1/Lectures/S2SLecture12/02-Example_8_08.Rmd",
     "project_path": "02-Example_8_08.Rmd",
     "type": "r_markdown",
-    "hash": "3809431876",
+    "hash": "3933660335",
     "contents": "",
     "dirty": false,
     "created": 1699795698795.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "33,48",
-        "scrollLine": "14"
+        "cursorPosition": "13,7",
+        "scrollLine": "8"
     },
     "folds": "",
-    "lastKnownWriteTime": 1699795996,
+    "lastKnownWriteTime": 1699951170,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1699795996257,
+    "last_content_update": 1699951170551,
     "read_only": false,
     "read_only_alternatives": []
 }
