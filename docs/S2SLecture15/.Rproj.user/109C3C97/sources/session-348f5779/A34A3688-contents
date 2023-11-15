@@ -1,0 +1,22 @@
+--- 
+title: ""
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+link-citations: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, eval=FALSE, comment=NA)
+library(knitr)
+library(webexercises)
+```
+
+# Pre-Lecture 15 Reading {-}
+
+**Before** the lecture you should read: 
+
+* [8.4.2 Confidence Interval for a Difference in Population Proportions](https://read.kortext.com/reader/pdf/92741/506)	
+
+
+

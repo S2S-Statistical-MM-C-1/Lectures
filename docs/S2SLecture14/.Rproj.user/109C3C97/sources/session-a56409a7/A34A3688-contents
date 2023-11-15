@@ -1,0 +1,25 @@
+--- 
+title: ""
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+link-citations: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, eval=FALSE, comment=NA)
+library(knitr)
+library(webexercises)
+```
+
+# Pre-Lecture 14 Reading {-}
+
+**Before** the lecture you should read: 
+
+* [8.4 Confidence Intervals Based on Large Samples](https://read.kortext.com/reader/pdf/92741/490)	
+
+   + [8.4.1 Confidence Interval for the Population Proportion (Asymptotic Confidence Interval)](https://read.kortext.com/reader/pdf/92741/491)	
+
+       - [8.4.1.1 Score/Wilson Confidence Interval](https://read.kortext.com/reader/pdf/92741/496)	
+
+

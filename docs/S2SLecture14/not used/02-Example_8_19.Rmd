@@ -1,0 +1,68 @@
+# Example 8-19 {-}
+
+```{r, eval=TRUE, echo=FALSE, fig.align='center', out.width='100%'}
+include_graphics("Images/Example_8_19.jpg")
+```
+
+Use R, either via RStudio on your own device or this [online console](https://www.mycompiler.io/new/r).
+
+
+```{r}
+# These functions may be useful
+
+library(lattice)
+names(barley)
+
+qqnorm()
+qqline()
+
+mean()
+sd()
+var()
+qt() 
+qchisq()
+
+```
+
+
+`r hide("Solution")`
+```{r, echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
+library(lattice)
+BarleyYield1932 <- barley$yield[barley$year=="1932"]
+  
+#Same result as...
+#BarleyYield1932 <- subset(barley, select = yield, subset = year == "1932", drop = TRUE)
+
+# To check normality of the sample...
+
+qqnorm(BarleyYield1932)
+qqline(BarleyYield1932)
+
+#(a) Construct a 95% confidence interval for μ, the mean barley yield in 1932.
+
+n <- sum(!is.na(BarleyYield1932))  #Count of the number of non-missing values, i.e. NOT "NA" values
+xbar <- mean(BarleyYield1932)
+xsd <- sd(BarleyYield1932)
+CT <- qt(0.975, n - 1)
+
+xbar + c(-1, 1) * CT * xsd/sqrt(n)   # Eqn 8.10
+
+# To construct the confidence interval directly with R:
+
+t.test(BarleyYield1932, conf.level = 0.95)$conf
+
+# (b) Construct a 95% confidence interval for (2, the variance of barley yield in 1932.
+
+s2 <- var(BarleyYield1932)
+lchi <- qchisq(0.025, n - 1)
+uchi <- qchisq(0.975, n - 1)
+c(s2, lchi, uchi)
+
+ll <- (n - 1) * s2/uchi    # Eqn 8.26
+ul <- (n - 1) * s2/lchi    # Eqn 8.26
+CI <- c(ll, ul)
+CI
+
+# For full solutions see textbook/lecture slides
+```
+`r unhide()`
