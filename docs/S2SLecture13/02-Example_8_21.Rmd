@@ -1,0 +1,69 @@
+# Example 8-21 {-}
+
+```{r, eval=TRUE, echo=FALSE, fig.align='center', out.width='100%'}
+include_graphics("Images/Example_8_21.jpg")
+```
+
+Use R, either via RStudio on your own device or this [online console](https://www.mycompiler.io/new/r).
+
+
+```{r}
+# These functions may be useful
+
+library(PASWR2)
+names(APPLE)
+
+qqnorm()
+qqline()
+
+var()
+qf()
+```
+
+
+`r hide("Solution")`
+```{r, echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
+library(PASWR2)
+names(APPLE)
+
+hardness.fresh <- APPLE$hardness[APPLE$location=="fresh"]
+hardness.warehouse <- APPLE$hardness[APPLE$location=="warehouse"]
+
+# To check normality of the sample...
+
+qqnorm(hardness.fresh)
+qqline(hardness.fresh)
+
+qqnorm(hardness.warehouse)
+qqline(hardness.warehouse)
+
+# Construct a 95% confidence interval for the ratio of the variances.
+
+VAR <- c(var(hardness.fresh),var(hardness.warehouse))
+VAR
+# Same result as... 
+# VAR <- tapply(APPLE$hardness, APPLE$location, var)
+
+RVAR <- VAR[2]/VAR[1] #Ratio of larger variance to smaller variance
+names(RVAR) <- NULL
+
+lf <- qf(0.025, 16, 16) # lower f value
+uf <- qf(0.975, 16, 16) # upper f value
+c(lf, uf, RVAR)
+
+lep <- lf*RVAR # lower CI end point from Eqn 8.31
+uep <- uf*RVAR # upper CI end point from Eqn 8.31
+CI <- c(lep, uep)
+CI
+
+# using var.test()
+levels(APPLE$location) # show default levels of location
+APPLE$location <- factor(APPLE$location, levels = c("warehouse", "fresh")) 
+#Reverses the order so the maximum variance appears first
+levels(APPLE$location) # changed levels of location
+
+var.test(hardness ~ location, data = APPLE)$conf
+  
+# For full solutions see textbook/lecture slides
+```
+`r unhide()`
