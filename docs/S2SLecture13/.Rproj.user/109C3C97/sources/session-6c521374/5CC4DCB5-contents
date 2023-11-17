@@ -1,0 +1,35 @@
+# Example 8-8 {-}
+
+```{r, eval=TRUE, echo=FALSE, fig.align='center', out.width='100%'}
+include_graphics("Images/Example_8_08.jpg")
+```
+
+Use R, either via RStudio on your own device or this [online console](https://www.mycompiler.io/new/r).
+
+
+```{r}
+# These functions may be useful
+
+# First approach
+mean()
+sd()
+qt() 
+
+# Second approach
+t.test()
+```
+
+
+`r hide("Solution")`
+```{r, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE}
+library(PASWR2)
+xbar <- mean(HOUSE$price)
+CT <- qt(0.975, 13) # critical t value
+ST <- sd(HOUSE$price) # standard deviation
+xbar + c(-1, 1) * CT * ST/sqrt(14)
+
+# Second approach
+t.test(HOUSE$price, conf.level = 0.95)$conf
+
+```
+`r unhide()`

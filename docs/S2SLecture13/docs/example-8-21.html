@@ -160,66 +160,69 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1>Example 8-21<a href="example-8-21.html#example-8-21" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p><img src="Images/Example_8_21.jpg" width="100%" style="display: block; margin: auto;" /></p>
 <p>Use R, either via RStudio on your own device or this <a href="https://www.mycompiler.io/new/r">online console</a>.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="example-8-21.html#cb12-1" tabindex="-1"></a><span class="co"># These functions may be useful</span></span>
-<span id="cb12-2"><a href="example-8-21.html#cb12-2" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="example-8-21.html#cb12-3" tabindex="-1"></a><span class="fu">library</span>(PASWR2)</span>
-<span id="cb12-4"><a href="example-8-21.html#cb12-4" tabindex="-1"></a><span class="fu">names</span>(APPLE)</span>
-<span id="cb12-5"><a href="example-8-21.html#cb12-5" tabindex="-1"></a></span>
-<span id="cb12-6"><a href="example-8-21.html#cb12-6" tabindex="-1"></a><span class="fu">qqnorm</span>()</span>
-<span id="cb12-7"><a href="example-8-21.html#cb12-7" tabindex="-1"></a><span class="fu">qqline</span>()</span>
-<span id="cb12-8"><a href="example-8-21.html#cb12-8" tabindex="-1"></a></span>
-<span id="cb12-9"><a href="example-8-21.html#cb12-9" tabindex="-1"></a><span class="fu">var</span>()</span>
-<span id="cb12-10"><a href="example-8-21.html#cb12-10" tabindex="-1"></a><span class="fu">qf</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="example-8-21.html#cb14-1" tabindex="-1"></a><span class="co"># These functions may be useful</span></span>
+<span id="cb14-2"><a href="example-8-21.html#cb14-2" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="example-8-21.html#cb14-3" tabindex="-1"></a><span class="fu">library</span>(PASWR2) <span class="co">#Package containing the data</span></span>
+<span id="cb14-4"><a href="example-8-21.html#cb14-4" tabindex="-1"></a><span class="fu">names</span>(APPLE) <span class="co">#To see what variables are in the data frame and their type</span></span>
+<span id="cb14-5"><a href="example-8-21.html#cb14-5" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="example-8-21.html#cb14-6" tabindex="-1"></a>hardness.fresh <span class="ot">&lt;-</span> APPLE<span class="sc">$</span>hardness[APPLE<span class="sc">$</span>location<span class="sc">==</span><span class="st">&quot;fresh&quot;</span>]</span>
+<span id="cb14-7"><a href="example-8-21.html#cb14-7" tabindex="-1"></a>hardness.warehouse <span class="ot">&lt;-</span> APPLE<span class="sc">$</span>hardness[APPLE<span class="sc">$</span>location<span class="sc">==</span><span class="st">&quot;warehouse&quot;</span>]</span>
+<span id="cb14-8"><a href="example-8-21.html#cb14-8" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="example-8-21.html#cb14-9" tabindex="-1"></a><span class="fu">qqnorm</span>()</span>
+<span id="cb14-10"><a href="example-8-21.html#cb14-10" tabindex="-1"></a><span class="fu">qqline</span>()</span>
+<span id="cb14-11"><a href="example-8-21.html#cb14-11" tabindex="-1"></a></span>
+<span id="cb14-12"><a href="example-8-21.html#cb14-12" tabindex="-1"></a><span class="fu">var</span>()</span>
+<span id="cb14-13"><a href="example-8-21.html#cb14-13" tabindex="-1"></a><span class="fu">qf</span>()</span></code></pre></div>
 <div class="webex-solution">
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="example-8-21.html#cb13-1" tabindex="-1"></a><span class="fu">library</span>(PASWR2)</span>
-<span id="cb13-2"><a href="example-8-21.html#cb13-2" tabindex="-1"></a><span class="fu">names</span>(APPLE)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="example-8-21.html#cb15-1" tabindex="-1"></a><span class="fu">library</span>(PASWR2) <span class="co">#Package containing the data</span></span>
+<span id="cb15-2"><a href="example-8-21.html#cb15-2" tabindex="-1"></a><span class="fu">names</span>(APPLE) <span class="co">#To see what variables are in the data frame and their type</span></span></code></pre></div>
 <pre><code>[1] &quot;hardness&quot; &quot;location&quot;</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="example-8-21.html#cb15-1" tabindex="-1"></a>hardness.fresh <span class="ot">&lt;-</span> APPLE<span class="sc">$</span>hardness[APPLE<span class="sc">$</span>location<span class="sc">==</span><span class="st">&quot;fresh&quot;</span>]</span>
-<span id="cb15-2"><a href="example-8-21.html#cb15-2" tabindex="-1"></a>hardness.warehouse <span class="ot">&lt;-</span> APPLE<span class="sc">$</span>hardness[APPLE<span class="sc">$</span>location<span class="sc">==</span><span class="st">&quot;warehouse&quot;</span>]</span>
-<span id="cb15-3"><a href="example-8-21.html#cb15-3" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="example-8-21.html#cb15-4" tabindex="-1"></a><span class="co"># To check normality of the sample...</span></span>
-<span id="cb15-5"><a href="example-8-21.html#cb15-5" tabindex="-1"></a></span>
-<span id="cb15-6"><a href="example-8-21.html#cb15-6" tabindex="-1"></a><span class="fu">qqnorm</span>(hardness.fresh)</span>
-<span id="cb15-7"><a href="example-8-21.html#cb15-7" tabindex="-1"></a><span class="fu">qqline</span>(hardness.fresh)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="example-8-21.html#cb17-1" tabindex="-1"></a>hardness.fresh <span class="ot">&lt;-</span> APPLE<span class="sc">$</span>hardness[APPLE<span class="sc">$</span>location<span class="sc">==</span><span class="st">&quot;fresh&quot;</span>]</span>
+<span id="cb17-2"><a href="example-8-21.html#cb17-2" tabindex="-1"></a>hardness.warehouse <span class="ot">&lt;-</span> APPLE<span class="sc">$</span>hardness[APPLE<span class="sc">$</span>location<span class="sc">==</span><span class="st">&quot;warehouse&quot;</span>]</span>
+<span id="cb17-3"><a href="example-8-21.html#cb17-3" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="example-8-21.html#cb17-4" tabindex="-1"></a><span class="co"># To check normality of the sample...</span></span>
+<span id="cb17-5"><a href="example-8-21.html#cb17-5" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="example-8-21.html#cb17-6" tabindex="-1"></a><span class="fu">qqnorm</span>(hardness.fresh)</span>
+<span id="cb17-7"><a href="example-8-21.html#cb17-7" tabindex="-1"></a><span class="fu">qqline</span>(hardness.fresh)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="example-8-21.html#cb16-1" tabindex="-1"></a><span class="fu">qqnorm</span>(hardness.warehouse)</span>
-<span id="cb16-2"><a href="example-8-21.html#cb16-2" tabindex="-1"></a><span class="fu">qqline</span>(hardness.warehouse)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="example-8-21.html#cb18-1" tabindex="-1"></a><span class="fu">qqnorm</span>(hardness.warehouse)</span>
+<span id="cb18-2"><a href="example-8-21.html#cb18-2" tabindex="-1"></a><span class="fu">qqline</span>(hardness.warehouse)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-10-2.png" width="672" /></p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="example-8-21.html#cb17-1" tabindex="-1"></a><span class="co"># Construct a 95% confidence interval for the ratio of the variances.</span></span>
-<span id="cb17-2"><a href="example-8-21.html#cb17-2" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="example-8-21.html#cb17-3" tabindex="-1"></a>VAR <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">var</span>(hardness.fresh),<span class="fu">var</span>(hardness.warehouse))</span>
-<span id="cb17-4"><a href="example-8-21.html#cb17-4" tabindex="-1"></a>VAR</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="example-8-21.html#cb19-1" tabindex="-1"></a><span class="co"># Construct a 95% confidence interval for the ratio of the variances.</span></span>
+<span id="cb19-2"><a href="example-8-21.html#cb19-2" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="example-8-21.html#cb19-3" tabindex="-1"></a>VAR <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">var</span>(hardness.fresh),<span class="fu">var</span>(hardness.warehouse))</span>
+<span id="cb19-4"><a href="example-8-21.html#cb19-4" tabindex="-1"></a>VAR</span></code></pre></div>
 <pre><code>[1] 1.510438 1.790951</code></pre>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="example-8-21.html#cb19-1" tabindex="-1"></a><span class="co"># Same result as... </span></span>
-<span id="cb19-2"><a href="example-8-21.html#cb19-2" tabindex="-1"></a><span class="co"># VAR &lt;- tapply(APPLE$hardness, APPLE$location, var)</span></span>
-<span id="cb19-3"><a href="example-8-21.html#cb19-3" tabindex="-1"></a></span>
-<span id="cb19-4"><a href="example-8-21.html#cb19-4" tabindex="-1"></a>RVAR <span class="ot">&lt;-</span> VAR[<span class="dv">2</span>]<span class="sc">/</span>VAR[<span class="dv">1</span>] <span class="co">#Ratio of larger variance to smaller variance</span></span>
-<span id="cb19-5"><a href="example-8-21.html#cb19-5" tabindex="-1"></a><span class="fu">names</span>(RVAR) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
-<span id="cb19-6"><a href="example-8-21.html#cb19-6" tabindex="-1"></a></span>
-<span id="cb19-7"><a href="example-8-21.html#cb19-7" tabindex="-1"></a>lf <span class="ot">&lt;-</span> <span class="fu">qf</span>(<span class="fl">0.025</span>, <span class="dv">16</span>, <span class="dv">16</span>) <span class="co"># lower f value</span></span>
-<span id="cb19-8"><a href="example-8-21.html#cb19-8" tabindex="-1"></a>uf <span class="ot">&lt;-</span> <span class="fu">qf</span>(<span class="fl">0.975</span>, <span class="dv">16</span>, <span class="dv">16</span>) <span class="co"># upper f value</span></span>
-<span id="cb19-9"><a href="example-8-21.html#cb19-9" tabindex="-1"></a><span class="fu">c</span>(lf, uf, RVAR)</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="example-8-21.html#cb21-1" tabindex="-1"></a><span class="co"># Same result as... </span></span>
+<span id="cb21-2"><a href="example-8-21.html#cb21-2" tabindex="-1"></a><span class="co"># VAR &lt;- tapply(APPLE$hardness, APPLE$location, var)</span></span>
+<span id="cb21-3"><a href="example-8-21.html#cb21-3" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="example-8-21.html#cb21-4" tabindex="-1"></a>RVAR <span class="ot">&lt;-</span> VAR[<span class="dv">2</span>]<span class="sc">/</span>VAR[<span class="dv">1</span>] <span class="co">#Ratio of larger variance to smaller variance</span></span>
+<span id="cb21-5"><a href="example-8-21.html#cb21-5" tabindex="-1"></a><span class="fu">names</span>(RVAR) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb21-6"><a href="example-8-21.html#cb21-6" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="example-8-21.html#cb21-7" tabindex="-1"></a>lf <span class="ot">&lt;-</span> <span class="fu">qf</span>(<span class="fl">0.025</span>, <span class="dv">16</span>, <span class="dv">16</span>) <span class="co"># lower f value</span></span>
+<span id="cb21-8"><a href="example-8-21.html#cb21-8" tabindex="-1"></a>uf <span class="ot">&lt;-</span> <span class="fu">qf</span>(<span class="fl">0.975</span>, <span class="dv">16</span>, <span class="dv">16</span>) <span class="co"># upper f value</span></span>
+<span id="cb21-9"><a href="example-8-21.html#cb21-9" tabindex="-1"></a><span class="fu">c</span>(lf, uf, RVAR)</span></code></pre></div>
 <pre><code>[1] 0.3621405 2.7613591 1.1857165</code></pre>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="example-8-21.html#cb21-1" tabindex="-1"></a>lep <span class="ot">&lt;-</span> lf<span class="sc">*</span>RVAR <span class="co"># lower CI end point from Eqn 8.31</span></span>
-<span id="cb21-2"><a href="example-8-21.html#cb21-2" tabindex="-1"></a>uep <span class="ot">&lt;-</span> uf<span class="sc">*</span>RVAR <span class="co"># upper CI end point from Eqn 8.31</span></span>
-<span id="cb21-3"><a href="example-8-21.html#cb21-3" tabindex="-1"></a>CI <span class="ot">&lt;-</span> <span class="fu">c</span>(lep, uep)</span>
-<span id="cb21-4"><a href="example-8-21.html#cb21-4" tabindex="-1"></a>CI</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="example-8-21.html#cb23-1" tabindex="-1"></a>lep <span class="ot">&lt;-</span> lf<span class="sc">*</span>RVAR <span class="co"># lower CI end point from Eqn 8.31</span></span>
+<span id="cb23-2"><a href="example-8-21.html#cb23-2" tabindex="-1"></a>uep <span class="ot">&lt;-</span> uf<span class="sc">*</span>RVAR <span class="co"># upper CI end point from Eqn 8.31</span></span>
+<span id="cb23-3"><a href="example-8-21.html#cb23-3" tabindex="-1"></a>CI <span class="ot">&lt;-</span> <span class="fu">c</span>(lep, uep)</span>
+<span id="cb23-4"><a href="example-8-21.html#cb23-4" tabindex="-1"></a>CI</span></code></pre></div>
 <pre><code>[1] 0.429396 3.274189</code></pre>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="example-8-21.html#cb23-1" tabindex="-1"></a><span class="co"># using var.test()</span></span>
-<span id="cb23-2"><a href="example-8-21.html#cb23-2" tabindex="-1"></a><span class="fu">levels</span>(APPLE<span class="sc">$</span>location) <span class="co"># show default levels of location</span></span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="example-8-21.html#cb25-1" tabindex="-1"></a><span class="co"># using var.test()</span></span>
+<span id="cb25-2"><a href="example-8-21.html#cb25-2" tabindex="-1"></a><span class="fu">levels</span>(APPLE<span class="sc">$</span>location) <span class="co"># show default levels of location</span></span></code></pre></div>
 <pre><code>[1] &quot;fresh&quot;     &quot;warehouse&quot;</code></pre>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="example-8-21.html#cb25-1" tabindex="-1"></a>APPLE<span class="sc">$</span>location <span class="ot">&lt;-</span> <span class="fu">factor</span>(APPLE<span class="sc">$</span>location, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;warehouse&quot;</span>, <span class="st">&quot;fresh&quot;</span>)) </span>
-<span id="cb25-2"><a href="example-8-21.html#cb25-2" tabindex="-1"></a><span class="co">#Reverses the order so the maximum variance appears first</span></span>
-<span id="cb25-3"><a href="example-8-21.html#cb25-3" tabindex="-1"></a><span class="fu">levels</span>(APPLE<span class="sc">$</span>location) <span class="co"># changed levels of location</span></span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="example-8-21.html#cb27-1" tabindex="-1"></a>APPLE<span class="sc">$</span>location <span class="ot">&lt;-</span> <span class="fu">factor</span>(APPLE<span class="sc">$</span>location, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;warehouse&quot;</span>, <span class="st">&quot;fresh&quot;</span>)) </span>
+<span id="cb27-2"><a href="example-8-21.html#cb27-2" tabindex="-1"></a><span class="co">#Reverses the order so the maximum variance appears first</span></span>
+<span id="cb27-3"><a href="example-8-21.html#cb27-3" tabindex="-1"></a><span class="fu">levels</span>(APPLE<span class="sc">$</span>location) <span class="co"># changed levels of location</span></span></code></pre></div>
 <pre><code>[1] &quot;warehouse&quot; &quot;fresh&quot;    </code></pre>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="example-8-21.html#cb27-1" tabindex="-1"></a><span class="fu">var.test</span>(hardness <span class="sc">~</span> location, <span class="at">data =</span> APPLE)<span class="sc">$</span>conf</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="example-8-21.html#cb29-1" tabindex="-1"></a><span class="fu">var.test</span>(hardness <span class="sc">~</span> location, <span class="at">data =</span> APPLE)<span class="sc">$</span>conf</span></code></pre></div>
 <pre><code>[1] 0.429396 3.274189
 attr(,&quot;conf.level&quot;)
 [1] 0.95</code></pre>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="example-8-21.html#cb29-1" tabindex="-1"></a><span class="co"># For full solutions see textbook/lecture slides</span></span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="example-8-21.html#cb31-1" tabindex="-1"></a><span class="co"># For full solutions see textbook/lecture slides</span></span></code></pre></div>
 </div>
 
 </div>

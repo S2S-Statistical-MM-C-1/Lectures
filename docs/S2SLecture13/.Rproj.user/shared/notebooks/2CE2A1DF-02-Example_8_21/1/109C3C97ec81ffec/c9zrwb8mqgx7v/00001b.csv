@@ -1,0 +1,4 @@
+"0","VAR <- c(var(hardness.fresh),var(hardness.warehouse))
+"
+"2","Error: object 'hardness.warehouse' not found
+"
