@@ -12,14 +12,15 @@ library(knitr)
 library(webexercises)
 ```
 
-# Pre-Lecture 13 Reading {-}
+# Pre-Lecture 14 Reading {-}
 
 **Before** the lecture you should read: 
 
-* [8.3 Confidence Intervals for Population Variances](https://read.kortext.com/reader/pdf/92741/482)	
+* [8.4 Confidence Intervals Based on Large Samples](https://read.kortext.com/reader/pdf/92741/490)	
 
-   + [8.3.1 Confidence Interval for the Population Variance When Sampling from a Normal Population](https://read.kortext.com/reader/pdf/92741/482)	
+   + [8.4.1 Confidence Interval for the Population Proportion (Asymptotic Confidence Interval)](https://read.kortext.com/reader/pdf/92741/491)	
 
-   + [8.3.2 Confidence Interval for the Ratio of Population Variances](https://read.kortext.com/reader/pdf/92741/487)	
+       - [8.4.1.1 Score/Wilson Confidence Interval](https://read.kortext.com/reader/pdf/92741/496)	
 
+**NOT Covering** 8.4.1.2, 8.4.1.3  or 8.4.1.4
 

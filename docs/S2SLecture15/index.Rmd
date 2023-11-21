@@ -18,5 +18,5 @@ library(webexercises)
 
 * [8.4.2 Confidence Interval for a Difference in Population Proportions](https://read.kortext.com/reader/pdf/92741/506)	
 
-
+* [8.4.3 Confidence Interval for the Mean of a Poisson Random Variable](https://read.kortext.com/reader/pdf/92741/508)	
 

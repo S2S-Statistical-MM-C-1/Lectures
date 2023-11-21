@@ -12,14 +12,11 @@ library(knitr)
 library(webexercises)
 ```
 
-# Pre-Lecture 13 Reading {-}
+# Pre-Lecture 15 Reading {-}
 
 **Before** the lecture you should read: 
 
-* [8.3 Confidence Intervals for Population Variances](https://read.kortext.com/reader/pdf/92741/482)	
+* [8.4.2 Confidence Interval for a Difference in Population Proportions](https://read.kortext.com/reader/pdf/92741/506)	
 
-   + [8.3.1 Confidence Interval for the Population Variance When Sampling from a Normal Population](https://read.kortext.com/reader/pdf/92741/482)	
-
-   + [8.3.2 Confidence Interval for the Ratio of Population Variances](https://read.kortext.com/reader/pdf/92741/487)	
 
 
