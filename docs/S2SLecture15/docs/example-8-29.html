@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Mentimeter Link | _main.knit</title>
+  <title>Example 8-29 | _main.knit</title>
   <meta name="description" content="" />
   <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Mentimeter Link | _main.knit" />
+  <meta property="og:title" content="Example 8-29 | _main.knit" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Mentimeter Link | _main.knit" />
+  <meta name="twitter:title" content="Example 8-29 | _main.knit" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="example-8-28.html"/>
+<link rel="prev" href="example-8-28.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -156,9 +156,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="mentimeter-link" class="section level1 unnumbered hasAnchor">
-<h1>Mentimeter Link<a href="mentimeter-link.html#mentimeter-link" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p><a href="https://www.menti.com/al2fyubf3wf3">Mentimeter Link</a></p>
+<div id="example-8-29" class="section level1 unnumbered hasAnchor">
+<h1>Example 8-29<a href="example-8-29.html#example-8-29" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><img src="Images/Example_8_29.jpg" width="100%" style="display: block; margin: auto;" /></p>
+<p>Use R, either via RStudio on your own device or this <a href="https://www.mycompiler.io/new/r">online console</a>.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="example-8-29.html#cb7-1" tabindex="-1"></a><span class="co"># These functions may be useful</span></span>
+<span id="cb7-2"><a href="example-8-29.html#cb7-2" tabindex="-1"></a><span class="fu">library</span>(PASWR2)</span>
+<span id="cb7-3"><a href="example-8-29.html#cb7-3" tabindex="-1"></a><span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>())</span>
+<span id="cb7-4"><a href="example-8-29.html#cb7-4" tabindex="-1"></a><span class="fu">mean</span>(_, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-5"><a href="example-8-29.html#cb7-5" tabindex="-1"></a><span class="fu">qnorm</span>()</span></code></pre></div>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="example-8-29.html#cb8-1" tabindex="-1"></a><span class="co"># R Code 8.27</span></span>
+<span id="cb8-2"><a href="example-8-29.html#cb8-2" tabindex="-1"></a><span class="fu">library</span>(PASWR2)</span>
+<span id="cb8-3"><a href="example-8-29.html#cb8-3" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(SOCCER<span class="sc">$</span>game)) <span class="co"># number of games</span></span>
+<span id="cb8-4"><a href="example-8-29.html#cb8-4" tabindex="-1"></a>xbar <span class="ot">&lt;-</span> <span class="fu">mean</span>(SOCCER<span class="sc">$</span>goals, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb8-5"><a href="example-8-29.html#cb8-5" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="fl">0.95</span>) <span class="co"># z_{0.95}</span></span>
+<span id="cb8-6"><a href="example-8-29.html#cb8-6" tabindex="-1"></a>CI <span class="ot">&lt;-</span> xbar <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>) <span class="sc">*</span> z <span class="sc">*</span> <span class="fu">sqrt</span>(xbar<span class="sc">/</span>n)</span>
+<span id="cb8-7"><a href="example-8-29.html#cb8-7" tabindex="-1"></a>CI</span></code></pre></div>
+<pre><code>[1] 2.308439 2.648458</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="example-8-29.html#cb10-1" tabindex="-1"></a><span class="co"># For full solutions see textbook/lecture slides</span></span></code></pre></div>
+</div>
 
 </div>
 <script>
@@ -372,8 +392,8 @@ window.onload = function() {
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="example-8-28.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="example-8-28.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

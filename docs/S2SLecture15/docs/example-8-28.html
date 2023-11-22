@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Mentimeter Link | _main.knit</title>
+  <title>Example 8-28 | _main.knit</title>
   <meta name="description" content="" />
   <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Mentimeter Link | _main.knit" />
+  <meta property="og:title" content="Example 8-28 | _main.knit" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Mentimeter Link | _main.knit" />
+  <meta name="twitter:title" content="Example 8-28 | _main.knit" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="example-8-28.html"/>
+<link rel="prev" href="mentimeter-link.html"/>
+<link rel="next" href="example-8-29.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -156,9 +156,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="mentimeter-link" class="section level1 unnumbered hasAnchor">
-<h1>Mentimeter Link<a href="mentimeter-link.html#mentimeter-link" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p><a href="https://www.menti.com/al2fyubf3wf3">Mentimeter Link</a></p>
+<div id="example-8-28" class="section level1 unnumbered hasAnchor">
+<h1>Example 8-28<a href="example-8-28.html#example-8-28" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><img src="Images/Example_8_28.jpg" width="100%" style="display: block; margin: auto;" /></p>
+<p>Use R, either via RStudio on your own device or this <a href="https://www.mycompiler.io/new/r">online console</a>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="example-8-28.html#cb1-1" tabindex="-1"></a><span class="co"># This function may be useful</span></span>
+<span id="cb1-2"><a href="example-8-28.html#cb1-2" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="example-8-28.html#cb1-3" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="at">x =</span> <span class="fu">c</span>(_, _), <span class="at">n =</span> <span class="fu">c</span>(_, _), <span class="at">conf.level =</span> <span class="fl">0.95</span>, <span class="at">correct =</span> _)<span class="sc">$</span>conf</span></code></pre></div>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="example-8-28.html#cb2-1" tabindex="-1"></a><span class="co"># Without continuity correction...</span></span>
+<span id="cb2-2"><a href="example-8-28.html#cb2-2" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="example-8-28.html#cb2-3" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">70</span>, <span class="dv">90</span>), <span class="at">n =</span> <span class="fu">c</span>(<span class="dv">1400</span>, <span class="dv">2000</span>), <span class="at">conf.level =</span> <span class="fl">0.95</span>, <span class="at">correct =</span> <span class="cn">FALSE</span>)<span class="sc">$</span>conf</span></code></pre></div>
+<pre><code>[1] -0.009590358  0.019590358
+attr(,&quot;conf.level&quot;)
+[1] 0.95</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="example-8-28.html#cb4-1" tabindex="-1"></a><span class="co"># With continuity correction...</span></span>
+<span id="cb4-2"><a href="example-8-28.html#cb4-2" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="example-8-28.html#cb4-3" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">70</span>, <span class="dv">90</span>), <span class="at">n =</span> <span class="fu">c</span>(<span class="dv">1400</span>, <span class="dv">2000</span>), <span class="at">conf.level =</span> <span class="fl">0.95</span>, <span class="at">correct =</span> <span class="cn">TRUE</span>)<span class="sc">$</span>conf</span></code></pre></div>
+<pre><code>[1] -0.0101975  0.0201975
+attr(,&quot;conf.level&quot;)
+[1] 0.95</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="example-8-28.html#cb6-1" tabindex="-1"></a><span class="co"># For full solutions see textbook/lecture slides</span></span></code></pre></div>
+</div>
 
 </div>
 <script>
@@ -372,8 +394,8 @@ window.onload = function() {
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="example-8-28.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="mentimeter-link.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="example-8-29.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
