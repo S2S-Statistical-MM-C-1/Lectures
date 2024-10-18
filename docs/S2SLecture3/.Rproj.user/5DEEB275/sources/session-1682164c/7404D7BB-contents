@@ -1,0 +1,20 @@
+--- 
+title: ""
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+link-citations: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, eval=FALSE, comment=NA)
+library(knitr)
+library(webexercises)
+```
+
+# Pre-Lecture 3 Reading {-}
+
+**Before** the lecture you should read: 
+
+* [6.4 Sampling Distribution of the Sample Mean ](https://read.kortext.com/reader/pdf/92741/359)
+
