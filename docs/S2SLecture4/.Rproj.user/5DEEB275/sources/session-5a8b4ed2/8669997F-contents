@@ -1,0 +1,49 @@
+# S2S03 Activity Results {-}
+
+Consider a population of 146 university students and the variable “how many drinks does it take to get drunk” shown here:
+
+```{r, eval=TRUE, echo=FALSE, fig.align='center', out.width='100%'}
+include_graphics("Images/activity_table.jpg")
+```
+
+* Simulate the sampling distribution of the sample mean as an estimator of the population mean from a simple random sample of size 10.  Use R, either via RStudio on your own device or this [online console](https://www.mycompiler.io/new/r).
+
+
+* Estimate the standard error of this point estimate. 
+
+
+**Here are your results from the Activity in Lecture 3...**
+
+```{r, eval=TRUE, echo=FALSE}
+drinks <- read.csv("drinks_to_get_drunk.csv", row.names=NULL)
+pop.mean <- mean(drinks$Drinks_to_get_drunk)
+pop.var <- var(drinks$Drinks_to_get_drunk)*145/146  # since R calculates a sample variance using n-1
+pop.sd <- sqrt(pop.var)
+```
+
+
+```{r, eval=TRUE}
+
+S2S03.Activity.Responses <- read.csv("S2S03 Activity  (Sample Mean Drinks) (Responses).csv", row.names=NULL)
+
+S2S03.Activity.Responses <- S2S03.Activity.Responses[,-1] # Drop the first columen (Google timestamp)
+  
+colnames(S2S03.Activity.Responses) <- c("sample.mean","sample.standard.deviation","estimate.pop.mean","estimate.standard.error.sample.mean")
+
+attach(S2S03.Activity.Responses)
+
+hist(sample.mean)
+hist(sample.mean[sample.mean<10], main="sample means (tidied) with population mean shown (red)")
+abline(v=pop.mean, col="red", lwd=3, lty=2)
+
+hist(sample.standard.deviation)
+hist(sample.standard.deviation[sample.standard.deviation<10],main="sample standard deviations (tidied) with population sd shown (blue)")
+abline(v=pop.sd, col="blue", lwd=3, lty=2)
+
+plot(sample.mean[sample.mean<10],estimate.pop.mean[sample.mean<10])
+abline(a=0,b=1)
+
+hist(estimate.standard.error.sample.mean)
+hist(estimate.standard.error.sample.mean[estimate.standard.error.sample.mean<4],main="estimate.standard.error.sample.mean (tidied)")
+
+```
