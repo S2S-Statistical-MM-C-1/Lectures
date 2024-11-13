@@ -1,0 +1,20 @@
+---
+title: "S2S Optional Supplementary Material on Maximum Likelihood Estimation"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+link-citations: yes
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval=TRUE, comment=NA)
+library(PASWR2)
+library(ggplot2)
+```
+
+# Introduction
+
+This material runs through some examples of finding the maximum likelihood estimate of different parameters, from different distributions. This is done both 'by hand' and by using R. Visualisations of the log-likelihood functions found will also be created to help verify that a maximum value has been found.
+
+This lab is based on examples 7.18, 7.24 & 7.25 from [Section 7.3.2 Likelihood and Maximum Likelihood Estimators](https://read.kortext.com/reader/pdf/92741/419) of *Probability and Statistics with R*.

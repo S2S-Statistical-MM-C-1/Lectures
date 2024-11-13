@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Maximum Likelihood Estimation | S2S Optional Supplementary Material on Maximum Likelihood Estimation</title>
+  <meta name="description" content="2 Maximum Likelihood Estimation | S2S Optional Supplementary Material on Maximum Likelihood Estimation" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Maximum Likelihood Estimation | S2S Optional Supplementary Material on Maximum Likelihood Estimation" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Maximum Likelihood Estimation | S2S Optional Supplementary Material on Maximum Likelihood Estimation" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="include/webex.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="maximum-likelihood-estimation.html"><a href="maximum-likelihood-estimation.html"><i class="fa fa-check"></i><b>2</b> Maximum Likelihood Estimation</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="maximum-likelihood-estimation.html"><a href="maximum-likelihood-estimation.html#bernoulli-distribution-example-7.18"><i class="fa fa-check"></i><b>2.1</b> Bernoulli Distribution (Example 7.18)</a></li>
+<li class="chapter" data-level="2.2" data-path="maximum-likelihood-estimation.html"><a href="maximum-likelihood-estimation.html#normal-distribution-examples-7.24-7.25"><i class="fa fa-check"></i><b>2.2</b> Normal Distribution (Examples 7.24 &amp; 7.25)</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">S2S Optional Supplementary Material on Maximum Likelihood Estimation</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="maximum-likelihood-estimation" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">2</span> Maximum Likelihood Estimation<a href="maximum-likelihood-estimation.html#maximum-likelihood-estimation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="bernoulli-distribution-example-7.18" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Bernoulli Distribution (Example 7.18)<a href="maximum-likelihood-estimation.html#bernoulli-distribution-example-7.18" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A laboratory is interested in testing a new child-friendly pesticide on <em>Blatta orientalis</em> (oriental cockroaches). The scientists from the lab apply the new pesticide to 81 randomly selected <em>Blatta orientalis oothecae</em> (eggs).</p>
+<p>The results from the experiment are stored in the data frame <code>ROACHEGGS</code>, from the <code>PASWR2</code> package, in the variable <code>eggs</code>. A 0 indicates that nothing hatched from the egg, while a 1 indicates the birth of a cockroach.</p>
+<p>Assuming the selected eggs are representative of the population of <em>Blatta orientalis</em> eggs, estimate the proportion of <em>Blatta orientalis</em> eggs that result in a birth, after being sprayed with the child-friendly pesticide.</p>
+<p><strong>Solution</strong></p>
+<p>We can start by reading in the data and saving it as an object called <code>eggs</code>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="maximum-likelihood-estimation.html#cb1-1" tabindex="-1"></a><span class="fu">library</span>(PASWR2)</span>
+<span id="cb1-2"><a href="maximum-likelihood-estimation.html#cb1-2" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="maximum-likelihood-estimation.html#cb1-3" tabindex="-1"></a>eggs <span class="ot">&lt;-</span> ROACHEGGS<span class="sc">$</span>eggs</span></code></pre></div>
+<p>Whether or not a <em>Blatta orientalis</em> egg hatches is a Bernoulli trial with unknown parameter <span class="math inline">\(\pi\)</span>. That is, <span class="math inline">\(X\sim\mbox{Bernoulli}(\pi)\)</span>, where <span class="math inline">\(X\)</span> is the value 0, indicating that nothing hatched from the egg, or 1, indicating the birth of a cockroach.</p>
+<p>We want to use the data from <code>ROACHEGGS</code>, as well as this Bernoulli distribution to find a <strong>maximum likelihood estimate</strong> for <span class="math inline">\(\pi\)</span>, the probability that an egg hatches after being sprayed with the pesticide.</p>
+<p>From the <a href="https://gla-my.sharepoint.com/:b:/g/personal/mitchum_bock_glasgow_ac_uk/EYMw7JaKJPhJqtx7U2y8014BpMoLnJ1iyb-ELxDb8hvGYg?e=BQm80L">Probability Formula Sheet</a> we see that the Bernoulli distribution has a probability distribution function (pdf) given by,</p>
+<p><span class="math display">\[
+P(X=x)=\pi^x(1-\pi)^{(1-x)}
+\]</span></p>
+<p>When <span class="math inline">\(n\)</span> samples are taken and the values <span class="math inline">\(x_1, x_2, \ldots, x_n\)</span> are observed (with each being either zero or one) we can write the likelihood function as,</p>
+<p><span class="math display" id="eq:like">\[\begin{equation}
+L(\pi|\mathbb{x})=\prod_{i=1}^n\pi^{x_i}(1-\pi)^{1-x_i}
+\tag{2.1}
+\end{equation}\]</span></p>
+<p>It will be easier to maximise the natural logarithm of the likelihood. Taking the natural logarithm of the likelihood function gives the log-likelihood function,</p>
+<p><span class="math display" id="eq:loglike">\[\begin{align}
+\ln L(\pi|\mathbb{x})&amp;=\ln\left[\prod_{i=1}^n\pi^{x_i}(1-\pi)^{1-x_i}\right]\\
+&amp;=\sum_{i=1}^n\ln\left[\pi^x_i(1-\pi)^{1-x_i}\right]\\
+&amp;=\sum_{i=1}^n\left[x_i\ln\pi+(1-x_i)\ln(1-\pi)\right]\\
+&amp;=\ln\pi\sum_{i=1}^nx_i+\ln(1-\pi)\sum_{i=1}^n(1-x_i) \tag{2.2}
+\end{align}\]</span></p>
+<p>The value that maximizes of this function will be our <strong>maximum likelihood estimate</strong>.</p>
+<p>Using the following code and the data stored within the variable <code>eggs</code> as the various <span class="math inline">\(x_i\)</span> values, create a function in R called <code>loglike</code> to calculate the value of the above log-likelihood <a href="maximum-likelihood-estimation.html#eq:loglike">(2.2)</a>, for a given value of <span class="math inline">\(\pi\)</span>. .</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="maximum-likelihood-estimation.html#cb2-1" tabindex="-1"></a>loglike <span class="ot">&lt;-</span> <span class="cf">function</span>(pi){</span>
+<span id="cb2-2"><a href="maximum-likelihood-estimation.html#cb2-2" tabindex="-1"></a>  <span class="fu">log</span>(pi)<span class="sc">*</span><span class="fu">sum</span>(eggs) <span class="sc">+</span> <span class="fu">log</span>(<span class="dv">1</span> <span class="sc">-</span> pi)<span class="sc">*</span><span class="fu">sum</span>(<span class="dv">1</span> <span class="sc">-</span> eggs)</span>
+<span id="cb2-3"><a href="maximum-likelihood-estimation.html#cb2-3" tabindex="-1"></a>  }</span></code></pre></div>
+<p>Using this new R function <code>loglike</code>, plot the log-likelihood <a href="maximum-likelihood-estimation.html#eq:loglike">(2.2)</a>, to see where the maximum value roughly lies using <code>ggplot2</code> as follows:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="maximum-likelihood-estimation.html#cb3-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb3-2"><a href="maximum-likelihood-estimation.html#cb3-2" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="maximum-likelihood-estimation.html#cb3-3" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>)), <span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
+<span id="cb3-4"><a href="maximum-likelihood-estimation.html#cb3-4" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> loglike, <span class="at">n =</span> <span class="dv">200</span>) <span class="sc">+</span></span>
+<span id="cb3-5"><a href="maximum-likelihood-estimation.html#cb3-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="fu">expression</span>(pi),</span>
+<span id="cb3-6"><a href="maximum-likelihood-estimation.html#cb3-6" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;log-likelihood&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>The code first creates a data frame which contains the range of values for <span class="math inline">\(\pi\)</span>, <span class="math inline">\(\left[0, 1\right]\)</span>, that we want to plot over. It then uses the layer <code>stat_function()</code> to calculate the value of the log-likelihood function <a href="maximum-likelihood-estimation.html#eq:loglike">(2.2)</a> at 200 different points between 0 and 1. These values are automatically displayed as a line by <code>stat_function()</code>.</p>
+<p>We can see from the above plot, that the maximum value of the log-likelihood function lies somewhere between 0.10 and 0.25. We can be more accurate than this however, and continue with the maximisation problem to find the <strong>exact value at which the log-likelihood function is maximised</strong>.</p>
+<p>To find the value that <strong>maximizes</strong> this log-likelihood function, we need to take the first order derivative of <span class="math inline">\(\ln L(\pi|\mathbb{x})\)</span> with respect to <span class="math inline">\(\pi\)</span> and set the answer equal to 0. This then gives the equation,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{\partial\ln L(\pi|\mathbb{x})}{\partial\pi}&amp;=\frac{\sum_{i=1}^nx_i}{\pi}-\frac{\sum_{i=1}^n(1-x_i)}{(1-\pi)}=0
+\end{aligned}
+\]</span>
+that needs to be solved. The solution to this is given by <span class="math inline">\(\pi=\frac{\sum_{i=1}^n}{n}=\bar x\)</span> (try and show this yourself).</p>
+<p>Our final step is to check that <span class="math inline">\(\pi=\bar x\)</span> indeed corresponds to a <strong>maximum</strong>. We can do this by checking that the second order derivative of the log-likelihood, with respect to <span class="math inline">\(\pi\)</span>, is negative at <span class="math inline">\(\pi=\bar x\)</span>. That is, <span class="math inline">\(\frac{\partial^2\ln L(\pi|\mathbb{x})}{\partial\pi^2}&lt;0\)</span> when <span class="math inline">\(\pi=\bar x\)</span>.</p>
+<p>The second order derivative of the log-likelihood function is,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{\partial^2\ln L(\pi|\mathbb{x})}{\partial\pi^2}&amp;=\frac{-\sum_{i=1}^nx_i}{\pi^2}-\frac{n-\sum_{i=1}^nx_i}{(1-\pi)^2}
+\end{aligned}
+\]</span>
+The value of the second order derivative at <span class="math inline">\(\pi=\bar x\)</span> is then,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{\partial^2\ln L(\pi|\mathbb{x})}{\partial\pi^2}&amp;=\frac{-\sum_{i=1}^nx_i}{\bar x^2}-\frac{n-\sum_{i=1}^nx_i}{(1-\bar x)^2}\\
+&amp;=\frac{-n\bar x}{\bar x^2}-\frac{n-n\bar x}{(1-\bar x)^2}\\
+&amp;=\frac{-n}{\bar x}-\frac{n(1-\bar x)}{(1-\bar x)^2}\\
+&amp;=\frac{-n}{\bar x}-\frac{n}{(1-\bar x)}\\
+&amp;=\frac{-n}{\bar x(1-\bar x)}
+\end{aligned}
+\]</span>
+which is less than 0 since <span class="math inline">\(0\leq\bar x\leq1\)</span> and <span class="math inline">\(n&gt;0\)</span>. Since the values of the <em>likelihood</em> function <a href="maximum-likelihood-estimation.html#eq:like">(2.1)</a> at the boundaries of the parameter space (i.e. when <span class="math inline">\(\pi=0\)</span> and <span class="math inline">\(\pi=1\)</span>) are both 0, that is <span class="math inline">\(L(\pi=0|\mathbb{x})=0\)</span> and <span class="math inline">\(L(\pi=1|\mathbb{x})=0\)</span>, then we can say that <span class="math inline">\(\pi=\bar x\)</span> is the value that <strong>maximizes</strong> the log-likelihood function (and hence, the value that maximizes the likelihood function).</p>
+<p>We have now shown that the <strong>maximum likelihood estimate</strong> is <span class="math inline">\(\hat\pi(\mathbb{x})=\bar x\)</span>. We can find the mean value from <code>eggs</code> which will be our estimate for the population proportion of eggs that hatch after being sprayed with the pesticide. Calculate the mean of <code>eggs</code> using the code below and verify that it is 0.2099.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="maximum-likelihood-estimation.html#cb4-1" tabindex="-1"></a><span class="fu">mean</span>(eggs)</span></code></pre></div>
+<pre><code>[1] 0.2098765</code></pre>
+<p>Add this value to the plot we made above, to show visually that this is indeed the maximum value. To do this, the code for the plot is exactly the same as above, but now the layer <code>geom_vline()</code> has been used to add a <code>"dashed"</code> vertical line at 0.2099.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="maximum-likelihood-estimation.html#cb6-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>)), <span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
+<span id="cb6-2"><a href="maximum-likelihood-estimation.html#cb6-2" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> loglike, <span class="at">n =</span> <span class="dv">200</span>) <span class="sc">+</span></span>
+<span id="cb6-3"><a href="maximum-likelihood-estimation.html#cb6-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="fu">expression</span>(pi),</span>
+<span id="cb6-4"><a href="maximum-likelihood-estimation.html#cb6-4" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;log-likelihood&quot;</span>) <span class="sc">+</span></span>
+<span id="cb6-5"><a href="maximum-likelihood-estimation.html#cb6-5" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(eggs), <span class="at">lty =</span> <span class="st">&quot;dashed&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>After having defined the function <code>loglike</code>, which calculates the value of the log-likelihood of a Bernoulli distribution at a given value of <span class="math inline">\(\pi\)</span>, we could use the R function <code>optimize()</code> to find the maximum of the function. The arguments that <code>optimize()</code> can take are,</p>
+<ul>
+<li><code>f =</code>: the function for which the maximum (or minimum) value should be found.</li>
+<li><code>interval =</code>: the interval across which the maximum (or minimum) value should be found.</li>
+<li><code>maximum =</code>: a <code>TRUE</code> or <code>FALSE</code> statement indicating whether the maximum or minimum should be found. By default, the minimum value will be found.</li>
+</ul>
+<p>Find the value of the maximum likelihood estimator for the proportion of cockroach eggs which hatch after being sprayed with the pesticide as follows:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="maximum-likelihood-estimation.html#cb7-1" tabindex="-1"></a><span class="fu">optimize</span>(<span class="at">f =</span> loglike, <span class="at">interval =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">maximum =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>$maximum
+[1] 0.2098906
+
+$objective
+[1] -41.61724</code></pre>
+<p>Here, we have set <code>interval =</code> to be the range <span class="math inline">\([0,1]\)</span>, because <span class="math inline">\(\pi\)</span> is a probability so it has to lie in the range <span class="math inline">\([0,1]\)</span>. <code>optimize()</code> returns two values; <code>maximum</code> which is the value of <span class="math inline">\(\pi\)</span> which maximises the log-likelihood function, and <code>objective</code> which is the value of the log-likelihood function at this value of <span class="math inline">\(\pi\)</span>.</p>
+<p>Note that the value of <code>maximum</code> returned here, 0.2099, is in agreement with the maximum likelihood estimate we found above (<span class="math inline">\(\hat\pi(\mathbb{x})=\bar x=0.2099\)</span>).</p>
+<p>Another function we could have used to solve this problem is the <code>nlm()</code> function. This will only search for the <strong>minimum</strong> of a function (not a maximum), so in order to use it to find the maximum of the log-likelihood function, we should input the negative of the log-likelihood. We can create this in a new function called <code>negloglike</code> as follows. Note that this makes use of our predefined function, <code>loglike</code>.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="maximum-likelihood-estimation.html#cb9-1" tabindex="-1"></a>negloglike <span class="ot">&lt;-</span> <span class="cf">function</span>(pi){</span>
+<span id="cb9-2"><a href="maximum-likelihood-estimation.html#cb9-2" tabindex="-1"></a>  (<span class="sc">-</span><span class="dv">1</span>)<span class="sc">*</span><span class="fu">loglike</span>(pi)</span>
+<span id="cb9-3"><a href="maximum-likelihood-estimation.html#cb9-3" tabindex="-1"></a>}</span></code></pre></div>
+<p>Now we are ready to use the <code>nlm()</code> function. The arguments this can take are,</p>
+<ul>
+<li><code>f =</code>: this is the function for which the minimum value should be found.</li>
+<li><code>p =</code>: this is the starting parameter value to use to find the minimum. <code>nlm()</code> will work iteratively to find the minimum of the function.</li>
+</ul>
+<p>Find the minimum of <code>negloglike</code> as follows:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="maximum-likelihood-estimation.html#cb10-1" tabindex="-1"></a><span class="fu">nlm</span>(<span class="at">f =</span> negloglike, <span class="at">p =</span> <span class="fl">0.2</span>)</span></code></pre></div>
+<pre><code>$minimum
+[1] 41.61724
+
+$estimate
+[1] 0.209876
+
+$gradient
+[1] 2.131628e-08
+
+$code
+[1] 1
+
+$iterations
+[1] 4</code></pre>
+<p>The value we are interested in here is <code>estimate</code> which we can extract.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="maximum-likelihood-estimation.html#cb12-1" tabindex="-1"></a><span class="fu">nlm</span>(<span class="at">f =</span> negloglike, <span class="at">p =</span> <span class="fl">0.2</span>)<span class="sc">$</span>estimate</span></code></pre></div>
+<pre><code>[1] 0.209876</code></pre>
+<p>Again, this value is in agreement with the <span class="math inline">\(\bar x=0.2099\)</span> being the <strong>maximum likelihood estimate</strong>. Note that <code>nlm()</code> has identified 0.2099 as being the value of <span class="math inline">\(\pi\)</span> which <em>minimises</em> the <em>negative</em> of the log-likelihood, but this is equivalent to it being the value which <em>maximises</em> the log-likelihood.</p>
+<hr />
+<p>You can find more examples of finding maximum likelihood estimators, both 'by hand' and using R in <a href="https://read.kortext.com/reader/pdf/92741/419">Section 7.3.2 Likelihood and Maximum Likelihood Estimators</a> of <em>Probability and Statistics with R</em>.</p>
+</div>
+<div id="normal-distribution-examples-7.24-7.25" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Normal Distribution (Examples 7.24 &amp; 7.25)<a href="maximum-likelihood-estimation.html#normal-distribution-examples-7.24-7.25" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<!--MLE for sigma^2-->
+<p>Suppose <span class="math inline">\(\left\{X_1,X_2,\dots,X_n\right\}\)</span> is a random sample from a <span class="math inline">\(N\left(\mu, \sigma\right)\)</span> distribution, where <span class="math inline">\(\mu\)</span> is <strong>known</strong>. Find the maximum likelihood estimator of <span class="math inline">\(\sigma^2\)</span>, by hand. The questions below should help you understand the steps required to find the <em>MLE</em>.</p>
+<div class="webex-box webex-check">
+<strong>What is the probability density function (pdf) of a random variable <span class="math inline">\(X\sim{N}\left(\mu,\sigma\right)\)</span></strong>
+<div id="radio_SGZPTQOPQY" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_SGZPTQOPQY" value=""></input> <span><span class="math inline">\(f(x)=\frac{\mu}{2\pi\sigma^2}\exp\left(-\frac{(x-\mu)^2}{\sigma^2}\right)\)</span></span></label><label><input type="radio" autocomplete="off" name="radio_SGZPTQOPQY" value=""></input> <span><span class="math inline">\(f(x)=\mu\exp(-\mu x)\)</span></span></label><label><input type="radio" autocomplete="off" name="radio_SGZPTQOPQY" value="answer"></input> <span><span class="math inline">\(f(x)=\frac{1}{\sqrt{2\pi\sigma^2}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right)\)</span></span></label><label><input type="radio" autocomplete="off" name="radio_SGZPTQOPQY" value=""></input> <span><span class="math inline">\(f(x)=\frac{(\sigma^2)^\mu x^{\mu-1}\exp(-\sigma^2x)}{\Gamma(\mu)}\)</span></span></label>
+</div>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<p>The pdf of a random variable <span class="math inline">\(X\sim{N}\left(\mu,\sigma\right)\)</span> is given by,</p>
+<p><span class="math display">\[
+f(x)=\frac{1}{\sqrt{2\pi\sigma^2}}\exp\left(-\frac{(x-\mu)^2}{2\sigma^2}\right),\,\,\,\,\,\,\,\,\,\,\,-\infty&lt;x&lt;\infty.
+\]</span>
+See the <a href="https://gla-my.sharepoint.com/:b:/g/personal/mitchum_bock_glasgow_ac_uk/EYMw7JaKJPhJqtx7U2y8014BpMoLnJ1iyb-ELxDb8hvGYg?e=BQm80L">Probability Formula Sheet</a>.</p>
+</div>
+</div>
+<div class="webex-box webex-check">
+<p><strong>What is the likelihood function of a random sample of <span class="math inline">\(n\)</span>, normally distributed random variables with mean <span class="math inline">\(\mu\)</span> and standard deviation <span class="math inline">\(\sigma\)</span>?</strong></p>
+<div id="radio_JXYROPALDQ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_JXYROPALDQ" value=""></input> <span><span class="math inline">\(L(\sigma^2|\mathbb{x})=\prod_{i=1}^n\frac{(\sigma^2)^\mu x_i^{\mu-1}\exp(-\sigma^2x_i)}{\Gamma(\mu)}\)</span></span></label><label><input type="radio" autocomplete="off" name="radio_JXYROPALDQ" value=""></input> <span><span class="math inline">\(L(\sigma^2|\mathbb{x})=\prod_{i=1}^n\mu\exp(-\mu x_i)\)</span></span></label><label><input type="radio" autocomplete="off" name="radio_JXYROPALDQ" value=""></input> <span><span class="math inline">\(L(\sigma^2|\mathbb{x})=\prod_{i=1}^n\frac{\mu}{2\pi\sigma^2}\exp\left(-\frac{(x_i-\mu)^2}{\sigma^2}\right)\)</span></span></label><label><input type="radio" autocomplete="off" name="radio_JXYROPALDQ" value="answer"></input> <span><span class="math inline">\(L(\sigma^2|\mathbb{x})=\prod_{i=1}^n\frac{1}{\sqrt{2\pi\sigma^2}}\exp\left(-\frac{(x_i-\mu)^2}{2\sigma^2}\right)\)</span></span></label>
+</div>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<p>The likelihood of <span class="math inline">\(n\)</span> random variables is given by the product of the <span class="math inline">\(n\)</span> probability density functions. In this case, the likelihood function of <span class="math inline">\(n\)</span> normally distributed random variables is given by,</p>
+<p><span class="math display" id="eq:normallike">\[\begin{align}
+L(\sigma^2|\mathbb{x})&amp;=\prod_{i=1}^nf(x_i)\\
+&amp;=\prod_{i=1}^n\frac{1}{\sqrt{2\pi\sigma^2}}\exp\left(-\frac{(x_i-\mu)^2}{2\sigma^2}\right) \tag{2.3}
+\end{align}\]</span></p>
+</div>
+</div>
+<div class="webex-box webex-check">
+<p><strong>By taking the natural logarithm of the likelihood function, what is the log-likelihood function of <span class="math inline">\(n\)</span>, normally distributed random variables with mean <span class="math inline">\(\mu\)</span> and standard deviation <span class="math inline">\(\sigma\)</span>?</strong></p>
+<em>You will need to work this out by hand and simplify the logarithm of the likelihood function.</em>
+<div id="radio_ONXKIUELTG" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_ONXKIUELTG" value=""></input> <span><span class="math inline">\(\ln L(\sigma^2|\mathbb{x})=\ln\left[\sum_{i=1}^n\frac{1}{\sqrt{2\pi\sigma^2}}\right]+\ln\left[\sum_{i=1}^n\exp\left(-\frac{(x_i-\mu)^2}{2\sigma^2}\right)\right]\)</span></span></label><label><input type="radio" autocomplete="off" name="radio_ONXKIUELTG" value="answer"></input> <span><span class="math inline">\(\ln L(\sigma^2|\mathbb{x})=-\frac{n}{2}\ln(2\pi)-\frac{n}{2}\ln(\sigma^2)-\frac{\sum_{i=1}^n(x_i-\mu)^2}{2\sigma^2}\)</span></span></label><label><input type="radio" autocomplete="off" name="radio_ONXKIUELTG" value=""></input> <span><span class="math inline">\(\ln L(\sigma^2|\mathbb{x})=-\frac{n}{2}\ln(2\pi)-\frac{n}{2}\ln(\sigma^2)-\exp\left(\frac{\sum_{i=1}^n(x_i-\mu)^2}{2\sigma^2}\right)\)</span></span></label><label><input type="radio" autocomplete="off" name="radio_ONXKIUELTG" value=""></input> <span><span class="math inline">\(\ln L(\sigma^2|\mathbb{x})=\prod_{i=1}^n\ln\left[(2\pi\sigma^2)^{-\frac{1}{2}}\right]+\sum_{i=1}^n\left(-\frac{(x_i-\mu)^2}{2\sigma^2}\right)\)</span></span></label>
+</div>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<p>The log-likelihood can be found as follows,</p>
+<p><span class="math display" id="eq:normalloglike">\[\begin{align}
+\ln L(\sigma^2|\mathbb{x})&amp;=\ln\left[\prod_{i=1}^n\frac{1}{\sqrt{2\pi\sigma^2}}\exp\left(-\frac{(x_i-\mu)^2}{2\sigma^2}\right)\right]\\
+&amp;=\ln\left[\prod_{i=1}^n\frac{1}{\sqrt{2\pi\sigma^2}}\right]+\ln\left[\prod_{i=1}^n\exp\left(-\frac{(x_i-\mu)^2}{2\sigma^2}\right)\right]\\
+&amp;=\sum_{i=1}^n\ln\left[(2\pi\sigma^2)^{-\frac{1}{2}}\right]+\sum_{i=1}^n\left(-\frac{(x_i-\mu)^2}{2\sigma^2}\right)\\
+&amp;=-\frac{1}{2}\sum_{i=1}^n\ln[2\pi]-\frac{1}{2}\sum_{i=1}^n\ln[\sigma^2]-\frac{\sum_{i=1}^n(x_i-\mu)^2}{2\sigma^2}\\
+&amp;=-\frac{n}{2}\ln(2\pi)-\frac{n}{2}\ln(\sigma^2)-\frac{\sum_{i=1}^n(x_i-\mu)^2}{2\sigma^2} \tag{2.4}
+\end{align}\]</span></p>
+<p>This is the function for which we want to find the value that maximizes it, as this will be the maximum likelihood estimator (MLE).</p>
+</div>
+</div>
+<div class="webex-box webex-check">
+<strong>What is the next step required to find the value of <span class="math inline">\(\sigma^2\)</span> that maximises <span class="math inline">\(\ln L(\sigma^2|\mathbb{x})\)</span>?</strong>
+<div id="radio_NRONMKTUTW" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_NRONMKTUTW" value=""></input> <span>Differentiate <span class="math inline">\(L(\sigma^2|\mathbb{x})\)</span> with respect to <span class="math inline">\(\sigma^2\)</span> and set equal to 0.</span></label><label><input type="radio" autocomplete="off" name="radio_NRONMKTUTW" value="answer"></input> <span>Differentiate <span class="math inline">\(\ln L(\sigma^2|\mathbb{x})\)</span> with respect to <span class="math inline">\(\sigma^2\)</span> and set equal to 0.</span></label><label><input type="radio" autocomplete="off" name="radio_NRONMKTUTW" value=""></input> <span>Differentiate <span class="math inline">\(\ln L(\sigma^2|\mathbb{x})\)</span> with respect to <span class="math inline">\(\mu\)</span> and set equal to 0.</span></label><label><input type="radio" autocomplete="off" name="radio_NRONMKTUTW" value=""></input> <span>Differentiate <span class="math inline">\(L(\sigma^2|\mathbb{x})\)</span> with respect to <span class="math inline">\(\mu\)</span> and set equal to 0.</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<p>The first order derivative of the log-likelihood function <a href="maximum-likelihood-estimation.html#eq:normalloglike">(2.4)</a> is given by,</p>
+<p><span class="math display">\[
+\begin{align}
+\frac{\partial\ln L(\sigma^2|\mathbb{x})}{\partial\sigma^2}&amp;=-\frac{n}{2\sigma^2}+\frac{\sum_{i=1}^n(x_i-\mu)^2}{2(\sigma^2)^2}=0
+\end{align}
+\]</span></p>
+<p>The solution to this equation is given by <span class="math inline">\(\sigma^2=\frac{\sum_{i=1}^n(x_i-\mu)^2}{n}\)</span> (try and show this yourself).</p>
+</div>
+</div>
+<div class="webex-box webex-check">
+<strong>What is the final step required to ensure that a maximum has been found?</strong>
+<div id="radio_ZEESXHXBAP" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_ZEESXHXBAP" value=""></input> <span>Take the second order derivative of the log-likelihood function and ensure it is positive at <span class="math inline">\(\widehat{\sigma^2}\)</span>.</span></label><label><input type="radio" autocomplete="off" name="radio_ZEESXHXBAP" value=""></input> <span>Take the second order derivative of the likelihood function and ensure it is negative at <span class="math inline">\(\widehat{\sigma^2}\)</span>.</span></label><label><input type="radio" autocomplete="off" name="radio_ZEESXHXBAP" value="answer"></input> <span>Take the second order derivative of the log-likelihood function and ensure it is negative at <span class="math inline">\(\widehat{\sigma^2}\)</span>.</span></label><label><input type="radio" autocomplete="off" name="radio_ZEESXHXBAP" value=""></input> <span>Take the second order derivative of the likelihood function and ensure it is positive at <span class="math inline">\(\widehat{\sigma^2}\)</span>.</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<p>The second order derivative of the log-likelihood function is,</p>
+<p><span class="math display">\[
+\begin{align}
+\frac{\partial^2\ln L(\sigma^2|\mathbb{x})}{\partial(\sigma^2)^2}=\frac{n}{2(\sigma^2)^2}-\frac{\sum_{i=1}^n(x_i-\mu)^2}{(\sigma^2)^3}
+\end{align}
+\]</span></p>
+<p>Then, to ensure that a maximum of the log-likelihood function has been found, we need to show that <span class="math inline">\(\frac{\partial^2\ln L(\sigma^2|\mathbb{x})}{\partial(\sigma^2)^2}&lt;0\)</span> when <span class="math inline">\(\sigma^2=\frac{\sum_{i=1}^n(x_i-\mu)^2}{n}\)</span>.</p>
+<p>That is, we want to check that when we sub in <span class="math inline">\(\sigma^2=\frac{\sum_{i=1}^n(x_i-\mu)^2}{n}\)</span>,</p>
+<p><span class="math display">\[
+\begin{align}
+\frac{\partial^2\ln L(\sigma^2|\mathbb{x})}{\partial(\sigma^2)^2}=\frac{n}{2(\sigma^2)^2}-\frac{\sum_{i=1}^n(x_i-\mu)^2}{(\sigma^2)^3}&amp;&lt;0\\
+\frac{n\sigma^2}{2}-\sum_{i=1}^n(x_i-\mu)^2&amp;&lt;0\\
+\frac{n}{2}\frac{\sum_{i=1}^n(x_i-\mu)^2}{n}-\sum_{i=1}^n(x_i-\mu)^2&amp;&lt;0\\
+-\frac{1}{2}\sum_{i=1}^n(x_i-\mu)^2&amp;&lt;0
+\end{align}
+\]</span></p>
+<p>which is true since <span class="math inline">\(\sum_{i=1}^n(x_i-\mu)^2&gt;0\)</span>.</p>
+<p>Therefore, the <strong>maximum likelihood estimate</strong> of <span class="math inline">\(\sigma^2\)</span> is <span class="math inline">\(\widehat{\sigma^2}(\mathbb{x})=\frac{\sum_{i=1}^n(x_i-\mu)^2}{n}\)</span>.</p>
+</div>
+</div>
+<p><strong>Simulating a sample and it's corresponding MLE</strong></p>
+<p>We can draw 1000 random samples from a <span class="math inline">\(N(4, 1)\)</span> distribution, to verify that our maximum likelihood estimator <span class="math inline">\(\widehat{\sigma^2}(\mathbb{x})=\frac{\sum_{i=1}^n(x_i-\mu)^2}{n}\)</span> gives a reasonably close estimate to the true parameter <span class="math inline">\(\sigma^2=1\)</span>.</p>
+<p>To start with, draw and save the samples in the vector <code>x</code> using the code below. Here, the function <code>set.seed()</code> has been used so that the random numbers selected when <code>rnorm()</code> is used are always the same, no matter how many times the code is run. It doesn't matter what value is used inside <code>set.seed()</code>, as long as it is always the same value each time the code is run, the random values will remain the same. If you use the value <code>123</code> as in this code, you will get the same results as shown below.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="maximum-likelihood-estimation.html#cb14-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb14-2"><a href="maximum-likelihood-estimation.html#cb14-2" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb14-3"><a href="maximum-likelihood-estimation.html#cb14-3" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="dv">4</span></span>
+<span id="cb14-4"><a href="maximum-likelihood-estimation.html#cb14-4" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb14-5"><a href="maximum-likelihood-estimation.html#cb14-5" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> n, <span class="at">mean =</span> mu, <span class="at">sd =</span> sigma)</span></code></pre></div>
+<p>In the quiz questions above, we saw that the log-likelihood function is given by,</p>
+<p><span class="math display">\[
+\ln L(\sigma^2|\mathbb{x})=-\frac{n}{2}\ln(2\pi)-\frac{n}{2}\ln(\sigma^2)-\frac{\sum_{i=1}^n(x_i-\mu)^2}{2\sigma^2}
+\]</span></p>
+<p>Write a function in R called <code>loglike_sigma2</code> which will take the values in <code>x</code> and a given value for <span class="math inline">\(\sigma^2\)</span>, and return the value of <span class="math inline">\(\ln L(\sigma^2|\mathbb{x})\)</span> using the code:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="maximum-likelihood-estimation.html#cb15-1" tabindex="-1"></a>loglike_sigma2 <span class="ot">&lt;-</span> <span class="cf">function</span>(sigma2){</span>
+<span id="cb15-2"><a href="maximum-likelihood-estimation.html#cb15-2" tabindex="-1"></a>  <span class="sc">-</span>n<span class="sc">/</span><span class="dv">2</span><span class="sc">*</span><span class="fu">log</span>(<span class="dv">2</span><span class="sc">*</span>pi) <span class="sc">-</span> n<span class="sc">/</span><span class="dv">2</span><span class="sc">*</span><span class="fu">log</span>(sigma2) <span class="sc">-</span> (<span class="fu">sum</span>((x<span class="sc">-</span>mu)<span class="sc">^</span><span class="dv">2</span>))<span class="sc">/</span>(<span class="dv">2</span><span class="sc">*</span>sigma2)</span>
+<span id="cb15-3"><a href="maximum-likelihood-estimation.html#cb15-3" tabindex="-1"></a>}</span></code></pre></div>
+<p>Calculate the value of the maximum likelihood estimator (MLE), <span class="math inline">\(\widehat{\sigma^2}=\frac{\sum_{i=1}^n(x_i-\mu)^2}{n}\)</span>, based on the simulated data stored in <code>x</code> using:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="maximum-likelihood-estimation.html#cb16-1" tabindex="-1"></a>mle_sigma2 <span class="ot">&lt;-</span> <span class="fu">sum</span>((x<span class="sc">-</span>mu)<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span>n</span></code></pre></div>
+<p>This tells us that <span class="math inline">\(\widehat{\sigma^2}=0.983\)</span>, based on this observed sample.</p>
+<p>Use <code>ggplot2</code> to show a plot of the log-likelihood function <a href="maximum-likelihood-estimation.html#eq:normalloglike">(2.4)</a> and add a vertical line at the maximum likelihood estimate <span class="math inline">\(\widehat{\sigma^2}=0.983\)</span> using:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="maximum-likelihood-estimation.html#cb17-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">2.45</span>)), <span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
+<span id="cb17-2"><a href="maximum-likelihood-estimation.html#cb17-2" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> loglike_sigma2, <span class="at">n =</span> <span class="dv">200</span>) <span class="sc">+</span></span>
+<span id="cb17-3"><a href="maximum-likelihood-estimation.html#cb17-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="fu">expression</span>(sigma<span class="sc">^</span><span class="dv">2</span>),</span>
+<span id="cb17-4"><a href="maximum-likelihood-estimation.html#cb17-4" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;log-likelihood&quot;</span>) <span class="sc">+</span></span>
+<span id="cb17-5"><a href="maximum-likelihood-estimation.html#cb17-5" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> mle_sigma2, <span class="at">lty =</span> <span class="st">&quot;dashed&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p>The reason that this estimate is not <strong>exactly</strong> equal to <span class="math inline">\(\sigma^2=1\)</span>, which we used to draw the random sample, is because the maximum likelihood estimator is dependent on the sample observed. It gives us an <em>estimate</em> of the true population parameter, based on the sample. As we can see in the plot, this estimate is relatively close to the true population parameter <span class="math inline">\(\sigma^2=1\)</span>.</p>
+<p>After having defined the function <code>loglike_sigma2</code>, we could use the function <code>optimize()</code> to find the maximum likelihood estimate. When the code below is run, we see again that the value that maximizes this function is <span class="math inline">\(\widehat{\sigma^2}=0.983\)</span> which is in agreement with what we found 'by hand'.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="maximum-likelihood-estimation.html#cb18-1" tabindex="-1"></a><span class="fu">optimize</span>(<span class="at">f =</span> loglike_sigma2, <span class="at">interval =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">2.5</span>), <span class="at">maximum =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>$maximum
+[1] 0.9827153
+
+$objective
+[1] -1410.231</code></pre>
+<p>We could also use the <code>nlm()</code> function to find the value that maximizes the log-likelihood function, but remember this actually only finds <em>minimum</em> values of a given function, so we first have to define the negative of the log-likelihood function, <code>negloglike_sigma2</code>.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="maximum-likelihood-estimation.html#cb20-1" tabindex="-1"></a>negloglike_sigma2 <span class="ot">&lt;-</span> <span class="cf">function</span>(sigma2){</span>
+<span id="cb20-2"><a href="maximum-likelihood-estimation.html#cb20-2" tabindex="-1"></a>  (<span class="sc">-</span><span class="dv">1</span>)<span class="sc">*</span><span class="fu">loglike_sigma2</span>(sigma2)</span>
+<span id="cb20-3"><a href="maximum-likelihood-estimation.html#cb20-3" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="maximum-likelihood-estimation.html#cb21-1" tabindex="-1"></a><span class="fu">nlm</span>(<span class="at">f =</span> negloglike_sigma2, <span class="at">p =</span> <span class="fl">0.5</span>)<span class="sc">$</span>estimate</span></code></pre></div>
+<pre><code>[1] 0.9827351</code></pre>
+<p>This again shows us that the value that maximizes of the log-likelihood function <a href="maximum-likelihood-estimation.html#eq:normalloglike">(2.4)</a> is <span class="math inline">\(\widehat{\sigma^2}=0.983\)</span>, based on our observed sample.</p>
+<hr />
+<p>You can find more examples of finding maximum likelihood estimators, both 'by hand' and using R in <a href="https://read.kortext.com/reader/pdf/92741/419">Section 7.3.2 Likelihood and Maximum Likelihood Estimators</a> of <em>Probability and Statistics with R</em>.</p>
+
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  var t = document.getElementsByClassName("webex-total_correct");
+  for (var i = 0; i < t.length; i++) {
+    p = t[i].parentElement;
+    var correct = p.getElementsByClassName("webex-correct").length;
+    var solvemes = p.getElementsByClassName("webex-solveme").length;
+    var radiogroups = p.getElementsByClassName("webex-radiogroup").length;
+    var selects = p.getElementsByClassName("webex-select").length;
+
+    t[i].innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* check answers */
+check_func = function() {
+  console.log("webex: check answers");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('unchecked')) {
+    cl.remove("unchecked");
+    this.innerHTML = "Hide Answers";
+  } else {
+    cl.add("unchecked");
+    this.innerHTML = "Check Answers";
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  var check_sections = document.getElementsByClassName("webex-check");
+  console.log("check:", check_sections.length);
+  for (var i = 0; i < check_sections.length; i++) {
+    check_sections[i].classList.add("unchecked");
+
+    let btn = document.createElement("button");
+    btn.innerHTML = "Check Answers";
+    btn.classList.add("webex-check-button");
+    btn.onclick = check_func;
+    check_sections[i].appendChild(btn);
+
+    let spn = document.createElement("span");
+    spn.classList.add("webex-total_correct");
+    check_sections[i].appendChild(spn);
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    solveme[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    selects[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  update_total_correct();
+}
+
+</script>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
