@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Pre-Lecture 12 Reading | _main.knit</title>
+  <title>Example 8-17 | _main.knit</title>
   <meta name="description" content="" />
   <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Pre-Lecture 12 Reading | _main.knit" />
+  <meta property="og:title" content="Example 8-17 | _main.knit" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Pre-Lecture 12 Reading | _main.knit" />
+  <meta name="twitter:title" content="Example 8-17 | _main.knit" />
   
   
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="example-8-8.html"/>
 
-<link rel="next" href="mentimeter-link.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -156,18 +156,54 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<!--bookdown:title:end-->
-<!--bookdown:title:start-->
-<div id="pre-lecture-12-reading" class="section level1 unnumbered hasAnchor">
-<h1>Pre-Lecture 12 Reading<a href="index.html#pre-lecture-12-reading" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p><strong>Before</strong> the lecture you should read:</p>
-<ul>
-<li><p><a href="https://read.kortext.com/reader/pdf/92741/464">8.2.2 Confidence Interval for the Population Mean When Sampling from a Normal Distribution with Unknown Population Variance</a></p>
-<ul>
-<li><a href="https://read.kortext.com/reader/pdf/92741/466">In LAB 8.2.3-8.2.6</a></li>
-</ul></li>
-<li><p><a href="https://read.kortext.com/reader/pdf/92741/480">8.2.7 Confidence Interval for the Mean Difference When the Differences Have a Normal Distribution</a></p></li>
-</ul>
+<div id="example-8-17" class="section level1 unnumbered hasAnchor">
+<h1>Example 8-17<a href="example-8-17.html#example-8-17" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><img src="Images/Example_8_17.jpg" width="100%" style="display: block; margin: auto;" /></p>
+<p>Use R, either via RStudio on your own device or this <a href="https://www.mycompiler.io/new/r">online console</a>.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="example-8-17.html#cb8-1" tabindex="-1"></a><span class="co"># These functions and data may be useful</span></span>
+<span id="cb8-2"><a href="example-8-17.html#cb8-2" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="example-8-17.html#cb8-3" tabindex="-1"></a><span class="fu">library</span>(PASWR2)</span>
+<span id="cb8-4"><a href="example-8-17.html#cb8-4" tabindex="-1"></a>SUNDIG<span class="sc">$</span>difference</span>
+<span id="cb8-5"><a href="example-8-17.html#cb8-5" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="example-8-17.html#cb8-6" tabindex="-1"></a><span class="fu">qqnorm</span>()</span>
+<span id="cb8-7"><a href="example-8-17.html#cb8-7" tabindex="-1"></a><span class="fu">qqline</span>()</span>
+<span id="cb8-8"><a href="example-8-17.html#cb8-8" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="example-8-17.html#cb8-9" tabindex="-1"></a><span class="co"># First approach</span></span>
+<span id="cb8-10"><a href="example-8-17.html#cb8-10" tabindex="-1"></a><span class="fu">mean</span>()</span>
+<span id="cb8-11"><a href="example-8-17.html#cb8-11" tabindex="-1"></a><span class="fu">sd</span>()</span>
+<span id="cb8-12"><a href="example-8-17.html#cb8-12" tabindex="-1"></a><span class="fu">qt</span>() </span>
+<span id="cb8-13"><a href="example-8-17.html#cb8-13" tabindex="-1"></a></span>
+<span id="cb8-14"><a href="example-8-17.html#cb8-14" tabindex="-1"></a><span class="co"># Second approach</span></span>
+<span id="cb8-15"><a href="example-8-17.html#cb8-15" tabindex="-1"></a><span class="fu">t.test</span>()</span>
+<span id="cb8-16"><a href="example-8-17.html#cb8-16" tabindex="-1"></a></span>
+<span id="cb8-17"><a href="example-8-17.html#cb8-17" tabindex="-1"></a><span class="co"># Third approach</span></span>
+<span id="cb8-18"><a href="example-8-17.html#cb8-18" tabindex="-1"></a><span class="fu">t.test</span>(,,<span class="at">paired=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="example-8-17.html#cb9-1" tabindex="-1"></a><span class="fu">library</span>(PASWR2)</span>
+<span id="cb9-2"><a href="example-8-17.html#cb9-2" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="example-8-17.html#cb9-3" tabindex="-1"></a><span class="fu">qqnorm</span>(SUNDIG<span class="sc">$</span>difference)</span>
+<span id="cb9-4"><a href="example-8-17.html#cb9-4" tabindex="-1"></a><span class="fu">qqline</span>(SUNDIG<span class="sc">$</span>difference)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="example-8-17.html#cb10-1" tabindex="-1"></a>xbar <span class="ot">&lt;-</span> <span class="fu">mean</span>(SUNDIG<span class="sc">$</span>difference)</span>
+<span id="cb10-2"><a href="example-8-17.html#cb10-2" tabindex="-1"></a>CT <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="fl">0.975</span>, <span class="dv">4</span>) <span class="co"># critical t value</span></span>
+<span id="cb10-3"><a href="example-8-17.html#cb10-3" tabindex="-1"></a>ST <span class="ot">&lt;-</span> <span class="fu">sd</span>(SUNDIG<span class="sc">$</span>difference) <span class="co"># standard deviation</span></span>
+<span id="cb10-4"><a href="example-8-17.html#cb10-4" tabindex="-1"></a>xbar <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>) <span class="sc">*</span> CT <span class="sc">*</span> ST<span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">5</span>)</span></code></pre></div>
+<pre><code>[1] 0.6100548 9.3899452</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="example-8-17.html#cb12-1" tabindex="-1"></a><span class="co"># Second approach</span></span>
+<span id="cb12-2"><a href="example-8-17.html#cb12-2" tabindex="-1"></a><span class="fu">t.test</span>(SUNDIG<span class="sc">$</span>difference, <span class="at">conf.level =</span> <span class="fl">0.95</span>)<span class="sc">$</span>conf</span></code></pre></div>
+<pre><code>[1] 0.6100548 9.3899452
+attr(,&quot;conf.level&quot;)
+[1] 0.95</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="example-8-17.html#cb14-1" tabindex="-1"></a><span class="co"># Third approach</span></span>
+<span id="cb14-2"><a href="example-8-17.html#cb14-2" tabindex="-1"></a><span class="fu">t.test</span>(SUNDIG<span class="sc">$</span>sun, SUNDIG<span class="sc">$</span>digital, <span class="at">paired=</span><span class="cn">TRUE</span>, <span class="at">conf.level =</span> <span class="fl">0.95</span>)<span class="sc">$</span>conf</span></code></pre></div>
+<pre><code>[1] 0.6100548 9.3899452
+attr(,&quot;conf.level&quot;)
+[1] 0.95</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="example-8-17.html#cb16-1" tabindex="-1"></a><span class="co"># For full solutions see textbook/lecture slides</span></span></code></pre></div>
+</div>
 
 </div>
 <script>
@@ -381,8 +417,8 @@ window.onload = function() {
           </div>
         </div>
       </div>
+<a href="example-8-8.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="mentimeter-link.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

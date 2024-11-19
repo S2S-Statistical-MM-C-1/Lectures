@@ -1,0 +1,10 @@
+"0","xbar <- mean(SUNDIG$difference)
+CT <- qt(0.975, 4) # critical t value
+ST <- sd(SUNDIG$difference) # standard deviation
+xbar + c(-1, 1) * CT * ST/sqrt(5)
+"
+"1","[1]"
+"1"," 0.6100548"
+"1"," 9.3899452"
+"1","
+"
