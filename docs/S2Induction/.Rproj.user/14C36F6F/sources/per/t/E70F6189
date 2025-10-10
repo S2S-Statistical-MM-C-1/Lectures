@@ -1,26 +1,24 @@
 {
-    "id": "44BDF597",
-    "path": "~/GitHub/S2S_2025/Lectures/docs/S2SLecture1/index.Rmd",
+    "id": "E70F6189",
+    "path": "~/GitHub/S2S_2025/Lectures/docs/S2Induction/index.Rmd",
     "project_path": "index.Rmd",
     "type": "r_markdown",
-    "hash": "0",
+    "hash": "2620608017",
     "contents": "",
     "dirty": false,
-    "created": 1759504126956.0,
+    "created": 1760108345229.0,
     "source_on_save": false,
     "relative_order": 1,
     "properties": {
         "source_window_id": "",
-        "Source": "Source",
-        "cursorPosition": "25,21",
-        "scrollLine": "18"
+        "Source": "Source"
     },
     "folds": "",
-    "lastKnownWriteTime": 1760107677,
+    "lastKnownWriteTime": 1759489927,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1760107677839,
+    "last_content_update": 1759489927,
     "read_only": false,
     "read_only_alternatives": []
 }
