@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Example 8-21 | _main.knit</title>
   <meta name="description" content="" />
-  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.45 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Example 8-21 | _main.knit" />
   <meta property="og:type" content="book" />
@@ -53,6 +53,7 @@
 
 
 <style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -136,7 +137,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <ul class="summary">
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Pre-Lecture 13 Reading</a></li>
-<li class="chapter" data-level="" data-path="mentimeter-link.html"><a href="mentimeter-link.html"><i class="fa fa-check"></i>Mentimeter Link</a></li>
 <li class="chapter" data-level="" data-path="example-8-19.html"><a href="example-8-19.html"><i class="fa fa-check"></i>Example 8-19</a></li>
 <li class="chapter" data-level="" data-path="example-8-21.html"><a href="example-8-21.html"><i class="fa fa-check"></i>Example 8-21</a></li>
 </ul>
@@ -187,10 +187,10 @@ Solution
 <span id="cb17-5"><a href="example-8-21.html#cb17-5" tabindex="-1"></a></span>
 <span id="cb17-6"><a href="example-8-21.html#cb17-6" tabindex="-1"></a><span class="fu">qqnorm</span>(hardness.fresh)</span>
 <span id="cb17-7"><a href="example-8-21.html#cb17-7" tabindex="-1"></a><span class="fu">qqline</span>(hardness.fresh)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="example-8-21.html#cb18-1" tabindex="-1"></a><span class="fu">qqnorm</span>(hardness.warehouse)</span>
 <span id="cb18-2"><a href="example-8-21.html#cb18-2" tabindex="-1"></a><span class="fu">qqline</span>(hardness.warehouse)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-10-2.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-9-2.png" width="672" /></p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="example-8-21.html#cb19-1" tabindex="-1"></a><span class="co"># Construct a 95% confidence interval for the ratio of the variances.</span></span>
 <span id="cb19-2"><a href="example-8-21.html#cb19-2" tabindex="-1"></a></span>
 <span id="cb19-3"><a href="example-8-21.html#cb19-3" tabindex="-1"></a>VAR <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">var</span>(hardness.fresh),<span class="fu">var</span>(hardness.warehouse))</span>
@@ -452,41 +452,41 @@ window.onload = function() {
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": null,
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection",
-"scroll_highlight": true
-},
-"info": true
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": null,
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection",
+    "scroll_highlight": true
+  },
+  "info": true
 });
 });
 </script>
